@@ -1,0 +1,99 @@
+<html>
+<head>
+  <title>Notebooks : /p-values.html</title>
+</head>
+<body>
+<h1>Notebooks</h1>
+
+<p>
+[
+<a href="http://ddarmon.github.io/master/notebooks/">Home</a>
+]
+</p>
+
+<h2>Wed, 23 May 2018</h2>
+<h3><a name="p-values">$P$-values and Their (Mis)Interpretation</a></h3>
+<div class="blosxomStory">
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<ul>
+<li>
+<p>Selected Explanations</p>
+<ul>
+<li>
+<p>Larry Wasserman's <a href="https://normaldeviate.wordpress.com/2013/03/14/double-misunderstandings-about-p-values/">simple reminder</a>.</p>
+</li>
+<li>
+<p>Cosma Shalizi's Discussion on P-values:</p>
+<ul>
+<li>Why using P-values to select predictors in a linear regression <a href="http://www.stat.cmu.edu/~cshalizi/mreg/15/lectures/26/lecture-26.pdf">doesn't make sense</a>.</li>
+<li><a href="http://bactra.org/notebooks/1111.html">Extended discussion on $P$-values</a>.</li>
+</ul>
+</li>
+<li>
+<p>Andrew Gelman's Papers on $P$-values:</p>
+<ul>
+<li>A. Gelman and J. Carlin, "Some Natural Solutions to the p-Value Communication Problem—and Why They Won't Work," Journal of the American Statistical Association, vol. 112, no. 519, 2017.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Misunderstandings_of_p-values">Wikipedia's entry on "Misunderstandings of $p$ values"</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Real World Implications:</p>
+<ul>
+<li>
+<p>Almost all of social science. (I am only half kidding.)</p>
+</li>
+<li>
+<p>Political Science:</p>
+<ul>
+<li>M. D. Ward, B. D. Greenhill, and K. M. Bakke, "The perils of policy by p-value: Predicting civil conflicts," Journal of Peace Research, vol. 47, no. 4, 2010.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Some Common Errors and Mis-interpretations:</h3>
+<ol>
+<li>
+<p>Interpretting $P_{\theta_{0}}(|T| \geq |T^{<em>}|)$ as $P(H_{0} \mid |T| = |T^{</em>}|)$, a.k.a. interpretting the $P$-value as the probability of the null hypothesis given the data<sup id="fnref:wrong1a"><a class="footnote-ref" href="#fn:wrong1a" rel="footnote">1</a></sup>.</p>
+</li>
+<li>
+<p>Inpretting $P_{\theta_{0}}(|T| \geq |T^{*}|)$ as the probability that the result occurred due to random chance. This is basically the same error as Error 1, but in even looser language.</p>
+</li>
+<li>
+<p>Interpretting $P_{\theta_{0}}(|T| \geq |T^{*}|)$ as the probability of making a False Positive Error, i.e. observing $p = 0.023$ does not mean you have a 2.3% chance of falsely rejecting the null. This is what the level / size / "$\alpha$" of the test controls: if you fix $\alpha$ at, say, 0.05, then under the null, you would incorrectly reject the null at most $100\alpha\%$ of the time.</p>
+</li>
+<li>
+<p>Interpretting a small $P$-value as a strong effect. A small $P$-value indicates that (a) you have a precisely measured effect that is different from the null effect or (b) you are very unlucky.</p>
+</li>
+<li>
+<p>Related to 3: interpretting statistical significance as practical significance.</p>
+</li>
+<li>
+<p>Using $P$-values from a regression to determine which predictor / covariate / 'independent variable' is most relevant to predicting an outcome / 'dependent variable'.</p>
+</li>
+</ol>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:wrong1a">
+<p>This error is often made in both directions: a large $P$-value is interpretted as indicating strong evidence for the null hypothesis, and a small $P$-value is interpretted as indicating strong <strong>direct</strong> evidence for the alternative hypothesis. Neither is true. <p> The error in the second direction requires additional clarification: a very small P-value <em>is</em> evidence against the null hypothesis. However, it is not <strong>direct</strong> evidence, in the sense of a direct interpretation of the $P$-value as $P(H_{0} \mid |T| = |T^{*}|)$. For example, the $P$-value is not generally equal to the evidence for the null hypothesis in a Bayesian framework. See: <p> J. O. Berger, T. Sellke, 1987, "Testing a Point Null Hypothesis: The Irreconcilability of P Values and Evidence," Journal of the American Statistical Association, vol. 82, no. 397, pp. 112–122, Mar. 1987.&#160;<a class="footnote-backref" href="#fnref:wrong1a" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+<p>
+  posted at: 14:04 |
+  path: <a href="http://ddarmon.github.io/master/notebooks/" title="path">/</a> |
+  <a href="http://ddarmon.github.io/master/notebooks/p-values.html">permanent link to this entry</a>
+</p>
+</div>
+
+<p>
+  <a href="http://pyblosxom.github.com/"><img src="http://pyblosxom.github.com/images/pb_pyblosxom.gif" alt="Made with Pyblosxom" border="0" /></a>
+</p>
+</body>
+</html>
