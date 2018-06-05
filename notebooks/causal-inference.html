@@ -11,20 +11,61 @@
 ]
 </p>
 
-<h2>Thu, 31 May 2018</h2>
+<h2>Fri, 01 Jun 2018</h2>
 <h3><a name="causal-inference">Causal Inference</a></h3>
 <div class="blosxomStory">
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <p>When you have multiple variables like \(X, Y, \text{and } Z\), and you want to know how one effects the others, <strong>causally</strong>.</p>
+<p>For example:</p>
+<p>Does eating a Mediterranean-style diet lower your risk of heart disease?</p>
+<p>Does smoking cause cancer?</p>
+<p>And several other, perhaps more controversial, examples.</p>
 <ul>
-<li>Big Picture:<ul>
-<li>D. Mackenzie and J. Pearl. The Book of Why: The New Science of Cause and Effect. 2018. <a href="https://www.basicbooks.com/titles/judea-pearl/the-book-of-why/9780465097609/">link</a></li>
+<li>
+<p>Big Picture:</p>
+<ul>
+<li>
+<p>D. Mackenzie and J. Pearl. The Book of Why: The New Science of Cause and Effect. 2018. <a href="https://www.basicbooks.com/titles/judea-pearl/the-book-of-why/9780465097609/">link</a></p>
+</li>
+<li>
+<p>Cosma Shalizi's chapters on causal inference in <a href="http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/"><em>Advanced Data Science from an Elementary Point of View</em></a> (Part III).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The Impossibility of Causal Discovery</p>
+<ul>
+<li>J. M. Robins, R. Scheines, P. Spirtes, and L. Wasserman, "Uniform consistency in causal inference," Biometrika, vol. 3, no. 90, pp. 491–515, 2003.<ul>
+<li>The short version: within a certain class of models<sup id="fnref:dag-assumptions"><a class="footnote-ref" href="#fn:dag-assumptions" rel="footnote">1</a></sup>,<ol>
+<li>universal consistency is achieved.</li>
+<li>uniform consistency is not achievable when time order is unknown and / or unobservable confounders are present.</li>
+</ol>
+</li>
 </ul>
 </li>
 </ul>
+</li>
+<li>
+<p>Some Hope for Causal Discovery:</p>
+<ul>
+<li>J. Zhang and P. Spirtes, "Strong faithfulness and uniform consistency in causal inference," Proceedings of the Nineteenth conference on Uncertainty in Artificial Intelligence, 2002, pp. 632–639.<ul>
+<li>Under stricter assumptions, the causal discovery algorithms are uniformly consistent. As the authors put it, 'Uniform Consistency with More Faithfulness'.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:dag-assumptions">
+<p>The assumptions that the data generating distribution is (1) Markov to the causal graph and (2) faithful to the causal graph.&#160;<a class="footnote-backref" href="#fnref:dag-assumptions" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 <p>
-  posted at: 13:29 |
+  posted at: 09:35 |
   path: <a href="http://ddarmon.github.io/master/notebooks/" title="path">/</a> |
   <a href="http://ddarmon.github.io/master/notebooks/causal-inference.html">permanent link to this entry</a>
 </p>
