@@ -1,0 +1,27 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<p><h2>Section 7.2: </h2>
+<p>25, 26, 27, 42
+
+<h2>Additional Problem</h2>
+
+<p>In this exercise, we consider how the power of a hypothesis test (the ability to reject the null hypothesis when it is in fact false) depends on the size of the rejection region / significance level of the test, the true difference of the population mean from the null hypothesis mean, and the sample size.</p>
+<p>Consider the case of testing a claim about the mean from a normal population. Call the value of the mean of the population <span class="math inline">\(\mu\)</span>, and the value under the null hypothesis <span class="math inline">\(\mu_{0}\)</span>. We wish to perform the hypothesis test <span class="math display">\[\begin{aligned}
+    H_{0} &amp;: \mu \leq \mu_{0} \\
+    H_{1} &amp;: \mu &gt; \mu_{0} \end{aligned}\]</span> We will use the <span class="math inline">\(Z\)</span> statistic <span class="math display">\[\begin{aligned}
+    Z = \frac{\bar{X} - \mu_{0}}{\sigma/\sqrt{n}}\end{aligned}\]</span> as our test statistic. We know that under the null hypothesis that <span class="math inline">\(\mu = \mu_{0}\)</span>, so under the null hypothesis <span class="math inline">\(Z\)</span> will have a standard normal distribution with mean 0 and standard deviation 1.</p>
+<p>Suppose instead that the true mean of the population is not <span class="math inline">\(\mu_{0}\)</span>, but <span class="math inline">\(\mu_{1} &gt; \mu_{0}\)</span>. That is, the alternative hypothesis is true, since the population mean is in fact larger than the null value <span class="math inline">\(\mu_{0}\)</span>. What is the distribution of <span class="math inline">\(Z\)</span> now? If <span class="math inline">\(X\)</span> is normal with mean <span class="math inline">\(\mu_{1}\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, then <span class="math inline">\(\bar{X}\)</span> is normal with mean <span class="math inline">\(\mu_{1}\)</span> and standard deviation <span class="math inline">\(\frac{\sigma}{\sqrt{n}}\)</span>. So <span class="math display">\[\begin{aligned}
+    \frac{\bar{X} - \mu_{1}}{\sigma/\sqrt{n}}\end{aligned}\]</span> is standard normal. <strong>But</strong>, the <span class="math inline">\(Z\)</span> statistic that we compute is <b>not</b> standard normal, since we are subtracting off <span class="math inline">\(\mu_{0}\)</span> instead of <span class="math inline">\(\mu_{1}\)</span>. In fact, we see that <span class="math display">\[\begin{aligned}
+    Z &amp;= \frac{\bar{X} - \mu_{0}}{\sigma/\sqrt{n}} \\
+    &amp;= \frac{\bar{X} - \mu_{0} + \mu_{1} - \mu_{1}}{\sigma/\sqrt{n}} \\
+    &amp;= \frac{\bar{X} - \mu_{1}}{\sigma/\sqrt{n}} + \frac{\mu_{1} - \mu_{0}}{\sigma/\sqrt{n}}\end{aligned}\]</span> is nonstandard normal with mean <span class="math inline">\(\dfrac{\mu_{1} - \mu_{0}}{\sigma/\sqrt{n}} = \sqrt{n}\cdot\dfrac{\mu_{1} - \mu_{0}}{\sigma}\)</span> and standard deviation 1. (The first term in the sum is standard normal, and the second term shifts the mean of the test statistic to the right by <span class="math inline">\(\sqrt{n}\cdot\dfrac{\mu_{1} - \mu_{0}}{\sigma}\)</span>.)</p>
+<p>The term <span class="math inline">\(\Delta = \dfrac{\mu_{1} - \mu_{0}}{\sigma}\)</span> is called the <strong>effect size</strong> of the difference from the null hypothesis: it measures how much the true mean differs from the null mean in units of the standard deviation of the population.</p>
+
+<p>Using the demo <a href = "https://ddarmon.shinyapps.io/size-power-tradeoff/">here</a>, use the right tailed-test to explore the trade-off between the size of the rejection region and the power of the test as a function of the effect size and the sample size:
+
+<ol>
+<li><p>Using an effect size of 1 and a sample size of 1, determine the power of the test to reject the null hypothesis when the size of the rejection region <span class="math inline">\(\alpha\)</span> is set to: 0.01, 0.05, 0.1, 0.5. What happens to the power of the test as you increase the size of the rejection region?</p></li>
+<li><p>Increase the effect size to 2, keeping the sample size at 1, and repeat the power determination from the previous item. How did increasing the effect size change your answers from the previous item?</p></li>
+<li><p>Fixing the effect size at 1 and <span class="math inline">\(\alpha\)</span> to 0.05, determine the power of the test to reject the null hypothesis when the sample size <span class="math inline">\(n\)</span> is set to: 1, 10, 20, 50, 100. What happens to the power of the test as the sample size increases?</p></li>
+<li><p>Repeat the previous item, using an effect size of 0.1. How does the smaller effect size change the power of the test to reject the null hypothesis with increasing sample size?</p></li>
+</ol>
