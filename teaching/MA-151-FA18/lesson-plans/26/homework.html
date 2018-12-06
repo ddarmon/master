@@ -46,24 +46,4 @@
 	<li> Annotate the printout with your interpretation of the coefficients and intercept of the linear regression model.
 	<li> Give your interpretation of the diagnostic plots. Does it appear that the assumptions about how the residuals should behave to make inferences hold for this data? If not, how do the diagnostic plots show deviation from the violated assumption(s)?
 	</ol>
-	<li><strong>Select a Model Using Mallow's \(C_{p}\) and Best Subset Selection:</strong>
-	<ol>
-		<li> Use Minitab to fit multiple linear regressions using all of the possible subsets of the predictors.
-			<ul>
-				<li> Select <tt>Stat > Regression > Regression > Best Subsets...</tt> in the menu bar.
-				<li> Select body.fat as the response.
-				<li> Select the predictors listed above as the free predictors.
-				<li> Select <tt>Options...</tt> and enter 1 in the <tt>Models of each size to print:</tt> text box.
-			</ul>
-		<li> Select the model for which <tt>Mallows Cp</tt> is first smaller than the number of variables in the model plus 1, i.e. the <tt>Vars</tt> column plus 1. (We need to add 1, since 'p' here stands for the number of coefficients, and we are also fitting a coefficient for the intercept.)
-			<ul>
-				<li><strong>Hint:</strong> This value should occur in the 5 to 10 range.
-				<li><strong>Hint:</strong> This value may be easier to find if you plot the <tt>Mallows Cp</tt> column against the <tt>Vars</tt> column + 1. You can copy and paste these columns into a worksheet by right-clicking on the column and selecting the <tt>Copy</tt> option from the context menu.
-			</ul>
-	</ol>
-	<li><strong>Interpret the Selected Model:</strong>
-	<ol>
-		<li> What predictors are included in the model you selected?
-		<li> Does this list of predictors make sense, given what you know about how subcutaneous and visceral fat are distributed on the human body? You may find the <a href = "https://en.wikipedia.org/wiki/Adipose_tissue">Wikipedia article on adipose fat</a> useful for answering this question.
-	</ol>
 </ol>
