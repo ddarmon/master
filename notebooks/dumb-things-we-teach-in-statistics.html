@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Notebooks : /dumb-things-we-teach-in-statistics.html</title>
+</head>
+<body>
+<h1>Notebooks</h1>
+
+<p>
+[
+<a href="http://ddarmon.github.io/master/notebooks/">Home</a>
+]
+</p>
+
+<h2>Sat, 18 Aug 2018</h2>
+<h3><a name="dumb-things-we-teach-in-statistics">Dumb Things We Teach in Statistics</a></h3>
+<div class="blosxomStory">
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<p>Lorem ipsum.</p>
+<p><strong>Examples:</strong>
+    * In large samples, performing a normality test before using a two sample T-test for difference in population means. If we reject normality, then we use a nonparametric test for difference in centers instead. But with a large enough sample, we'll likely reject normality for even small deviations from normality. ("A goodness-of-fit test under a fixed distribution is ultimately a measure of sample size.") Yet, because of the sample size, the Central Limit Theorem has kicked in for the sample means, so the T-test will work regardless of the underlying distribution of the data (unless the data are pathological). <strong>Takeaway:</strong> with a large enough sample, a T-test will suffice for testing differences of population means.
+        * See: R. Schall, "The empirical coverage of confidence intervals: Point estimates and confidence intervals for confidence levels," Biom. J., vol. 54, no. 4, pp. 537–551, May 2012.
+        * For a contrasting opinion on using mis-specification testing before using a T-test, see <a href="https://errorstatistics.com/2018/08/13/a-spanos-egon-pearsons-neglected-contributions-to-statistics-5/">this post</a> from <a href="https://errorstatistics.com">Deborah Mayo's blog</a>.
+    * Comparing baseline characteristics between two groups using significance testing when you're really interested in a difference in some <em>outcome</em>. In that case, you don't really care if the differences at baseline exist, but rather whether they're associated with the difference in the outcome.</p>
+<p>
+  posted at: 10:40 |
+  path: <a href="http://ddarmon.github.io/master/notebooks/" title="path">/</a> |
+  <a href="http://ddarmon.github.io/master/notebooks/dumb-things-we-teach-in-statistics.html">permanent link to this entry</a>
+</p>
+</div>
+
+<p>
+  <a href="http://pyblosxom.github.com/"><img src="http://pyblosxom.github.com/images/pb_pyblosxom.gif" alt="Made with Pyblosxom" border="0" /></a>
+</p>
+</body>
+</html>

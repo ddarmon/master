@@ -11,9 +11,11 @@
 ]
 </p>
 
-<h2>Thu, 26 Jul 2018</h2>
+<h2>Fri, 10 Aug 2018</h2>
 <h3><a name="echo-state-networks">Echo State Networks (ESNs)</a></h3>
 <div class="blosxomStory">
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
 <ul>
 <li>
 <p>Big Picture</p>
@@ -30,11 +32,19 @@
 <li>
 <p>M. Lukoševičius, "A Practical Guide to Applying Echo State Networks," in Neural Networks: Tricks of the Trade, 2nd ed., vol. 7700, no. 2, Berlin, Heidelberg: Springer, Berlin, Heidelberg, 2012, pp. 659–686. <a href="https://pdfs.semanticscholar.org/11bb/0941b1f6088783e26d7f9603789ee1db7faa.pdf">link</a></p>
 </li>
+<li>
+<p>G. Manjunath and H. Jaeger, "Echo state property linked to an input: Exploring a fundamental characteristic of recurrent neural networks," Neural Computation, vol. 25, no. 3, pp. 671–696, Mar. 2013.</p>
+<ul>
+<li>A more formal presentation of the echo state property in the context of non-autonomous dynamical systems. The definition of the echo state property is especially clear here. For example, the authors explicitly point out that, if a system has the echo state property, then for any given bi-infinite input sequence, there is one and only one bi-infinite state sequence that is admitted by that input sequence. This fact can be deduced from the original definition of the echo state property, but this paper makes it an explicit proposition with a proof.</li>
+<li>This paper also gives the cleanest requirements on the input and state space, namely the input space should be a complete metric space, and the state space should be a compact metric space. Though, a point of confusion: under the hyperbolic tangent, \(\tanh : \mathbb{R} \to (-1, 1) \), which isn't a compact metric space...</li>
+<li>Also does a good job of refuting the 'folk lore' that has sprung up around the echo state property, i.e. the claim that taking the spectral radius of the reservoir matrix less than 1 ensures the echo state property. This is a folk lore that I myself fell prey to in an <a href="https://ieeexplore.ieee.org/abstract/document/6693319/">early paper</a>.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <p>
-  posted at: 16:25 |
+  posted at: 13:25 |
   path: <a href="http://ddarmon.github.io/master/notebooks/" title="path">/</a> |
   <a href="http://ddarmon.github.io/master/notebooks/echo-state-networks.html">permanent link to this entry</a>
 </p>
