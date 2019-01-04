@@ -12,7 +12,7 @@
 Section 01: Tuesday, 1:15 PM &mdash; 2:35 PM; Thursday, 11:40 AM &mdash; 1:00 PM, Howard Hall 205
 </center>
 
-<P>This course covers the process of statistical analysis from beginning to end. That process, in broad strokes, is as follows: we pose a scientific question, determine what experiments or observations might provide data towards answering that question, develop approaches to collecting that data, summarize the resulting data, and derive inferences relevant to the original scientific question. In the process, we will learn about sampling, descriptive statistics, probability, probability models, inferential statistics, confidence intervals, hypothesis tests, and regression. A special emphasis will be given to common pitfalls in statistical analysis you are likely to see 'in the wild', including mis-interpretations / mis-understandings of statistical procedures, the conflation of association and causation, and the reproducibility crisis in psychology, medicine, and nutrition. 
+<P>This course will cover the probability theory necessary to solve problems on the Society of Actuaries' (SOA's) Exam P, the first exam in the credentialing process for both the SOA and the Casualty Actuarial Society (CAS). This exam covers material from a first course in calculus-based probability theory. A (non-exhaustive) list of those topics are given in the <a href = "#topics">Topics, Notes, Readings section</a> below. The course will alternate between lectures on topics and informal problem solving sessions. The problem solving sessions will be run by you, the students, with my assistance. A special emphasis will be given to solving questions in the cleverest way possible, since the 'right' or 'long' way may take too long given the structure of Exam P. In addition to covering the probability theory included on Exam P, we will learn about the career paths available to actuaries, and have guest speakers discuss their experiences as actuaries.
 
 <h4>Prerequisites</h4>
 
@@ -25,21 +25,21 @@ Section 01: Tuesday, 1:15 PM &mdash; 2:35 PM; Thursday, 11:40 AM &mdash; 1:00 PM
 <tr><td></td><td></td><td>Howard Hall 241</td></tr>
 </table>
 
-<h2>Topics, Notes, Readings</h2>
+<div id="topics"><h2>Topics, Notes, Readings</h2></div>
 
 <P>This is currently a <em>tentative</em> listing of topics, in order.
 
 
 <dl>
-	<dt><em>Introduction:</em> What is statistics? Where do data come from? Experimental versus observational studies. Types of data.
-    <dt><em>Descriptive statistics as summaries of data:</em> Summaries of the entire data distribution: rug plot, dot plot, histogram, box plot. Measures of center: mean, median, mode. Measures of variation: range, standard deviation, mean absolute deviation.
-    <dt><em>Probability:</em> The origin of probability in games of chance. The interpretation of probability. Computing probabilities involving two or more events using the addition and multiplication rules. Conditional probability and independence.
-    <dt><em>Discrete random variables:</em> Random variables as 'numbers that could have been otherwise.' Probability mass functions. The binomial distribution and its properties.
-    <dt><em>Continuous random variables:</em> Summarizing quantitative data with histograms. From histograms to probability density functions. The normal distribution and its properties. Using the normal distribution to approximate the binomial distribution.
-    <dt><em>Hypothesis tests:</em> Hypothesis tests for population means and proportions. Components of a hypothesis test. Types of error in hypothesis testing. Scientific hypotheses and statistical hypotheses. Statistical significance and practical significance. <em>P</em>-values.
-    <dt><em>Confidence intervals:</em> Confidence intervals for population means and proportions. Confidence intervals as interval estimators. The interpretation of confidence intervals. Using confidence intervals for hypothesis tests. Using confidence intervals to distinguish between practical and statistical significance.
-    <dt><em>Everything but the kitchen sink:</em> Two-sample tests for population means and their associated confidence intervals. Two-sample tests for population proportions and their associated confidence intervals. Tests for independence and homogeneity using contingency tables. Two-sample tests for equality of population variances. 
-    <dt><em>Correlation and Regression:</em> Exploratory data analysis for two or more quantitative variables. Pearson's correlation coefficient. Hypothesis test for zero correlation between two quantitative variables. Association does not imply causation. Simple linear regression. Interpretation of regression coefficients. Multiple linear regression. Predictive and causative statements.
+	<dt><em>Introduction:</em> What is an actuary? What is actuarial science? The credentialing process for becoming an actuary. Exam P. Tips and tricks for life-long learning.
+    <dt><em>Combinatorial Probability:</em> Finding the probability of an outcome by counting. Combinatorics. Permutations, combinations, multisets, and all of the other ways to assign \(n\) items to \(k\) slots. How combinatorics relates to sampling.
+    <dt><em>Probability:</em> Probability as a measure on a set. Set operations: union, intersection, difference, and so on. Venn diagrams for reasoning about probabilities. Sample spaces and events. Assigning probabilities to events, in all the ways.
+    <dt><em>Discrete random variables:</em> How to talk about discrete random variables: probability mass functions, cumulative distribution functions, expectations, and moment generating functions. Discrete random vectors as multidimensional generalizations of discrete random variables.
+    <dt><em>Some parametric discrete distributions:</em> Uniform. Bernoulli. Descendants of Bernoulli: binomial, negative binomial, geometric. Like binomial, but without replacement: hypergeometric. Poisson.
+    <dt><em>Continuous random variables:</em> How to talk about continuous random variables: probability density functions, cumulative distribution functions, expectations, and moment generating functions. Mixed-type random variables.
+    <dt><em>Some parametric continuous distributions:</em> Exponential. Normal. Gamma. Beta. Connections between families of random variables. The Russian inequalities. The law of large numbers. The central limit theorem.
+    <dt><em>Random vectors and multivariate distributions:</em> How to talk about random vectors:  joint probability mass / density functions, joint cumulative distribution functions, and joint moment generating functions. Expectations of random vectors. Conditional random variables and conditional distributions.
+    <dt><em>More techniques in probability theory:</em> Transformations of random variables. Order statistics. More on the moment generating function. More on variances and covariances via linear algebra. More on conditioning arguments.
 </dl>
 
 See the end for the current lecture schedule, subject to revision.  Homework and additional resources will be linked there, as available.
@@ -48,17 +48,21 @@ See the end for the current lecture schedule, subject to revision.  Homework and
 
 <h4>Office Hours</h4>
 
+<p>I will have office hours at the following four times each week:
+
 <center><table>
+    <tr><td>Monday, &nbsp;&nbsp;10:00&mdash;11:00 AM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
     <tr><td>Tuesday, &nbsp;&nbsp;03:00&mdash;04:00 PM</td> <td>Howard Hall 241</td></tr>
 </td></tr>
     <tr><td>Thursday, 10:00&mdash;11:00 AM</td> <td>Howard Hall 241</td></tr>
 </td></tr>
     <tr><td>Thursday, 01:30&mdash;02:30 PM</td> <td>Howard Hall 241</td></tr>
-</td></tr>
-    <tr><td>Friday, &nbsp;&nbsp;&nbsp;&nbsp;09:00&mdash;10:00 AM</td> <td>Howard Hall 241</td></tr>
 </table></center>
 
-<P>If you cannot make the scheduled office hours, please e-mail me about making an appointment.
+<p>I have an open-door policy during those times: you can show up unannounced. If you cannot make the scheduled office hours, please e-mail me about making an appointment.
+
+<p>If you are struggling with the homework, having difficulty with the quizzes, or just want to chat, please visit me during my office hours. I am here to help.
 
 <h4>Grading Policy</h4> 
 
