@@ -25,8 +25,10 @@ server = function(input, output, session){
 		abline(v = input$z, lwd = 1.5)
 		
 		zs = pnorm(xs, sd = input$sd, mean = input$mean)
-		plot(xs, zs, xlab = expression(x), ylab = expression(italic(F(x))), type = 'l', lwd = lwd.use, xlim = c(-5, 5)*input$sd + input$mean, ylim = c(0, 1), yaxt = 'n')
+		plot(xs, zs, xlab = expression(x), ylab = expression(italic(F(x))), type = 'l', lwd = lwd.use, xlim = c(-5, 5)*input$sd + input$mean, ylim = c(0, 1), yaxt = 'n', xaxt = 'n')
 		axis(side = 1, at = seq(-5, 5, 1)*input$sd + input$mean)
+		axis(side = 2, at = seq(0, 1, 0.25))
+		
 		
 		points(input$z, pnorm(input$z, sd = input$sd, mean = input$mean), pch = 16, cex = 2, col = 'red')
 	})
