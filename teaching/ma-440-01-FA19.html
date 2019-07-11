@@ -34,17 +34,17 @@ Section 01: Tuesday and Friday, 11:40 AM &mdash; 1:00 PM, Howard Hall 308
 
 
 <dl>
-	<dt><em>Introduction:</em> What is statistics? Where do data come from? Experimental versus observational studies. Types of data.
-    <dt><em>Descriptive statistics as summaries of data:</em> Summaries of the entire data distribution: rug plot, dot plot, histogram, box plot. Measures of center: mean, median, mode. Measures of variation: range, standard deviation, mean absolute deviation.
-    <dt><em>Probability:</em> The origin of probability in games of chance. The interpretation of probability. Computing probabilities involving two or more events using the addition and multiplication rules. Conditional probability and independence.
-    <dt><em>Discrete random variables:</em> Random variables as 'numbers that could have been otherwise.' Probability mass functions. Parametric models for discrete random variables: uniform, Bernoulli, binomial, geometric, and Poisson. Moments of discrete random variables.
-    <dt><em>Continuous random variables:</em> Summarizing quantitative data with histograms. From histograms to probability density functions. Parametric models for continuous random variables: uniform, exponential, normal. Moments of continuous random variables. The normal distribution and its properties. Using the normal distribution to approximate the binomial distribution.
-    <dt><em>Statistics and their sampling distributions:</em> From forward probability to inverse probability. Statistics as functions of a data set. The sampling distribution of the sample mean. The Law of Large Numbers and the Central Limit Theorem.
-    <dt><em>Estimators and point estimation:</em> Making an educated guess at a population parameter using a point estimator. Desirable properties of point estimators. Methods for deriving point estimators: method of moments and maximum likelihood estimation.
-    <dt><em>Confidence intervals:</em> Confidence intervals as interval estimators. The interpretation of confidence intervals. Confidence intervals for population means and proportions.
-    <dt><em>Hypothesis tests:</em> Hypothesis tests for population means and proportions. Components of a hypothesis test. Types of error in hypothesis testing. Scientific hypotheses and statistical hypotheses. Statistical significance and practical significance. Using confidence intervals for hypothesis tests. Using confidence intervals to distinguish between practical and statistical significance. <em>P</em>-values.
-    <dt><em>Everything but the kitchen sink:</em> Two-sample tests for population means and their associated confidence intervals. Two-sample tests for population proportions and their associated confidence intervals. 
-    <dt><em>Correlation and regression:</em> Exploratory data analysis for two or more quantitative variables. Pearson's correlation coefficient. Confidence interval and hypothesis test for the Pearson correlation between two quantitative variables. Association does not imply causation. Simple linear regression. Interpretation of regression coefficients. Multiple linear regression. Predictive and causative statements.
+	<dt><em>Introduction:</em> Big ideas in statistics: random variables, random samples, estimation and testing. Statistical prediction: the predictor and the response.
+	<dt><em>Exploratory Data Analysis with R:</em>  Histograms, scatter plots, and smoothers.
+	<dt><em>Statistical models for bivariate data:</em> The line of best fit as a data-summary device. A statistical model as a story for how the data are generated. Where does the 'randomness' come from in the first place? Populations, super-populations, and no-populations.
+	<dt><em>Statistical models for simple linear regression:</em> The least-squares line. Interpreting the regression coefficients: slope and intercept. Viewing the data as a random sample from a population. The standard line: simple linear regression with Gaussian noise (SLRGN).
+	<dt><em>Checking assumptions before we infer:</em> Sample residuals. Residual plots from the sample residuals. Where the SLRGN model can go wrong, and what it looks like. Checking validity using out-of-sample performance. Transforming the predictor and response to handle common violations. 
+	<dt><em>Inferences for parameters of a simple linear regression:</em> Properties of the simple linear regression estimators under random sampling from a population, in general, and under the SLRGN model, in particular. Estimation and hypothesis testing under the SLRGN model. Confidence curves as summaries of all available information about regression parameters. Bootstrapping: when the data is a population of its own. Confidence intervals and \(P\)-values via bootstrapping. Confidence curves via bootstrapping.
+	<dt><em>Inferences for expected values of a simple linear regression:</em> Standard errors and confidence sets for the population line. Standard errors and confidence sets for a new measurement from the population.
+	<dt><em>Assessing the simple linear regression as a predictive model:</em> Predictive error. In-sample error. Out-of-sample error. Cross-validated error. Bootstrapping estimates of errors.
+	<dt><em>Multiple linear regression:</em> Like simple linear regression, but more. Predicting a response with more than one predictor. Least squares and the hyperplane-of-best-fit. Interpreting the regression coefficients. The dependence of population-level regression coefficients on the predictors included in the model.
+	<dt><em>Statistical models for multiple linear regression and model checking:</em> The multiple linear regression with Gaussian noise (MLRGN) model. Assumption checking for the MLRGN model. Common departures from the MLRGN model, and how they show up in the sample residuals.
+	<dt><em>:</em> 
 </dl>
 
 See the <a href = "#schedule">end of this page</a> for the current lecture schedule, subject to revision.  Homework and additional resources will be linked there, as available.
@@ -125,7 +125,7 @@ If you miss an examination your grade will be zero for that exam.  If you know y
 
 <P>The <strong>required</strong> textbook is:
 <ul>
-<li>Jay L. Devore and Kenneth N. Berk. <em>Modern mathematical statistics with applications</em>, 1st Edition (Cengage Learning, 2007). <a href = "http://mubookstore.monmouth.edu/TextBookDetail.aspx?BookPriceID=2292893&MBSNumber=747336&SecID=9614832&trm=SPRING%2019#.XBl34y2ZNhE">Link to University Store</a>
+<li>Michael H. Kutner, Christopher J. Nachtsheim, and John Neter. <em>Applied Linear Regression Models</em>, Fourth Edition (McGraw-Hill, 2004).
 </ul>
 
 <h4>Collaboration, Cheating, and Plagiarism</h4>
