@@ -34,7 +34,7 @@ Section 01: Tuesday and Friday, 11:40 AM &mdash; 1:00 PM, Howard Hall 308
 
 
 <dl>
-	<dt><em>Introduction:</em> Big ideas in statistics: random variables, random samples, estimation and testing. Statistical prediction: the predictor and the response.
+	<dt><em>Introduction:</em> Big ideas in statistics: random samples, random variables, estimation and testing. Statistical prediction: the predictor and the response.
 	<dt><em>Exploratory Data Analysis with R:</em>  Histograms, scatter plots, and smoothers.
 	<dt><em>Statistical models for bivariate data:</em> The line of best fit as a data-summary device. A statistical model as a story for how the data are generated. Where does the 'randomness' come from in the first place? Populations, super-populations, and no-populations.
 	<dt><em>Statistical models for simple linear regression:</em> The least-squares line. Interpreting the regression coefficients: slope and intercept. Viewing the data as a random sample from a population. The standard line: simple linear regression with Gaussian noise (SLRGN).
@@ -44,7 +44,10 @@ Section 01: Tuesday and Friday, 11:40 AM &mdash; 1:00 PM, Howard Hall 308
 	<dt><em>Assessing the simple linear regression as a predictive model:</em> Predictive error. In-sample error. Out-of-sample error. Cross-validated error. Bootstrapping estimates of errors.
 	<dt><em>Multiple linear regression:</em> Like simple linear regression, but more. Predicting a response with more than one predictor. Least squares and the hyperplane-of-best-fit. Interpreting the regression coefficients. The dependence of population-level regression coefficients on the predictors included in the model.
 	<dt><em>Statistical models for multiple linear regression and model checking:</em> The multiple linear regression with Gaussian noise (MLRGN) model. Assumption checking for the MLRGN model. Common departures from the MLRGN model, and how they show up in the sample residuals.
-	<dt><em>:</em> 
+	<dt><em>Inferences for parameters of a multiple linear regression:</em> The sampling distribution of multiple linear regression coefficients under the MLRGN model. Confidence curves for the coefficients of a multiple linear regression via both the MLRGN model and bootstrapping. Adjusting for multiple comparisons. Testing one, more, or all coefficients in a multiple linear regression. Do you really care so much about that \(P\)-value?
+	<dt><em>Enhancements and adjustments to multiple linear regression:</em> Nonlinearity in predictor variables. Categorical predictors. Multicollinearity amongst predictors. Interactions between predictors. Influential points and outliers.
+	<dt><em>Model selection:</em> Choosing amongst a set of candidate models. Predictor variable selection as model selection. Theoretical and data-driven approaches to model selection. The perils of naive inference post-model selection.
+	<dt><em>Beyond Ordinary Least Squares:</em> Heteroskedasticity in the noise. Weighted least squares for handling heteroskedasticity. Nonparametric regression. Regression as a smoothing problem. Nearest neighbor and kernel regressions. Tuning parameters in nonparametric regression, and how to tune them.
 </dl>
 
 See the <a href = "#schedule">end of this page</a> for the current lecture schedule, subject to revision.  Homework and additional resources will be linked there, as available.
@@ -74,12 +77,10 @@ See the <a href = "#schedule">end of this page</a> for the current lecture sched
 Your final grade will be determined by the following weighting scheme:
 
 <dl>
-	<dd> 45% for 2 in-class exams (22.5% each)
-	<dd> 25% for a cumulative final exam
-	<dd> 15% for homework problem sets
-	<dd> &nbsp;&nbsp;5% for pre-class preparation
-	<dd> &nbsp;&nbsp;5% for quizzes
-	<dd> &nbsp;&nbsp;5%  for class participation
+	<dd> 30% for 2 in-class exams (15% each)
+	<dd> 20% for homework problem sets
+	<dd> 40% for data analysis projects
+	<dd> 10%  for class participation
 </dl>
 
 I will use the standard 10-point breakdown to assign letter grades to numerical grades:
@@ -95,23 +96,13 @@ I will use the standard 10-point breakdown to assign letter grades to numerical 
 
 Homework will be assigned at the end of every class meeting, and listed in the <a href="#schedule">Schedule</a> section of this page. Homework assignments are due at the beginning of the next class meeting.
 
-<h4>Pre-class Preparation</h4>
+<h4>Data Analysis Projects</h4>
 
-<p>One of the most important skills needed to master mathematics is memory. To do mathematics, you need to make connections between concepts stored in your long-term memory, and before you can do that, you need to store those memories in the first place. One of the best methods for strengthening long-term memory is <strong>retrieval practice</strong> (think flash cards) combined with <strong>spaced repetition</strong> (think reviewing flash cards on an intelligent schedule). This is the exact opposite of how many students study, which typically takes the form of browsing notes (and thus skipping over retrieving the information from their own memories) immediately before the information is needed (i.e. 'cramming'). Unfortunately, this is one of the worst ways to commit information to long-term memory, despite the fact that cramming <em>feels</em> effective in the short-term. Retrieval practice with spaced repetition is more effective than the browse-and-cram approach, takes less time, and is more enjoyable!
-
-<p>As part of pre-class preparation, you are required to regularly use Anki, and submit your Anki decks via eCampus. See <a href = "#anki">below</a> for details on Anki.
-
-<p>See <a href = "MA-220-SP19/additional-syllabus-pages/preclass-prep-instructions.html">here</a> for the instructions on submitting your Anki decks via eCampus.
-
-<h4>Quizzes</h4>
-
-<p> There will be a 10-minute quiz at the beginning of every class. The quizzes will be cumulative, covering material from the first lecture through the most recent lecture. These quizzes are meant to be diagnostic: they direct you to gaps in your understanding of the material so that you can course correct before exams. As long as you are on time for a quiz and make a good-faith attempt to complete the quiz, you will receive full credit for that quiz.
-
-<p> Up to 4 missed quizzes will be dropped. As such, there will be no make-up quizzes.
+<p>There will be three take-home data analysis projects over the course of the semester. For each data analysis project, you will be provided with a research question and a data set collected to answer that question. You will analyze the data set, and write up your analysis and findings as a scientific report. For the final data analysis project, you will also give a 15-20 minute presentation on your analysis and findings. Each of the first two data analysis projects will count for 10% of your final grade and the final data analysis project will count for 20% of your final grade. A rubric and template report will be provided prior to the assignment of the first data analysis project.
 
 <h4>Class Participation</h4>
 
-I expect you to be fully engaged during each class, to ask questions when confused, and to attempt to answer questions when called on. If I notice that the same students are always answering each question, I may begin randomly sampling from students. I will announce this before doing so. During class, attempting to answer a question is more important than getting the correct answer, and class participation will be assigned accordingly.
+I expect you to be fully engaged during each class, to ask questions when confused, and to attempt to answer questions when called on. During class, attempting to answer a question is more important than getting the correct answer, and class participation will be assigned accordingly.
 
 <h4>Attendance</h4>
 
@@ -146,13 +137,13 @@ Students with disabilities who need special accommodations for this class are en
 
 <div id="anki"><h2>Anki</h2></div>
 
-<P> We will use <a href = "https://ankiweb.net/about">Anki</a> for spaced retrieval practice throughout the semester. Anki is open-source, free (as in both <a href = "https://en.wikipedia.org/wiki/Gratis_versus_libre"><em>gratis</em> and <em>libre</em></a>) software. You can download Anki to your personal computer from <a href = "https://apps.ankiweb.net/#download">this link</a>. If you have ever used flashcards, then Anki should be fairly intuitive. If you would like more details you can find Anki's User Manual <a href = "https://apps.ankiweb.net/docs/manual.html">here</a>.
+<P> You may use <a href = "https://ankiweb.net/about">Anki</a> for spaced retrieval practice throughout the semester. Anki is open-source, free (as in both <a href = "https://en.wikipedia.org/wiki/Gratis_versus_libre"><em>gratis</em> and <em>libre</em></a>) software. You can download Anki to your personal computer from <a href = "https://apps.ankiweb.net/#download">this link</a>. If you have ever used flashcards, then Anki should be fairly intuitive. If you would like more details you can find Anki's User Manual <a href = "https://apps.ankiweb.net/docs/manual.html">here</a>.
 
-<P> <strong>Note:</strong> Anki has both desktop and mobile phone variants. Please use the desktop variant.
+<P> Anki decks will be provided after each class covering the material that I expect you to know for homework assignments, exams, data analysis projects, etc. You may also want to make your own Anki cards.
 
 <div id="schedule"><h2>Schedule</h2></div>
 
-<strong>Subject to revision</strong>.  Assignments and solutions will all be linked here, as they are available.  All readings are from the textbook by Devore and Berk unless otherwise noted.
+<strong>Subject to revision</strong>.  Assignments and solutions will all be linked here, as they are available.  All readings are from the textbook by Kutner, Nachtsheim, and Neter unless otherwise noted.
 
 <dl>
 
@@ -189,7 +180,7 @@ Students with disabilities who need special accommodations for this class are en
 	<dd><b>Sections: </b>Handout
 
 <dt>September 27, Lecture 8:
-	<dd><b>Topics: </b>Estimation and hypothesis testing when SLRGN won't do. Bootstrapping. Bootstrap confidence intervals. Bootstrap hypothesis testing. Thank Science for R. Confidence curves from the bootstrap distribution.
+	<dd><b>Topics: </b>Estimation and hypothesis testing when SLRGN won't do. Bootstrapping. Bootstrap confidence intervals. Bootstrap hypothesis testing. Thank von Neumann for digital computers. Confidence curves from the bootstrap distribution.
 	<dd><b>Sections: </b>Handout
 
 <dt>October 1, Lecture 9:
@@ -217,20 +208,20 @@ Students with disabilities who need special accommodations for this class are en
 	<dd><b>Sections: </b>Handout, 6.6, 6.8
 
 <dt>October 25, Lecture 15:
-	<dd><b>Topics: </b>What makes an estimate significant? Statistical versus practical significance: redux. Confidence curves for the coefficients of a multiple linear regression model under the MLRGN model. Confidence curves for the coefficients of a multiple linear regression model via bootstrapping. Adjusting for multiple comparisons.
+	<dd><b>Topics: </b>Hypothesis testing for a single regression coefficient in a multiple linear regression. What makes an estimate significant? Statistical versus practical significance: redux. Confidence curves for the coefficients of a multiple linear regression model under the MLRGN model. Confidence curves for the coefficients of a multiple linear regression model via bootstrapping. Adjusting for multiple comparisons.
 	<dd><b>Sections: </b>Handout, 6.6, 11.5
 
 <dt>October 29, Lecture 16:
-	<dd><b>Topics: </b>Dealing with non-linearity. Adding polynomial terms. Dealing with categorical predictors by adding "dummy" variables. Interpreting the coefficients on categorical variables.
-	<dd><b>Sections: </b>8.1, 8.3
+	<dd><b>Topics: </b>Testing and confidence sets for multiple coefficients. Testing for groups of coefficients in the context of a larger model. Testing all the slopes in the context of a larger model. Confidence rectangles via multiple comparisons. Confidence ellipsoids.
+	<dd><b>Sections: </b>Handout, 7.3
 
 <dt>November 1, Lecture 17:
-	<dd><b>Topics: </b>Multicollinearity: what it is and why it's a problem. Identifying collinearity from pairwise plots of the predictors. Dropping predictors to remove collinearity. Ridge regression for handling multicollinearity.
-	<dd><b>Sections: </b>Handout, 7.6, 11.2
+	<dd><b>Topics: </b>Dealing with nonlinearity. Adding polynomial terms. Dealing with categorical predictors by adding "dummy" variables. Interpreting the coefficients on categorical variables.
+	<dd><b>Sections: </b>8.1, 8.3
 
 <dt>November 5, Lecture 18:
-	<dd><b>Topics: </b>Testing and confidence sets for multiple coefficients. Testing individual coefficients in the context of a larger model. Testing for groups of coefficients in the context of a larger model. Testing all the slopes in the context of a larger model. Confidence rectangles via multiple comparisons. Confidence ellipsoids.
-	<dd><b>Sections: </b>Handout, 7.3
+	<dd><b>Topics: </b>Multicollinearity: what it is and why it's a problem. Identifying collinearity from pairwise plots of the predictors. Dropping predictors to remove collinearity. Ridge regression for handling multicollinearity.
+	<dd><b>Sections: </b>Handout, 7.6, 11.2
 
 <dt>November 8, Lecture 19:
 	<dd><b>Topics: </b>Interactions. Interactions in a linear model. Interactions between numerical and categorical variables.
@@ -261,7 +252,7 @@ Students with disabilities who need special accommodations for this class are en
 	<dd><b>Sections: </b>11.1
 
 <dt>December 6, Lecture 26:
-	<dd><b>Topics: </b>The world is neither linear, nor quadratic, nor... Nonparametric regression: it's regression, Jim, but not as we know it. Regression as local smoothing. Linear regression as the simplest local smoother. Nearest neighbor regression. Kernel regression. Tuning parameters and their selection. R packages for nonparametric regression.
+	<dd><b>Topics: </b>The world is neither linear, nor quadratic, nor... Nonparametric regression: it's regression, Jim, but not as we know it. Regression as local smoothing. Linear regression as a simple smoother. Nearest neighbor regression. Kernel regression. Tuning parameters and their selection. R packages for nonparametric regression.
 	<dd><b>Sections: </b>Handout, 3.10, 11.4
 
 </dl>
