@@ -149,7 +149,7 @@ Let's use some of <tt>mosaic</tt>'s functionality to explore the <tt>course.stat
 
 Remember that the "grammar" of functions in <tt>mosaic</tt> follows the structure
 
-<!-- ![The grammar of mosaic](mosaic-grammar.png) -->
+![The grammar of mosaic](mosaic-grammar.png)
 
 Since we want to tally the students by their major, and the data is stored in the <tt>course.stats</tt> data frame, the command we want to use is
 
