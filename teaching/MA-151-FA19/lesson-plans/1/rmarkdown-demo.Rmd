@@ -16,7 +16,7 @@ In this lab, you will explore a (fake!) data set of the attributes of students i
 1. Organize your work in R.
 2. Create and use an RMarkdown file to store your work.
 3. Load and inspect a data frame.
-4. Compute summaries of 
+4. Compute summaries of categorical and quantitative data.
 
 ## Setting Up a Directory for MA 151
 
