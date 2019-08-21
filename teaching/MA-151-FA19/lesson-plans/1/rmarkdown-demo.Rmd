@@ -195,7 +195,7 @@ gf_histogram(~ midterm.1, data = course.stats, binwidth = 10, boundary = 0)
 
 ```
 
-We can also add a rug plot to the histogram, to display the actual scores of the students, using the <tt>gf_rugx</tt> command. To add an element to a plot, you use the <tt>%<%</tt> operation:
+We can also add a rug plot to the histogram, to display the actual scores of the students, using the <tt>gf_rugx</tt> command. To add an element to a plot, you use the <tt>%>%</tt> operation:
 
 ```{r}
 
