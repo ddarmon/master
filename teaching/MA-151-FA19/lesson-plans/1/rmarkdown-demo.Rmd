@@ -65,7 +65,7 @@ name it <tt>lab1.Rmd</tt>, and save it in the <tt>lab1</tt> folder you created i
 
 ## Downloading the Data
 
-You can find the data listed under today's date on the course website, or from [this link](https://github.com/ddarmon/master/raw/master/teaching/MA-151-FA19/lessson-plans/1/SynthCourseStats.rda).
+You can find the data listed under today's date on the course website, or from [this link](https://github.com/ddarmon/master/raw/master/teaching/MA-151-FA19/lesson-plans/1/SynthCourseStats.rda).
 
 The data is stored in <tt>SynthCourseStats.rda</tt>. The file has the suffix <tt>rda</tt> file, which stands for **RDa**ta Format. This is similar to the <tt>.xls</tt>, <tt>.doc</tt>, etc., suffixes you may be familiar with from Microsoft Excel, Microsoft Word, etc. It tells your computer that this type of file should be opened by a program that can read R files.
 
