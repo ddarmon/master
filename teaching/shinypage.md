@@ -1,5 +1,9 @@
 # Shiny Demos of Statistical Concepts
 
+## Descriptive Statistics
+
+* [Measures of center and spread with histograms](https://ddarmon.shinyapps.io/sample-mean-and-and-variance/)
+
 ## Random Variables
 
 * [Density functions as the limit of density histograms](https://ddarmon.shinyapps.io/dens-hist-to-dens-func/)
@@ -13,7 +17,7 @@
 
 ## Inferential Statistics
 
-* [The model of inferential statistics](https://ddarmon.shinyapps.io/inferential-stats-demo/)
+* [A black box model for inferential statistics](https://ddarmon.shinyapps.io/inferential-stats-demo/)
 * [Frequency interpretation of the confidence level of a confidence interval](https://ddarmon.shinyapps.io/confidence-interval-demo/)
 * [Confidence curves for the mean of a Gaussian population](https://ddarmon.shinyapps.io/confidence-curves/)
 * [Wilson score confidence interval for a binomial success probability](https://ddarmon.shinyapps.io/agresti-coull-wilson-interval-demo/)
@@ -22,5 +26,6 @@
 
 ## Regression
 
+* [Animated schematic of simple linear regression with Gaussian noise (SLRGN) model](https://ddarmon.shinyapps.io/simple-linear-regression-schematic/)
 * [The least squares solution to the linear regression problem](https://ddarmon.shinyapps.io/linear-regression-demo/)
 * [Diagnostic plots for the simple linear regression with Gaussian noise (SLRGN) model](https://ddarmon.shinyapps.io/linear-regression-diagnostics-demo/)
