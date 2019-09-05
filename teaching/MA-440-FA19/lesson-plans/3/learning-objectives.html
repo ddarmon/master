@@ -1,0 +1,43 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<p><strong>Section 1.3: Simple Linear Regression Model with Distribution of Error Terms Unspecified</strong></p>
+
+<ol>
+<li>State the model for simple linear regression when the distribution of the error terms is unspecified except for their means, variances, and covariances.</li>
+<li>Explain which part of the simple linear regression model is &#8220;signal&#8221; and which part is &#8220;noise.&#8221;</li>
+<li>State the mean and variance of the response in the simple linear regression model.</li>
+<li>Relate the estimators for the population slope and intercept to the ordinary least squares solutions.</li>
+</ol>
+
+<p><strong>Section 1.6: Estimation of Regression Functions</strong></p>
+
+<ol>
+<li>State the ordinary least squares solutions for the slope and intercept of a simple linear regression.</li>
+<li>Compute the ordinary least squares solutions for the slope and intercept of a simple linear regression given the relevant sample statistics for <span class="math">\(X\)</span> and <span class="math">\(Y\)</span>.</li>
+<li>State the objective function that is minimized to find the ordinary least squares solutions for the slope and intercept.</li>
+</ol>
+
+<p><strong>Section 1.7: Estimation of Error Terms Variance <span class="math">\(\sigma^{2}\)</span></strong></p>
+
+<ol>
+<li>State the estimator for the noise variance <span class="math">\(\sigma^{2}[\epsilon] = \sigma_{\epsilon}^{2}\)</span>.</li>
+</ol>
+
+<p><strong>Section 1.8: Normal Error Regression Model</strong></p>
+
+<ol>
+<li>Recognize &#8220;Gaussian&#8221; as a synonym for &#8220;normal&#8221;.</li>
+<li>Recognize the acronym &#8220;SLRGN&#8221; for &#8220;simple linear regression with Gaussian noise&#8221;</li>
+<li>State the population parameters of the SLRGN model.</li>
+<li>Draw a (rough) schematic of the SLRGN model given values for the population parameters.</li>
+<li>Compute the probability that the response will fall within an interval, given the population parameters of the SLRGN model and a value for the predictor.</li>
+</ol>
+
+<p><strong>R</strong></p>
+
+<ol>
+<li>Use <tt>lm</tt> to fit a simple linear regression.</li>
+<li>Use <tt>makeFun</tt> from the <tt>mosaic</tt> package to turn an output from <tt>lm</tt> into a callable function.</li>
+<li>Extract the estimate of the noise variance from an output from <tt>lm</tt>.</li>
+<li>Use <code>pnorm</code> to compute probabilites for a Gaussian (&#8220;normal&#8221;) random variable.</li>
+</ol>
