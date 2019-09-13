@@ -28,7 +28,7 @@ with open('{}_for_rescheduling.txt'.format(fname_prefix), 'w') as wfile:
 
 			topics = line.split('<dd><b>Topics: </b>')[1]
 
-			topics_for_file = ' ! '.join(topics.split('. ')[:-1])
+			topics_for_file = ' ! '.join(topics.split('.')[:-1])
 
 			print(topics_for_file)
 
