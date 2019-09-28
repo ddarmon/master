@@ -7,6 +7,8 @@
 ## Random Variables
 
 * [Density functions as the limit of density histograms](https://ddarmon.shinyapps.io/dens-hist-to-dens-func/)
+* [Center and spread of the density curve of a normal random variable](https://ddarmon.shinyapps.io/normal-distribution-demo)
+* [Probabilities from a normal density curve, and the associated probability queries and R commands](https://ddarmon.shinyapps.io/normal-area-demo/)
 
 ## Sampling Distributions
 
@@ -29,3 +31,6 @@
 * [Animated schematic of simple linear regression with Gaussian noise (SLRGN) model](https://ddarmon.shinyapps.io/simple-linear-regression-schematic/)
 * [The least squares solution to the linear regression problem](https://ddarmon.shinyapps.io/linear-regression-demo/)
 * [Diagnostic plots for the simple linear regression with Gaussian noise (SLRGN) model](https://ddarmon.shinyapps.io/linear-regression-diagnostics-demo/)
+* [Sampling properties of the slope and intercept in a simple linear regression](https://ddarmon.shinyapps.io/ols-estimators-mean-variance/)
+* [Confidence and prediction intervals for SLRGN](https://ddarmon.shinyapps.io/ols-ci_pi-intervals/)
+* [The case resampling bootstrap for simple linear regression](https://ddarmon.shinyapps.io/bootstrap-ols/)
