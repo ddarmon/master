@@ -9,6 +9,7 @@
 * [Density functions as the limit of density histograms](https://ddarmon.shinyapps.io/dens-hist-to-dens-func/)
 * [Center and spread of the density curve of a normal random variable](https://ddarmon.shinyapps.io/normal-distribution-demo)
 * [Probabilities from a normal density curve, and the associated probability queries and R commands](https://ddarmon.shinyapps.io/normal-area-demo/)
+* [Practice computing Normal probability queries using R](https://ddarmon.shinyapps.io/normal-probability-queries-practice/)
 
 ## Sampling Distributions
 
