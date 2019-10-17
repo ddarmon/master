@@ -1,0 +1,46 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<p><strong>Exploratory Data Analysis with Multiple Predictors (Lecture Notes for Lecture 13)</strong></p>
+
+<ol>
+<li>Explain what a matrix plot is, and how a matrix plot can be used to investigate the relationship between multiple predictors and a response.</li>
+<li>Interpret a 3D scatter plot showing the relationship between two predictors and a response.</li>
+</ol>
+
+<p><strong>Section 6.1: Multiple Linear Regression</strong></p>
+
+<ol>
+<li>Describe the overall goal of multiple linear regression from the perspective of prediction.</li>
+<li>State the multiple linear regression model with <span class="math">\(p\)</span> predictors per-unit.</li>
+<li>State the multiple linear regression model with <span class="math">\(p\)</span> predictors in matrix-vector form.</li>
+<li>Construct a response vector, predictor vector, and design matrix given a particular multiple linear regression model.</li>
+<li>Describe what the multiple linear regression function corresponds to, geometrically, using two predictors.</li>
+<li>Describe what the multiple linear regression function corresponds to, geometrically, using more than two predictors.</li>
+<li>Interpret the coefficients from a multiple linear regression model <strong>in the context of a given problem</strong>.</li>
+<li>Explain why economists and other end-users of regression talk about regression coefficients in terms of <em>ceteris paribus</em> (Latin for &#8220;other things equal&#8221;) or &#8220;controlling&#8221; for the other predictors, and why this sort of thinking is fuzzy at-best and entirely fallacious at-worst.</li>
+<li><strong>Carefully</strong> distinguish between statements such as &#8220;the response increases by <span class="math">\(u\)</span> units for each unit increase in the predictor&#8221; (a causal statement) and &#8220;the <strong>prediction</strong> of the response increases by <span class="math">\(u\)</span> units for each unit increase in the predictor&#8221; (a predictive statement).</li>
+<li>Explain why the interpretation of the coefficients from a multiple linear regression <strong>depend on the predictors included in the model</strong>.</li>
+</ol>
+
+<p><strong>Section 6.3: Estimation of Regression Coefficients</strong></p>
+
+<ol>
+<li>State the objective function that is minimized to determine the ordinary least squares estimator <span class="math">\(\mathbf{b}\)</span> for a multiple linear regression model.</li>
+<li>State the form of the ordinary least squares estimator in terms of the design matrix <span class="math">\(\mathbf{X}\)</span> and response vector <span class="math">\(\mathbf{Y}\)</span>.</li>
+</ol>
+
+<p><strong>Section 6.4: Fitted Values and Residuals</strong></p>
+
+<ol>
+<li>Explain how to compute the fitted (predicted) values of the response using the design matrix <span class="math">\(\mathbf{X}\)</span> and coefficient vector <span class="math">\(\mathbf{b}\)</span>.</li>
+</ol>
+
+<p><strong>R</strong></p>
+
+<ol>
+<li>Plot a matrix plot from a data frame containing a response variable and multiple predictors using <code>pairs</code>.</li>
+<li>Plot a 3D scatter plot of a response variable against two predictor variables using <code>plot3d</code> in the <code>rgl</code> package.</li>
+<li>Fit a multiple linear regression from a data frame using <code>lm</code>.</li>
+<li>Interpret the output of <code>lm</code> when used to fit a multiple linear regression.</li>
+<li>Plot the plane-of-best fit from a multiple linear regression with two predictor variables using <code>planes3d</code> in the <code>rgl</code> package.</li>
+</ol>
