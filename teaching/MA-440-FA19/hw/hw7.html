@@ -7,7 +7,6 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -343,6 +342,18 @@ summary {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
 
@@ -424,15 +435,28 @@ summary {
 <h1>Computation Problems</h1>
 <div id="computation-problem-1" class="section level2">
 <h2>Computation Problem 1</h2>
-<p><strong>a.</strong> Verify by direct computation the estimated noise variances reported by <code>lm</code> for the multiple linear regressions <span class="math display">\[ \widehat{\texttt{courseevaluation}} = \texttt{beauty} + \texttt{female} + \texttt{age}\]</span> and <span class="math display">\[ \widehat{\texttt{courseevaluation}} = \widetilde{\texttt{beauty}} + \texttt{female} + \widetilde{\texttt{age}}\]</span> from Interpretation Problem 1, where the tilde over a predictor variable indicates that we use the <strong>standardized</strong> predictor.</p>
+<p><strong>a.</strong> Verify by direct computation the estimated noise variances reported by <code>lm</code> for the multiple linear regressions <span class="math display">\[ \texttt{courseevaluation} \sim \texttt{beauty} + \texttt{female} + \texttt{age}\]</span> and <span class="math display">\[ \texttt{courseevaluation} \sim \widetilde{\texttt{beauty}} + \texttt{female} + \widetilde{\texttt{age}}\]</span> from Interpretation Problem 1, where the tilde over a predictor variable indicates that we use the <strong>standardized</strong> predictor.</p>
 <p><strong>b.</strong> Are the estimated noise variances the same? Why?</p>
 </div>
 <div id="computation-problem-2" class="section level2">
 <h2>Computation Problem 2</h2>
-<p><strong>a.</strong> Verify by direct computation the estimated standard errors for the coefficient estimates reported by <code>lm</code> for the multiple linear regression <span class="math display">\[ \widehat{\texttt{kid_score}} = \widetilde{\texttt{mom_age}} + \texttt{mom_hs}\]</span> from Interpretation Problem 2, where the tilde over a predictor variable indicates that we use the <strong>standardized</strong> predictor.</p>
+<p><strong>a.</strong> Verify by direct computation the estimated standard errors for the coefficient estimates reported by <code>lm</code> for the multiple linear regression <span class="math display">\[ \texttt{kid_score} \sim \widetilde{\texttt{mom_age}} + \texttt{mom_hs}\]</span> from Interpretation Problem 2, where the tilde over a predictor variable indicates that we use the <strong>standardized</strong> predictor.</p>
 <p><strong>Hint:</strong> It will be easier if you work with the formula given in terms of the design matrix rather than the formula involving the multiple <span class="math inline">\(R^{2}\)</span> value.</p>
-<p><strong>b.</strong> Would you get the same estimated standard errors for the multiple linear regression <span class="math display">\[ \widehat{\texttt{kid_score}} = \texttt{mom_age} + \texttt{mom_hs}\text{?}\]</span> Why?</p>
+<p><strong>b.</strong> Would you get the same estimated standard errors for the multiple linear regression <span class="math display">\[ \texttt{kid_score} \sim \texttt{mom_age} + \texttt{mom_hs}\text{?}\]</span> Why?</p>
 <p><strong>Hint:</strong> It will be easier if you think about this using the formula given in terms of the multiple <span class="math inline">\(R^{2}\)</span> value.</p>
+</div>
+</div>
+<div id="theory-problems" class="section level1">
+<h1>Theory Problems</h1>
+<div id="theory-problem-1" class="section level2">
+<h2>Theory Problem 1</h2>
+<p>In class, I stated that, when we include an intercept in a simple linear regression, the mean of the residuals from that regression is zero: <span class="math display">\[ \frac{1}{n} \sum_{i = 1}^{n} e_{i} = 0.\]</span> This is one of the “constraints” placed on the residuals that induces a loss of one degree of freedom for the <span class="math inline">\(t\)</span> and <span class="math inline">\(\chi^{2}\)</span> distributions associated with the SLRGN and MLRGN models.</p>
+<p>In this problem, we will prove that the residuals of a fitted multiple linear regression model <span class="math display">\[ Y = b_{0} + \sum_{j = 1}^{p} b_{j} X_{j} + e_{i}\]</span> have mean 0, as well as that the residuals are uncorrelated with any of the predictors included in the model. That is, we will show that: <span class="math display">\[\begin{aligned} \frac{1}{n} \sum_{i = 1}^{n} e_{i} &amp;= 0 \\ \frac{1}{n} \sum_{i = 1}^{n} X_{ij} e_{i} &amp;= 0, j = 1, 2, \ldots, p \end{aligned}. \]</span></p>
+<p><strong>a.</strong> The “residual maker” matrix <span class="math inline">\(\mathbf{M} = \mathbf{I} - \mathbf{X} (\mathbf{X}^{T} \mathbf{X})^{-1} \mathbf{X}^{T}\)</span> is so-called because it transforms the response vector <span class="math inline">\(\mathbf{Y}\)</span> into the residual vector <span class="math inline">\(\mathbf{e}\)</span>, <span class="math display">\[ \mathbf{M} \mathbf{Y} = \mathbf{e}.\]</span> Verify this property of the residual maker matrix.</p>
+<p><strong>b.</strong> Show that <span class="math inline">\(\mathbf{X}^{T} \mathbf{e} = \mathbf{0}\)</span> by using the result you verified above.</p>
+<p><strong>c.</strong> Explain why <span class="math inline">\(\mathbf{X}^{T} \mathbf{e} = \mathbf{0}\)</span> indicates that <span class="math display">\[\frac{1}{n} \sum_{i = 1}^{n} e_{i} = 0 \]</span> and we can conclude that the sample mean of the residuals is 0.</p>
+<p><strong>d.</strong> Explain why <span class="math inline">\(\mathbf{X}^{T} \mathbf{e} = \mathbf{0}\)</span> indicates that <span class="math display">\[\frac{1}{n} \sum_{i = 1}^{n} X_{ij} e_{i} = 0, j = 1, 2, \ldots, p \]</span> and we can conclude that the sample correlation between the residuals and each predictor included in the model is 0.</p>
+<p><strong>e.</strong> What do the results from Part c and Part d indicate about the slope and intercept of a simple linear regression model that predicts the residuals using any one of the predictors included in the multiple linear regression? How does this relate to why we always use a nonparametric smoother to search for systematic deviations from 0 in the residual versus predictor plots?</p>
 </div>
 </div>
 
@@ -453,23 +477,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
