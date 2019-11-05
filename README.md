@@ -1,1 +1,0 @@
-# GitHub Pages Site for David Darmon
