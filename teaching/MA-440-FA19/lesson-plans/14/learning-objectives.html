@@ -1,0 +1,54 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<p><strong>Section 6.1: Multiple Regression Models</strong></p>
+
+<ol>
+<li>State the assumptions of the multiple linear regression (MLR) model as a system of equations when the distribution of the noise term is unspecified beyond its mean and variance-covariance.</li>
+<li>State the assumptions of the multiple linear regression model as matrix-vector equation when the distribution of the noise term is unspecified beyond its mean and variance-covariance.</li>
+<li>Sketch a drawing of the main parts of the multiple linear regression model with two predictors, including:
+
+<ul>
+<li>The population regression plane.</li>
+<li>The expected value of the response.</li>
+<li>The observed value of the response.</li>
+<li>The error term.</li>
+</ul></li>
+<li>State the assumptions of the multiple linear regression with Gaussian noise (MLRGN) model.</li>
+</ol>
+
+<p><strong>Section 6.8: Diagnostics and Remedial Measures</strong></p>
+
+<ol>
+<li>Explain the rationale for using the statistical properties of the residuals from a fitted multiple linear regression model as a proxy for the population errors.</li>
+<li>State the relevant residual diagnostic plots to generate after fitting a multiple linear regression model.</li>
+<li>Relate each residual diagnostic plot from the previous learning objective to the associated assumption of the multiple linear regression with Gaussian noise (MLRGN) model.</li>
+<li>Given a residual diagnostic plot, determine whether the plot indicates a departure from the assumptions of MLRGN.</li>
+</ol>
+
+<p><strong>Properties of the Ordinary Least Squares Estimators Under MLR and MLRGN (Lecture Notes for Lecture 14)</strong></p>
+
+<ol>
+<li>State the point estimator we will use for the population coefficients <span class="math">\(\boldsymbol{\beta}\)</span>.</li>
+<li>State the point estimator we will use for the population noise variance <span class="math">\(\sigma_{\epsilon}^{2}\)</span>.</li>
+<li>State the mean and variance-covariance matrix of the ordinary least squares estimator <span class="math">\(\mathbf{b}\)</span> under the MLR model.</li>
+<li>State the variance of the coefficient estimator <span class="math">\(b_{j}\)</span> under the MLR model.</li>
+<li>Describe how the variance of the coefficient estimator for the coefficient parameter for the <em>j</em>-th predictor under the MLR model varies with:
+
+<ul>
+<li>The sample size.</li>
+<li>The population noise variance.</li>
+<li>The standard deviation of <span class="math">\(j\)</span>-th predictor.</li>
+<li>The correlation between the <span class="math">\(j\)</span>-th predictor and the other predictors used in the model.</li>
+</ul></li>
+<li>Define the multiple <span class="math">\(R^2\)</span> between a predictor variable and the other predictor variables in the model.</li>
+<li>Reason about what makes the multiple <span class="math">\(R^2\)</span> between a predictor variable and the other predictor variables in the model large (<span class="math">\(\approx 1\)</span>) or small (<span class="math">\(\approx 0\)</span>).</li>
+<li>State the sampling distribution of the coefficient estimators under the multiple linear regression with Gaussian noise (MLRGN) model.</li>
+<li>State the sampling distribution of the studentized coefficient estimators under the multiple linear regression with Gaussian noise (MLRGN) model.</li>
+</ol>
+
+<p><strong>R (Lecture Notes for Lecture 14)</strong></p>
+
+<ol>
+<li>Create residual diagnostic plots &#8220;by-hand&#8221; using functions from <code>ggformula</code>.</li>
+<li>Create residual diagnostic plots using <code>gf_residuals_versus_predictors</code> from the <code>MUsaic</code> package.</li>
+</ol>

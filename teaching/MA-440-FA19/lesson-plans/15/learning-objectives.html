@@ -1,0 +1,61 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<p><strong>Section 6.6: Inferences about Regression Parameters</strong></p>
+
+<ol>
+<li>Construct a <span class="math">\(1 - \alpha\)</span> confidence interval for a regression coefficient <span class="math">\(\beta_{j}\)</span> under the MLRGN model.</li>
+<li>Perform a significance level <span class="math">\(\alpha\)</span> test for a regression coefficient <span class="math">\(\beta_{j}\)</span> under the MLRGN model.</li>
+</ol>
+
+<p><strong>Standardizing Regression Coefficients (Lecture Notes for Lecture 15)</strong></p>
+
+<ol>
+<li>State the regression function for a Multiple Linear Regression (MLR) with standardized predictor variables.</li>
+<li>State how the coefficients of a MLR with standardized predictor variables are related to the coefficients of a MLR with unstandardized predictor variables.</li>
+<li>Explain why coefficients of a MLR with standardized predictor variables are more comparable than coefficients from a MLR with unstandardized predictor variables.</li>
+<li>Interpet the coefficients of a MLR with standardized predictor variables in the context of a given problem.</li>
+<li>Standardize the predictor variables in a data frame using the <code>mutate_*</code> functions from the <code>dplyr</code> package.</li>
+</ol>
+
+<p><strong>Coefficient Plots (Lecture Notes for Lecture 15)</strong></p>
+
+<ol>
+<li>Interpret coefficient plots for a fitted multiple linear regression.</li>
+<li>Create coefficient plots using <code>plot.lm.coef</code> from the <code>confcurve</code> package.</li>
+</ol>
+
+<p><strong>What Makes a Coefficient Estimate &#8220;Significantly Different from 0&#8221;? (Lecture Notes for Lecture 15)</strong></p>
+
+<ol>
+<li>Recognize that estimates, not parameters, are statistically significant.</li>
+<li>State the null hypothesis used by R for the <span class="math">\(P\)</span>-values reported by <code>summary</code>.</li>
+<li>Never, ever (ever) make the mistake of saying / writing (/ thinking?):
+
+<ul>
+<li>&#8220;a significant coefficient estimate means the associated predictor is important for prediction&#8221;</li>
+<li>&#8220;a non-significant coefficient estimate means the associated predictor is unimportant for prediction&#8221;</li>
+</ul></li>
+<li>Reason about what makes a coefficient estimate significantly different from zero in terms of:
+
+<ul>
+<li>the model(s) and underlying population parameter</li>
+<li>the estimated noise variance</li>
+<li>the standard deviation of the predictor</li>
+<li>the correlation between the predictor and the other predictors in the model</li>
+</ul></li>
+<li>Explain why a coefficient estimate can be statistically significant with one set of predictors and non-significant with another set of predictors.</li>
+<li>Explain in what way a <span class="math">\(P\)</span>-value mixes together the size of a population coefficient and the precision with which that population coefficient has been estimated.</li>
+</ol>
+
+<p><strong>Confidence Curves for Population Coefficients Under the MLRGN Model (Lecture Notes for Lecture 15)</strong></p>
+
+<ol>
+<li>State how to construct a confidence curve for a population coefficient under the MLRGN Model.</li>
+<li>Interpret and use a confidence curve for a population coefficient under the MLRGN Model to do all the usual things:
+
+<ul>
+<li>Identify the point estimate</li>
+<li>Construct confidence intervals</li>
+<li>Perform two-sided hypothesis tests</li>
+</ul></li>
+</ol>

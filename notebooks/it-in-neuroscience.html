@@ -1,0 +1,66 @@
+<html>
+<head>
+  <title>Notebooks : /it-in-neuroscience.html</title>
+</head>
+<body>
+<h1>Notebooks</h1>
+
+<p>
+[
+<a href="http://ddarmon.github.io/master/notebooks/">Home</a>
+]
+</p>
+
+<h2>Tue, 17 May 2016</h2>
+<h3><a name="it-in-neuroscience">Information Theory in Neuroscience</a></h3>
+<div class="blosxomStory">
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<ul>
+<li>
+<p>Entropy Rate</p>
+<ul>
+<li>C. Gomez, J. T. Lizier, M. Schaum, P. Wollstadt, C. Grutzner, P. Uhlhaas, C. M. Freitag, S. Schlitt, S. Bolte, R. Hornero, and M. Wibral, "Reduced predictable information in brain signals in autism spectrum disorder", <a href="http://eprints.gla.ac.uk/101563/1/101563.pdf">Front. Neuroinform., vol. 8</a>, Feb. 2014.<ul>
+<li>A study of source entropy rate using MEG data in a small case-control study (10 ASD and 14 control). Main tool is Active Information Storage (AIS), which is the mutual information between the next-step future and past of a stochastic process: \(I[X_{t} \wedge X_{-\infty}^{t-1}]\). After unwrapping, this is equivalent to normalizing the entropy rate by the marginal entropy, \(I[X_{t} \wedge X_{-\infty}^{t-1}] = h[X_{t}] - h[X_{t} \mid X_{-\infty}^{t-1}]\). Similar to the normalization used in negentropy, but using an estimate of the marginal entropy instead of a Gaussian entropy.</li>
+<li>Notable Parameters:<ul>
+<li><strong>Experimental protocol:</strong> "All subjects performed a perceptual closure task where stimuli consisted of degraded pictures of human faces in which all shades of gray had been converted into black or white (Mooney and Ferguson, 1951). In addition, scrambled and vertically mirrored versions of these stimuli were created, for which face perception was not possible. One hundred and sixty different stimuli for each stimulus category were presented in a random sequence, where each stimulus was shown for 200 ms, separated by a random inter- stimulus intervals between 3500 and 4500 ms. Participants had to indicate with a button press whether they saw a face or not. Response hands were counterbalanced across participants in each group. This set of stimuli allowed us to identify the visual system and higher cortices related to object and face perception for further investigation using AIS."</li>
+<li>Use a lag of 10 with a sampling rate of 300 Hz, giving \(dt\) = 3.33 ms and a maximum lookback of 33.3 ms</li>
+<li>12 sources determined via beamforming</li>
+<li>66 trials per condition, across two conditions, each 1 s in length</li>
+<li>Used a box kernel density estimator for estimation of AIS. (Aside: This estimator is essentially equivalent to Approximate Entropy, normalizing by the marginal entropy.)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Transfer Entropy</p>
+<ul>
+<li>
+<p>R. Vicente, M. Wibral, M. Lindner, and G. Pipa, "Transfer entropy-a model-free measure of effective connectivity for the neurosciences", Journal of Computational Neuroscience, 2011.</p>
+<ul>
+<li>An in-depth computational study of transfer entropy, addressing issues like linear mixing of sources ('volume conduction'), nonlinear mixing of sources, additive noise, etc.</li>
+</ul>
+</li>
+<li>
+<p>M. Lobier, F. Siebenhuhner, S. Palva, and J. M. Palva, "Phase transfer entropy: A novel phase-based measure for directed connectivity in networks coupled by oscillatory interactions," NeuroImage, vol. 85, pp. 853-872, Jan. 2014.</p>
+<ul>
+<li>An in-depth computational study of 'phase transfer entropy', which corresponds to the transfer entropy between the time-domain <em>phases</em> (either via a Hilbert or Wavelet transform) of two signals at a particular frequency. They use a neural mass model as their model system, and consider all of the usual suspects of confounders in connectivity analysis within neuroscience: noise, volume conduction, and frequency-dependence.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>
+  posted at: 15:20 |
+  path: <a href="http://ddarmon.github.io/master/notebooks/" title="path">/</a> |
+  <a href="http://ddarmon.github.io/master/notebooks/it-in-neuroscience.html">permanent link to this entry</a>
+</p>
+</div>
+
+<p>
+  <a href="http://pyblosxom.github.com/"><img src="http://pyblosxom.github.com/images/pb_pyblosxom.gif" alt="Made with Pyblosxom" border="0" /></a>
+</p>
+</body>
+</html>

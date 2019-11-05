@@ -1,0 +1,43 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h1>Homework 12</h1>
+
+<h2>Additional Directions</h2>
+
+<p> For each of the following problems, sketch the probability density function of the normal random variable (i.e. get the general shape and placement of the probability density function correct), and indicate the area under the curve that you are computing to answer the given probability query.
+
+<p><b>Example:</b> If \(X \sim N(1, 2^{2})\), and you are asked to compute \(P(0 \leq X \leq 2)\),
+you should sketch:
+
+<p><center><img src = "pdf-example.jpg" width = 500x></img></center>
+
+<p>as well as find the probability that \(X\) falls in \((0, 2)\).
+
+<p><b>Notice:</b> I have marked the horizontal axis with \(\mu \pm k \sigma\) for \(k = 0, 1, 2, 3\).
+
+<p><b>Hint:</b> You may find <a href="../12/cdf-pdf-demo.R">this Shiny demo</a> useful as you get familiar with the Gaussian curve and reading the table of Gaussian probabilities.
+
+<h2>Problems</h2>
+
+<p><h3>Section 4.3: </h3>
+<ul>
+	<li>39; use Table A.3 in Devore & Berk and <b>show all of your work</b>
+	<li>43; use R and <b>state the R commands used and show all of your work</b>. You should use <tt>pnorm</tt> with arguments <tt>mean = 0</tt> and <tt>sd = 1</tt>, so you need to <b>standardize</b> \(X\) <b>first</b>.
+	<li>44; use Table A.3 in Devore & Berk and <b>show all of your work</b>
+</ul>
+
+<h2>Reading</h2>
+<p> Read pages 178-180 (up to "Nonstandard Normal Distributions") and page 183 (up to "The Normal Distribution and Discrete Populations") in Devore & Berk about percentiles of the Gaussian (normal) distribution, and solve the following problems.
+
+<p><b>Note:</b> If after reading the assigned sections from the book you are still unclear about finding percentiles for a normal distribution, see <a href="https://www.khanacademy.org/math/ap-statistics/density-curves-normal-distribution-ap/normal-distributions-calculations/v/finding-z-score-for-a-percentile">this video</a> from Khan Academy. If, after watching and thinking about this video, you are still unclear, please plan to see me during office hours.
+
+<p>You can use either R or Table A.3 in Devore & Berk for these problems. In either case, <b>show all of your work</b>.
+
+<p><strong>Hint:</strong> The R function <tt>qnorm</tt> will compute quantiles (a \(100p\%\) <strong>percentile</strong> is the same as a \(p\) <strong>quantile</strong>) for you. See the <tt>qnorm</tt> section on <a href = "http://seankross.com/notes/dpqr/">this page</a> for a quick tutorial.
+
+<p><h3>Section 4.3: </h3>
+<ul>
+	<li>41
+	<li>42
+	<li>52; <strong>Note:</strong> This is a challenging problem. Please see me during office hours or email me if you would like any hints after attempting this problem.
+</ul>

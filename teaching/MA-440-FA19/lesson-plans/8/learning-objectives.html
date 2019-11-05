@@ -1,0 +1,46 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<p><strong>Bootstrapping to Approximate the Sampling Distribution of a Statistic (Lecture Notes for Lecture 8)</strong></p>
+
+<ol>
+<li>Explain why inferential statistics derived under the SLRGN model become &#8220;junk numbers&#8221; when the SLRGN model fails to hold.</li>
+<li>Identify when inferential statistics derived under the SLRGN model are likely to be &#8220;junk numbers&#8221;.</li>
+<li>Explain how a resampling-based inferential method replaces a model-based sampling distribution with a sampling distribution based on the sample itself.</li>
+</ol>
+
+<p><strong>The Case Resampling Bootstrap for Simple Linear Regression (Lecture Notes for Lecture 8)</strong></p>
+
+<ol>
+<li>Describe the procedure for the Case Resampling Bootstrap.</li>
+<li>Given a scatter plot, explain how you could generate a bootstrap sample using the Case Resampling Bootstrap.</li>
+<li>Explain the tradeoffs between small and large values for <span class="math">\(B\)</span>, the number of bootstrap samples.</li>
+</ol>
+
+<p><strong>The Percentile Bootstrap (Lecture Notes for Lecture 8)</strong></p>
+
+<ol>
+<li>Describe how to compute a percentile bootstrap confidence interval from bootstrapped estimates of parameter values.</li>
+<li>State the name of the improved confidence interval method implemented in <code>confcurve</code>.</li>
+</ol>
+
+<p><strong>Confidence Curves from the Bootstrap Distribution (Lecture Notes for Lecture 8)</strong></p>
+
+<ol>
+<li>Explain how one can construct a bootstrapped confidence curve for a parameter value using the percentile bootstrap confidence interval.</li>
+</ol>
+
+<p><strong><span class="math">\(P\)</span>-values from the Bootstrapped Confidence Curve (Lecture Notes for Lecture 8)</strong></p>
+
+<ol>
+<li>Explain how one can compute a bootstrapped <span class="math">\(P\)</span>-value for a two-sided hypothesis test using a bootstrapped confidence curve.</li>
+</ol>
+
+<p><strong><tt>confcurve</tt> in R (Lecture Notes for Lecture 8)</strong></p>
+
+<ol>
+<li>Use <tt>bootcurve.lm</tt> to generate bootstrapped parameter estimates from a dataframe.</li>
+<li>Use <tt>confcurve</tt> to compute a BCa bootstrap confidence interval for the population slope and intercept using an output from <tt>bootcurve.lm</tt>.</li>
+<li>Use <tt>plot.confcurve</tt> to compute a BCa bootstrap confidence curve for the population slope and intercept using an output from <tt>bootcurve.lm</tt>.</li>
+<li>Use <tt>confpvalue</tt> to compute bootstrapped two-sided <span class="math">\(P\)</span>-values for the population slope and intercept using an output from <tt>bootcurve.lm</tt>.</li>
+<li>Compare and contrast SLRGN-based and bootstrap-based confidence curves for the same data set in terms of how violations of the SLRGN model impact the properties of its inferential statistics.</li>
+</ol>

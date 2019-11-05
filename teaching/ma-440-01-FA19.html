@@ -1,0 +1,295 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<title>MA 440-01 Regression and Time Series Analysis (Fall 2019)</title>
+
+<a href="http://www.thirdorderscientist.org"><em>David Darmon</em></a>
+
+<h1>MA 440-01, Regression and Time Series Analysis</h1>
+
+<h2>Fall 2019</h2>
+
+
+<center>
+Tuesday, 11:40 AM &mdash; 1:00 PM, Howard Hall 212
+<br>Friday, 11:40 AM &mdash; 1:00 PM, Howard Hall 308
+</center>
+
+<P>Here's the official description:
+<blockquote>Covers topics related to multiple regression techniques, including testing the assumptions required for each to be valid. This includes applications to yield curve smoothing, pricing, and investment models, and the use of principal component analysis. Also covered are techniques for the analysis and modeling of time series data and forecasting.</blockquote>
+
+<P>This class covers linear statistical models: what they are, how to estimate and use them, and how to make inferences from them. Our focus will be on data analysis, statistical modeling and prediction, and critical thinking about what a statistical model can and cannot tell us about a scientific question. We will cover both classical methods of inference, including their often unrealistic assumptions, as well as more assumption-free methods. Ultimately, our goal is to use linear statistical models to explore and analyze data and report our findings to a community of peers.
+
+<h4>Prerequisites</h4>
+
+<P>MA 116 or MA 118 or MA 126, passed with a grade of C- or higher, and MA 151 or MA 220 or BE 251, passed with a grade of C- or higher.
+
+<h4>Professor</h4>
+
+<table>
+<tr><td>Dr. David Darmon</td> <td></td><td>ddarmon [at] monmouth.edu</td></tr>
+<tr><td></td><td></td><td>Howard Hall 241</td></tr>
+</table>
+
+<h2>Topics, Notes, Readings</h2>
+
+<P>This is currently a <em>tentative</em> listing of topics, in order.
+
+
+<dl>
+	<dt><em>Statistical models for bivariate data:</em> Statistical prediction: the predictor and the response. The line of best fit as a data-summary device. A statistical model as a story for how the data are generated. Where does the 'randomness' come from in the first place? Populations, super-populations, and no-populations.
+	<dt><em>Exploratory Data Analysis with R:</em>  Histograms, scatter plots, and smoothers.
+	<dt><em>Statistical models for simple linear regression:</em> The least-squares line. Interpreting the regression coefficients: slope and intercept. Viewing the data as a random sample from a population. The standard line: simple linear regression with Gaussian noise (SLRGN).
+	<dt><em>Checking assumptions before we infer:</em> Sample residuals. Residual plots from the sample residuals. Where the SLRGN model can go wrong, and what it looks like. Checking validity using out-of-sample performance. Transforming the predictor and response to handle common violations. 
+	<dt><em>Inferences for parameters of a simple linear regression:</em> Properties of the simple linear regression estimators under random sampling from a population, in general, and under the SLRGN model, in particular. Estimation and hypothesis testing under the SLRGN model. Confidence curves as summaries of all available information about regression parameters. Bootstrapping: when the data is a population of its own. Confidence intervals and \(P\)-values via bootstrapping. Confidence curves via bootstrapping.
+	<dt><em>Inferences for expected values of a simple linear regression:</em> Standard errors and confidence sets for the population line. Prediction intervals for a new measurement from the population.
+	<dt><em>Assessing the simple linear regression as a predictive model:</em> Predictive error. In-sample error. Out-of-sample error. Cross-validated error. Bootstrapping estimates of errors.
+	<dt><em>Multiple linear regression:</em> Like simple linear regression, but more. Predicting a response with more than one predictor. Least squares and the hyperplane-of-best-fit. Interpreting the regression coefficients. The dependence of population-level regression coefficients on the predictors included in the model.
+	<dt><em>Statistical models for multiple linear regression and model checking:</em> The multiple linear regression with Gaussian noise (MLRGN) model. Assumption checking for the MLRGN model. Common departures from the MLRGN model, and how they show up in the sample residuals.
+	<dt><em>Inferences for parameters of a multiple linear regression:</em> The sampling distribution of multiple linear regression coefficients under the MLRGN model. Confidence curves for the coefficients of a multiple linear regression via both the MLRGN model and bootstrapping. Adjusting for multiple comparisons. Testing one, more, or all coefficients in a multiple linear regression. Do you really care so much about that \(P\)-value?
+	<dt><em>Enhancements and adjustments to multiple linear regression:</em> Nonlinearity in predictor variables. Categorical predictors. Multicollinearity amongst predictors. Interactions between predictors. Influential points and outliers.
+	<dt><em>Model selection:</em> Choosing amongst a set of candidate models. Predictor variable selection as model selection. Theoretical and data-driven approaches to model selection. The perils of naive inference post-model selection.
+	<dt><em>Beyond Ordinary Least Squares:</em> Heteroskedasticity in the noise. Weighted least squares for handling heteroskedasticity. Nonparametric regression. Regression as a smoothing problem. Nearest neighbor and kernel regressions. Tuning parameters in nonparametric regression, and how to tune them.
+</dl>
+
+See the <a href = "#schedule">end of this page</a> for the current lecture schedule, subject to revision.  Homework and additional resources will be linked there, as available.
+
+<h2>Course Mechanics</h2>
+
+<h4>Office Hours</h4>
+
+<p>I will have office hours at the following four times each week:
+
+<center><table>
+    <tr><td>Tuesday, &nbsp;&nbsp;03:00&ndash;04:00 PM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
+    <tr><td>Thursday, 10:00&ndash;11:00 AM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
+    <tr><td>Thursday, 01:30&ndash;02:30 PM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
+    <tr><td>Friday, &nbsp;&nbsp;&nbsp;&nbsp;09:00&ndash;10:00 AM</td> <td>Howard Hall 241</td></tr>
+</table></center>
+
+<p>I have an open-door policy during those times: you can show up unannounced. If you cannot make the scheduled office hours, please e-mail me about making an appointment.
+
+<p>If you are struggling with the homework, having difficulty with the quizzes, or just want to chat, please visit me during my office hours. I am here to help.
+
+<h4>Grading Policy</h4> 
+
+Your final grade will be determined by the following weighting scheme:
+
+<dl>
+	<dd> 30% for 2 in-class exams (15% each)
+	<dd> 20% for homework problem sets
+	<dd> 40% for data analysis projects
+	<dd> 10%  for class participation
+</dl>
+
+I will use the standard 10-point breakdown to assign letter grades to numerical grades:
+<ul>
+	<li> \([90, 100] \to \text{A}\)
+	<li> \([80, 90) \,\,\, \to \text{B}\)
+	<li> \([70, 80) \,\,\, \to \text{C}\)
+	<li> \([60, 70) \,\,\, \to \text{D}\)
+	<li> \([0, 60) \,\,\,\,\,\, \to \text{F}\)
+</ul>
+
+<h4>Homework</h4>
+
+Homework will be assigned on Fridays, and listed in the <a href="#schedule">Schedule</a> section of this page. Homework assignments are due at the beginning of class on the following Friday.
+
+<h4>Data Analysis Projects</h4>
+
+<p>There will be three take-home data analysis projects over the course of the semester. For each data analysis project, you will be provided with a research question and a data set collected to answer that question. You will analyze the data set, and write up your analysis and findings as a scientific report. For the final data analysis project, you will also give a 15-20 minute presentation on your analysis and findings. Each of the first two data analysis projects will count for 10% of your final grade and the final data analysis project will count for 20% of your final grade. A rubric and template report will be provided prior to the assignment of the first data analysis project.
+
+<h4>Class Participation</h4>
+
+I expect you to be fully engaged during each class, to ask questions when confused, and to attempt to answer questions when called on. During class, attempting to answer a question is more important than getting the correct answer, and class participation will be assigned accordingly.
+
+<h4>Attendance</h4>
+
+Required. If you expect to miss 2-3 sessions of the course, you should take the course during another semester.
+
+<h4>Examination Absences</h4>
+
+If you miss an examination your grade will be zero for that exam.  If you know you will be absent for an exam you must let me know at least one week in advance to schedule a make-up exam.
+
+<h4>Textbook</h4>
+
+<P>The <strong>required</strong> textbook is:
+<ul>
+<li>Michael H. Kutner, Christopher J. Nachtsheim, and John Neter. <em>Applied Linear Regression Models</em>, Fourth Edition (McGraw-Hill, 2004).
+</ul>
+
+<h4>Collaboration, Cheating, and Plagiarism</h4>
+
+All submitted work should be your own. You are welcome and encouraged to consult with others while working on an assignment, including other students in the class and tutors in the <a href="https://www.monmouth.edu/department-mathematics/math-learning-center/">Mathematics Learning Center</a>.  However, whenever you have had assistance with a problem, you must state so at the beginning of the problem solution.  Unless this mechanism is abused, there will be no reduction in credit for using and reporting such assistance.  This policy applies to both individual and group work. In group work, you only need to acknowledge help from outside the group. This policy does <b>not</b> apply to examinations.
+
+<h4>Statement on Special Accommodations</h4>
+
+Students with disabilities who need special accommodations for this class are encouraged to meet with me or the appropriate disability service provider on campus as soon as possible.  In order to receive accommodations, students must be registered with the appropriate disability service provider on campus as set forth in the student handbook and must follow the University procedure for self-disclosure, which is stated in the University <em>Guide to Services and Accommodations for Students with Disabilities</em>.  Students will not be afforded any special accommodations for academic work completed prior to the disclosure of the disability, nor will they be afforded any special accommodations prior to the completion of the documentation process with the appropriate disability office.
+
+<div id="R"><h2>R</h2></div>
+
+<P>We will use R, a programming language for statistical computing, throughout the semester for in-class activities and homework assignments. I will cover the relevant features of R throughout the course.
+
+<p>You can access R from any web accessible computer using <a href = "https://rstudio.cloud">RStudio Cloud</a>. You will need to create an account on RStudio Cloud from their <a href = "https://login.rstudio.cloud/register">Registration page</a>. I will send out a link via email for you to join a Space on RStudio Cloud for this course. Resources for homeworks, labs, etc., will be hosted on RStudio Cloud for easy access.
+	
+<p>You can also install R on your personal computer, if you have one. You can install R by following the instructions <a href="https://cran.rstudio.com/bin/windows/base/">for Windows here</a>, <a href="https://cran.rstudio.com/bin/macosx/">for macOS here</a>, or <a href="https://cran.rstudio.com/bin/linux/">for Linux here</a>. You will also want to install RStudio, and Integrated Development Environment for R, which you can find <a href="https://www.rstudio.com/products/rstudio/download/#download">here</a>.
+
+<p>We will use R as a scripting language and statistical calculator, and thus will not get into the nitty-gritty of programming in R. The <a href="https://www.cyclismo.org/tutorial/R/">R Tutorial by Kelly Black</a> is a good reference for the basics of using R. I will demonstrate R's functionality in class and handouts as we need it.
+
+<div id="anki"><h2>Anki</h2></div>
+
+<P> You may use <a href = "https://ankiweb.net/about">Anki</a> for spaced retrieval practice throughout the semester. Anki is open-source, free (as in both <a href = "https://en.wikipedia.org/wiki/Gratis_versus_libre"><em>gratis</em> and <em>libre</em></a>) software. You can download Anki to your personal computer from <a href = "https://apps.ankiweb.net/#download">this link</a>. If you have ever used flashcards, then Anki should be fairly intuitive. If you would like more details you can find Anki's User Manual <a href = "https://apps.ankiweb.net/docs/manual.html">here</a>.
+
+<P> Anki decks will be provided after each class covering the material that I expect you to know for homework assignments, exams, data analysis projects, etc. You may also want to make your own Anki cards.
+
+<div id="schedule"><h2>Schedule</h2></div>
+
+<strong>Subject to revision</strong>.  Assignments and solutions will all be linked here, as they are available.  All readings are from the textbook by Kutner, Nachtsheim, and Neter unless otherwise noted.
+
+<dl>
+		
+<dt>September 3, Lecture 1:
+	<dd><b>Topics: </b>Statistical modeling. Drawing lines through scatter plots. Which line did it best? Statistical models as data summaries. Statistical models as stories about populations. Sources of uncertainty in inference: sampling variability, measurement error, and chance.
+	<dd><b>Sections: </b>1.1, 1.2, 1.4
+	<dd><a href="MA-440-FA19/lesson-plans/1/learning-objectives.html">Learning Objectives</a>
+	<dd><b><a href="MA-440-FA19/hw/hw1.html">Homework 1.</a></b> Due Lecture 4
+
+<dt>September 6, Lecture 2:
+	<dd><b>Topics: </b>Introduction to R. Exploratory data analysis with R. Histograms, scatter plots, and smoothers. R Markdown and <tt>knitr</tt>. Basics of LaTeX (with Pointer to MathPix).
+	<dd><b>Sections: </b>Handout
+	<dd><a href="MA-440-FA19/lesson-plans/2/learning-objectives.html">Learning Objectives</a>
+	<dd><b><a href="MA-440-FA19/lesson-plans/2/lab1.html">Lab 1.</a></b> Due Lecture 3
+
+<dt>September 10, Lecture 3:
+	<dd><b>Topics: </b>Simple linear regression. The least-squares line, and hints at its derivation. Simple linear regression with a random sample from a population. Stories we tell: the simple linear regression with Gaussian noise (SLRGN) model.
+	<dd><b>Sections: </b>1.3, 1.6, 1.7, 1.8
+	<dd><a href="MA-440-FA19/lesson-plans/3/learning-objectives.html">Learning Objectives</a>
+	<dd><a href="https://ddarmon.shinyapps.io/linear-regression-demo/">Ordinary Least Squares Demo</a>
+	<dd><a href="https://ddarmon.shinyapps.io/simple-linear-regression-schematic/">Simple Linear Regression Schematic Demo</a>
+
+<dt>September 13, Lecture 4:
+	<dd><b>Topics: </b>Checking the assumptions of the simple linear model. Residual plots. Out-of-sample generalization. Transformations to handle violations of assumptions.
+	<dd><b>Sections: </b>3.1, 3.2, 3.3, 3.9
+	<dd><a href="MA-440-FA19/lesson-plans/4/learning-objectives.html">Learning Objectives</a>
+	<dd><a href="https://ddarmon.shinyapps.io/linear-regression-diagnostics-demo_v2/">Simple Linear Regression Diagnostic Plots Demo</a>
+	<dd><b><a href="MA-440-FA19/hw/hw2.html">Homework 2.</a></b> Due Lecture 6
+
+<dt>September 17, Lecture 5:
+	<dd><b>Topics: </b>Properties of the simple linear regression estimators under random sampling from a population. Properties of the simple linear regression estimators under the SLRGN model. Estimation and hypothesis testing under the SLRGN model. The estimate, not the parameter, is significant. What is a \(P\)-value, again? Statistical significance and practical significance.
+	<dd><b>Sections: </b>2.1, 2.2
+	<dd><a href="MA-440-FA19/lesson-plans/5/learning-objectives.html">Learning Objectives</a>
+	<dd><a href="https://ddarmon.shinyapps.io/ols-estimators-mean-variance/">Demo of Sampling Variability of the Estimators for the Slope and Intercept</a>
+
+<dt>September 20, Lecture 6:
+	<dd><b>Topics: </b>Review. Quantiles and critical values. Quantiles and critical values in R. Interval estimators and confidence intervals. Interpreting the confidence level of an interval estimator. Hypothesis tests. How all of this relates to making inferences under the SLRGN model.
+	<dd><b>Sections: </b>Review
+	<dd><b><a href="MA-440-FA19/hw/hw3.html">Homework 3.</a></b> Due Lecture 8
+	<dd><a href = "https://ddarmon.shinyapps.io/t-quantile-demo/">Demo on Quantiles and Critical Values for the \(t\)-distribution</a>
+	<dd><a href = "https://ddarmon.shinyapps.io/confidence-interval-demo/">Demo on Interpretation of the Confidence Level of an Interval Estimator</a>
+
+<dt>September 24, Lecture 7:
+	<dd><b>Topics: </b>More on estimation and hypothesis testing. The duality between estimation and hypothesis testing. Why 0.05? Use all the numbers: the confidence interval at all confidence levels. Example with the interval estimator for the mean of a Gaussian population. The confidence curve. \(P\)-values (if you must) from the confidence curve.
+	<dd><b>Sections: </b>Handout
+	<dd><a href="MA-440-FA19/lesson-plans/7/learning-objectives.html">Learning Objectives</a>
+	<dd><a href = "https://ddarmon.shinyapps.io/confidence-curves/">Demo of Using Confidence Curves to Estimate the Mean of a Gaussian Population</a>
+
+<dt>September 27, Lecture 8:
+	<dd><b>Topics: </b>Estimation and hypothesis testing when SLRGN won't do. Bootstrapping. Bootstrap confidence intervals. Bootstrap hypothesis testing. Thank von Neumann for digital computers. Confidence curves from the bootstrap distribution.
+	<dd><b>Sections: </b>11.5, Handout
+	<dd><a href="MA-440-FA19/lesson-plans/8/learning-objectives.html">Learning Objectives</a>
+	<dd><a href = "https://ddarmon.shinyapps.io/bootstrap-ols/">Demo of Case Resampling Bootstrap for Simple Linear Regression</a>
+	<dd><b><a href="MA-440-FA19/hw/hw4.html">Homework 4.</a></b> Due Lecture 10
+
+<dt>October 1, Lecture 9:
+	<dd><b>Topics: </b>Inferences for expected values: standard errors and confidence sets. Inferences for new measurements: prediction intervals.
+	<dd><b>Sections: </b>2.4, 2.5
+	<dd><a href="MA-440-FA19/lesson-plans/9/learning-objectives.html">Learning Objectives</a>
+	<dd><a href = "https://ddarmon.shinyapps.io/ols-ci_pi-intervals/">Demo of Confidence Interval for the Expected Response and Prediction Interval for a New Response</a>
+
+<dt>October 4, Lecture 10:
+	<dd><b>Topics: </b>A taste of linear algebra: simple linear regression via matrices and vectors. Review of matrix-vector arithmetic. The inverse of a matrix. Doing linear algebra in R.
+	<dd><b>Sections: </b>5.1, 5.2, 5.3, 5.4, 5.6
+	<dd><a href="MA-440-FA19/lesson-plans/10/learning-objectives.html">Learning Objectives</a>
+	<dd><b><a href="MA-440-FA19/hw/hw5.html">Homework 5.</a></b> Due Lecture 11
+
+<dt>October 11, Lecture 11:		
+	<dd><b>Topics: </b>Random vectors and random matrices. Expectations and variances of random vectors. Simple linear regression as a matrix-vector equation. The solution to ordinary least squares as a matrix-vector equation. Sampling properties under SLR of the ordinary least squares estimator via matrix algebra.
+	<dd><b>Sections: </b>5.8, 5.9, 5.10, 5.13
+	<dd><a href="MA-440-FA19/lesson-plans/11/learning-objectives.html">Learning Objectives</a>
+
+<dt>October 15, Lecture 12:
+	<dd><b>Topics: </b>Exam 1.
+	<dd><b>Sections: </b>Chapters 1-3 and Lecture Notes 1-9
+	<dd><a href = "MA-440-FA19/lesson-plans/12/exam1-studyguide.html">Exam 1 Study Guide</a>
+
+<dt>October 18, Lecture 13:
+	<dd><b>Topics: </b> Multiple linear regression. Predicting with multiple predictors. Least squares with multiple predictors. Why multiple linear regression is different from combining several simple linear regressions. Why regression coefficients change when we change the predictors in our model.
+	<dd><b>Sections: </b>6.1, 6.3, 6.4
+	<dd><a href="MA-440-FA19/lesson-plans/13/learning-objectives.html">Learning Objectives</a>
+	<dd><a href="https://ddarmon.shinyapps.io/multiple-linear-regression-schematic/">Multiple Linear Regression Schematic Demo</a>
+	<dd><b><a href="MA-440-FA19/hw/hw6.html">Homework 6.</a></b> Due Lecture 15
+
+<dt>October 22, Lecture 14:
+	<dd><b>Topics: </b>Stories we tell: the multiple linear regression with Gaussian noise (MLRGN) model. Assumption-checking for multiple linear regression: the same, but different. Properties of the ordinary least squares estimators under the MLRGN model.
+	<dd><b>Sections: </b>Handout, 6.1, 6.8
+	<dd><a href="MA-440-FA19/lesson-plans/14/learning-objectives.html">Learning Objectives</a>
+
+<dt>October 25, Lecture 15:
+	<dd><b>Topics: </b>Standardizing the predictors to make multiple linear regression coefficients more interpretable.  Coefficient plots (with confidence intervals) in place of tables. Hypothesis testing for a single regression coefficient under the MLRGN model.  What makes an estimate significantly different from 0? Statistical versus practical significance: redux.  Confidence curves for a single coefficient under the MLRGN model.
+	<dd><b>Sections: </b>Handout, 6.6
+	<dd><a href="MA-440-FA19/lesson-plans/15/learning-objectives.html">Learning Objectives</a>
+	<dd><b><a href="MA-440-FA19/hw/hw7.html">Homework 7.</a></b> Due Lecture 17
+
+<dt>October 29, Lecture 16:
+	<dd><b>Topics: </b>Lab.
+	<dd><b>Sections: </b>Lab Handout
+
+<dt>November 1, Lecture 17:
+	<dd><b>Topics: </b> Confidence curves for a single coefficient via bootstrapping. Adjusting for multiple comparisons. Confidence sets for multiple coefficients. Confidence rectangles via multiple comparisons. Confidence ellipsoids via the sampling distribution of the coefficient estimator.
+	<dd><b>Sections: </b>Handout, 4.1, 7.3, 11.5
+	<dd><a href="MA-440-FA19/lesson-plans/17/learning-objectives.html">Learning Objectives</a>
+	<dd><b><a href="MA-440-FA19/hw/hw8.html">Homework 8.</a></b> Due Lecture 19
+
+<dt>November 5, Lecture 18:
+	<dd><b>Topics: </b>Testing for multiple coefficients. Testing for groups of coefficients in the context of a larger model. Testing all the slopes in the context of a larger model. Categorical predictors. Dealing with categorical predictors by adding "dummy" variables. Reference and baseline categories. Interpreting the coefficients on categorical variables. Oh-NOVA.
+	<dd><b>Sections: </b>7.3, 8.3
+	<dd><a href="MA-440-FA19/lesson-plans/18/learning-objectives.html">Learning Objectives</a>
+
+<dt>November 8, Lecture 19:
+	<dd><b>Topics: </b>Interactions. Interactions in a linear model. Interactions between numerical and categorical variables. Interactions between categorical variables. Dealing with nonlinearity. Adding polynomial terms.
+	<dd><b>Sections: </b>8.1, 8.2, 8.5
+
+<dt>November 12, Lecture 20:
+	<dd><b>Topics: </b>Multicollinearity: what it is and why it's a problem. Identifying collinearity from pairwise plots of the predictors. Dropping predictors to remove collinearity. Ridge regression for handling multicollinearity.
+	<dd><b>Sections: </b>Handout, 7.6, 11.2
+
+<dt>November 15, Lecture 21:
+	<dd><b>Topics: </b>Influential points and outliers. Influence of a data point on the ordinary least squares estimates. Detecting outliers. Dealing with outliers and influential points: deletion and robust regression.
+	<dd><b>Sections: </b>10.2, 10.3, 10.4, 11.3
+
+<dt>November 19, Lecture 22:
+	<dd><b>Topics: </b>Exam 2.
+	<dd><b>Sections: </b>Chapters 5-8 and Lecture Notes 9-19
+
+<dt>November 22, Lecture 23:
+	<dd><b>Topics: </b>Model selection. Who wore it best? Silly things you may see people do. Modern approaches to model selection. The perils of inference after model selection.
+	<dd><b>Sections: </b>Handout, 9.3, 9.4
+
+<dt>November 26, Lecture 24:
+	<dd><b>Topics: </b>Variable selection as a special case of model selection. Finding important variables. What do we mean by an "important" variable? Please leave \(P\) out of this. Cross-validation for variable selection. All subsets selection. Stepwise regression. The perils of inference after model selection, redux.
+	<dd><b>Sections: </b>Handout, 9.3, 9.4
+
+<dt>December 3, Lecture 25:
+	<dd><b>Topics: </b>When the noise misbehaves: heteroskedasticity and non-constant noise variance. Weighted least squares. Weighted least squares in R.
+	<dd><b>Sections: </b>11.1
+
+<dt>December 6, Lecture 26:
+	<dd><b>Topics: </b>The world is neither linear, nor quadratic, nor... Nonparametric regression: it's regression, Jim, but not as we know it. Regression as local smoothing. Linear regression as a simple smoother. Nearest neighbor regression. Kernel regression. Tuning parameters and their selection. R packages for nonparametric regression.
+	<dd><b>Sections: </b>Handout, 3.10, 11.4
+
+<dt>December 13, Final Exam:
+	<dd><b>Time: </b>11:35 AM - 2:25 PM
+	<dd><b>Location: </b> Howard Hall 212 (HH 212)
+
+</dl>
