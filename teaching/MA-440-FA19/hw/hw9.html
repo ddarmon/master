@@ -1,0 +1,89 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h1>Homework 9</h1>
+
+<p><h1>Chapter 7</h1>
+<p> Complete the following 3 problems:
+<ol>
+	<li>Problem 7.6
+		<ul>
+			<li>Test the null hypothesis using an \(F\)-test.
+			<li>Did you get a similar \(P\)-value as from the confidence ellipse in Homework 8?</b>.
+		</ul>
+	<li>Problem 7.8
+		<ul>
+			<li>Follow the same directions as Problem 7.6.
+		</ul>
+	<li>Problem 7.9
+		<ul>
+			<li>Follow the same directions as Problem 7.6.
+			<li><strong>Hint:</strong> Look back at Problem 6.25 from Homework 6.
+		</ul>
+</ol>
+
+<p><h1>Chapter 8</h1>
+<p> Complete the following 3 problems:
+<ol>
+	<li>Problem 8.11
+	<li>Problem 8.15abde
+	<li>Problem 8.16
+	<li>Problem 8.19
+	<li>Problem 8.20
+</ol>
+
+<p><h1>Additional Problems</h1>
+
+<ol>
+	<li> <b>Contrasts for two binary categorical variables without an interaction:</b> 
+		<ol type = "a">
+			<li>For the model
+				\[ Y = \beta_{0} + \beta_{1} B + \beta_{2} C + \epsilon\]
+				where \(B\) and \(C\) are binary indicator variables for two 2-category categorical variables, solve for the \(\beta\)s in the system of equations
+\[ \begin{array}{l}{E[Y_{B = 0, C = 0}]=\beta_{0}} \\ {E[Y_{B = 1, C = 0}]=\beta_{0}+\beta_{1}} \\ {E[Y_{B = 0, C = 1}]=\beta_{0}+\beta_{2}} \\ {E[Y_{B = 1, C = 1}]=\beta_{0}+\beta_{1}+\beta_{2}}\end{array}\]
+			<li>Give an interpretation of the coefficients in terms of contrasts between the categories of the categorical variables.
+		</ol>
+	<li> <b>Contrasts for two binary categorical variables with an interaction:</b> 
+		<ol type = "a">
+			<li>For the model
+				\[ Y = \beta_{0} + \beta_{1} B + \beta_{2} C + \beta_{3} BC + \epsilon\]
+				where \(B\) and \(C\) are binary indicator variables for two 2-category categorical variables, solve for the \(\beta\)s in the system of equations
+\[ \begin{array}{l}{E[Y_{B = 0, C = 0}]=\beta_{0}} \\ {E[Y_{B = 1, C = 0}]=\beta_{0}+\beta_{1}} \\ {E[Y_{B = 0, C = 1}]=\beta_{0}+\beta_{2}} \\ {E[Y_{B = 1, C = 1}]=\beta_{0}+\beta_{1}+\beta_{2}+\beta_{3}}\end{array}\]
+			<li>Give an interpretation of the coefficients in terms of contrasts between the categories of the categorical variables.
+		</ol>
+</ol>
+
+<h1>Extra Credit</h1>
+
+This problem is extra credit. If you complete this problem <b>entirely correctly</b>, it will count as extra credit up to a (medium-sized) problem on Exam 2.
+
+<h2>Equivalence of the Two-sample \(t\)-test and Regression with a Binary Indicator Variable</h2>
+
+<p> Consider the setup for the two-sample \(t\)-test, where we have two independent random samples:
+	\[ \begin{aligned} X_{1}, X_{2}, \ldots, X_{m} &\sim N(\mu_{1}, \sigma^{2}) \\ Y_{1}, Y_{2}, \ldots, Y_{n} &\sim N(\mu_{2}, \sigma^{2}) \end{aligned}\]
+	<strong>Note:</strong> We are assuming <strong>equal variances</strong> but allowing <strong>unequal sample sizes</strong>.
+	
+	<p>As you learned in introductory statistics, the \(T\)-statistic for a hypothesis test about the difference between the means \(\mu_{1} - \mu_{2}\) is
+	\[ T = \frac{\bar{X} - \bar{Y} - (\mu_{1} - \mu_{2})}{s_{\text{pooled}} \sqrt{1/m + 1/n}}\]
+	where \(s_{\text{pooled}}^{2}\) is the pooled variance
+	\[ s_{\text{pooled}}^{2} = \frac{\left(m-1\right) s_{X}^{2}+\left(n-1\right) s_{Y}^{2}}{m + n -2}.\]
+	This \(T\)-statistic follows a \(t\)-distribution with \(m + n - 2\) degrees of freedom.
+	
+	<p>Consider an alternative way of encoding the data, where we set up the regression
+	\[ W_{i} = \beta_{0} + \beta_{1} B_{i} + \epsilon_{i}, i = 1, 2, \ldots, m + n\]
+	where \(B_{i}\) is a binary variable with
+	\[ B_{i} = \begin{cases} 0 &: \text{Unit \(i\) is in the second sample} \\ 1 &: \text{Unit \(i\) is in the first sample} \end{cases}\]
+	and we assume that \(\epsilon_{i} \stackrel{\text{iid}}{\sim} N(0, \sigma^{2})\). The \(T\)-statistic for \(\beta_{1}\) is
+	\[ T = \frac{b_{1} - \beta_{1}}{s[b_{1}]},\]
+	which will also be \(t\)-distributed with \(m + n - 2\) degrees of freedom under the SLRGN model assumptions.
+	
+	<p> In this problem, you will show that the \(T\)-statistic for the two-sample \(t\)-test is equivalent to the \(T\)-statistic for the regression.
+	
+	<ol>
+		<li> Find the least squares estimates for \(\beta_{0}\) and \(\beta_{1}\) in the stated simple linear regression in terms of the sample statistics \(\bar{W}, \bar{B},\) and \(s_{B}^{2}\).
+		<li>Determine how the least squares estimates for \(\beta_{0}\) and \(\beta_{1}\) in the stated simple linear regression are related to the sample statistics \(\bar{X}, \bar{Y}, s_{X}^{2}, s_{Y}^{2}, m, \) and \(n\).
+			<p><strong>Hint:</strong> What are you <strong>expecting</strong> these estimates to be? That should give you a hint about the simplifications you can make.
+		<li> Find the estimate of the standard error \(s[b_{1}]\) for the stated simple linear regression in terms of \(s_{B}^{2}, \widehat{\sigma_{\epsilon}^{2}}, m, \) and \(n\).
+		<li>Determine how the estimate of the standard error \(s[b_{1}]\) for the stated simple linear regression is related to the sample statistics \(s_{\text{pooled}}^{2}, m, \) and \(n\).
+		<p><strong>Hint:</strong> What are you <strong>expecting</strong> the denominator to be? That should give you a hint about the simplifications you can make.
+		<li> Show that the \(T\)-statistic \(T = \frac{b_{1} - \beta_{1}}{s[b_{1}]}\) is equivalent to the \(T\)-statistic \(T = \frac{\bar{X} - \bar{Y} - (\mu_{1} - \mu_{2})}{s_{\text{pooled}} \sqrt{1/m + 1/n}}\), and conclude that both methods perform the same hypothesis test for the difference between the population means.
+	</ol>
