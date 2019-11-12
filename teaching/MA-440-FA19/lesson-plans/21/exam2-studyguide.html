@@ -1,0 +1,362 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<h1>Study Guide for Exam 2</h1>
+
+<p>This will be a closed-book exam. You will be allowed to use R on a <strong>school</strong> computer for computations. This means you will not have access to, nor will you need to use, anything beyond Base R (e.g. <tt>mosaic</tt>, <tt>ggformula</tt>, <tt>confcurve</tt>, etc.) for the exam. You should, however, still <strong>know the commands from these packages</strong>, as you may be asked for the code to generate a provided figure, output from <tt>lm</tt>, etc.</p>
+
+<p>You are permitted one 8.5 inch by 11 inch sheet of <strong>handwritten</strong> notes (<strong>one</strong> side) for this exam.</p>
+
+<p>To do well on the exam, you should be able to do the following:</p>
+
+<h2>Chapter 5</h2>
+
+<p><strong>Section 5.1: Matrices</strong></p>
+
+<ol>
+<li>Describe how matrices, vectors, and scalars differ in how they correspond to an array (&#8220;organized box of numbers&#8221;).</li>
+<li>Recognize the notation (in writing) <span class="math">\(\underline{\underline{A}}\)</span>, <span class="math">\(\underline{b}\)</span>, and <span class="math">\(c\)</span> and (in typeset notes) <span class="math">\(\mathbf{A}\)</span>, <span class="math">\(\mathbf{b}\)</span>, and <span class="math">\(c\)</span> for a matrix, vector, and scalar.</li>
+<li>Recognize that we specify the size of a matrix <span class="math">\(\mathbf{A}\)</span> as <span class="math">\(m \times n\)</span>, where <span class="math">\(m\)</span> is the number of rows and <span class="math">\(n\)</span> is the number of columns.</li>
+<li>Recognize the notation <span class="math">\(a_{ij}\)</span> or <span class="math">\((\mathbf{A})_{ij}\)</span> for the matrix entry in the <span class="math">\(i\)</span>-th row and <span class="math">\(j\)</span>-th column.</li>
+<li>Given a matrix <span class="math">\(\mathbf{A}\)</span>, compute its transpose <span class="math">\(\mathbf{A}^T\)</span>.</li>
+<li>State what a matrix equality <span class="math">\(\mathbf{A} = \mathbf{B}\)</span> means in terms of the elements of the matrices.</li>
+<li>Identify the design matrix <span class="math">\(\mathbf{X}\)</span> and response vector <span class="math">\(\mathbf{Y}\)</span> for a simple linear regression model.</li>
+</ol>
+
+<p><strong>Section 5.2: Matrix Addition and Subtraction</strong></p>
+
+<ol>
+<li>Given two matrices <span class="math">\(\mathbf{A}\)</span> and <span class="math">\(\mathbf{B}\)</span>, perform the matrix operations <span class="math">\(\mathbf{A} + \mathbf{B}\)</span> and <span class="math">\(\mathbf{A} - \mathbf{B}\)</span>.</li>
+</ol>
+
+<p><strong>Section 5.3: Matrix Multiplication</strong></p>
+
+<ol>
+<li>Given a matrix <span class="math">\(\mathbf{A}\)</span> and a scalar <span class="math">\(k\)</span>, compute the matrix-scalar product <span class="math">\(k\mathbf{A}\)</span>.</li>
+<li>Given a matrix <span class="math">\(\mathbf{A}\)</span> and a vector <span class="math">\(\mathbf{b}\)</span>, compute the matrix-vector product <span class="math">\(\mathbf{A}\mathbf{b}\)</span> both using (1) the direct definition of a matrix-vector product and (2) the row-column rule.</li>
+<li>Identify the conditions on the dimension of a matrix <span class="math">\(\mathbf{A}\)</span> and a vector <span class="math">\(\mathbf{b}\)</span> for their matrix-vector product to be well-defined.</li>
+<li>Given two matrices <span class="math">\(\mathbf{A}\)</span> and <span class="math">\(\mathbf{B}\)</span>, compute the matrix-matrix product <span class="math">\(\mathbf{A}\mathbf{B}\)</span> both using (1) the direct definition of a matrix-matrix product and (2) the row-column rule.</li>
+<li>Identify the conditions on the dimension of the matrices <span class="math">\(\mathbf{A}\)</span> and <span class="math">\(\mathbf{B}\)</span> for their matrix-matrix product to be well-defined.</li>
+<li>Explain what it means to say that matrix-matrix multiplication is not commutative.</li>
+<li>Compute and simplify matrix-matrix and matrix-vector products relevant to simple linear regression, for example <span class="math">\(\mathbf{Y}^{T}\mathbf{Y}\)</span>, <span class="math">\(\mathbf{X}^{T}\mathbf{X}\)</span>, and <span class="math">\(\mathbf{X}^{T}\mathbf{Y}\)</span>.</li>
+</ol>
+
+<p><strong>Section 5.4: Special Types of Matrices</strong></p>
+
+<ol>
+<li>State the <span class="math">\(n \times n\)</span> identity matrix <span class="math">\(\mathbf{I}_{n}\)</span>.</li>
+<li>Explain why the identity matrix is so-named.</li>
+</ol>
+
+<p><strong>Section 5.6: Inverse of a Matrix</strong></p>
+
+<ol>
+<li>Define the multiplicative inverse of a scalar <span class="math">\(a \neq 0\)</span>.</li>
+<li>Define the multiplicative inverse of an invertible matrix <span class="math">\(\mathbf{A}\)</span>.</li>
+<li>Explain why in matrix arithmetic, we cannot write <span class="math">\(\mathbf{A}/\mathbf{B}\)</span>.</li>
+<li>Compute the inverse of a <span class="math">\(2 \times 2\)</span> matrix.</li>
+<li>Verify that a given matrix <span class="math">\(\mathbf{A}^{-1}\)</span> is the inverse of another matrix <span class="math">\(\mathbf{A}\)</span>.</li>
+<li>Define invertible / non-invertible and singular / non-singular in the context of matrix inverses.</li>
+<li>Compute the inverse of the matrix <span class="math">\(\mathbf{X}^{T} \mathbf{X}\)</span> from a simple linear regression.</li>
+</ol>
+
+<p><strong>R</strong></p>
+
+<ol>
+<li>Use the function <code>matrix</code> from Base R to construct matrices and vectors.</li>
+<li>Use the function <code>string2matrix</code> from <code>MUsaic</code> to construct matrices and vectors.</li>
+<li>Recognize MATLAB syntax for constructing a matrix or vector.</li>
+<li>Perform matrix arithmetic using R, including matrix sums and differences, matrix-vector products, matrix-matrix products.</li>
+<li>Compute the inverse of a matrix using R.</li>
+</ol>
+
+<p><strong>Section 5.8: Random Vectors and Matrices</strong></p>
+
+<ol>
+<li>Explain how a random vector or random matrix is constructed from random variables.</li>
+<li>Define the expectation of a random vector, and compute the expectation of random vectors arising in simple linear regression.</li>
+<li>Compute inner and outer products between two vectors.</li>
+<li>Define the variance-covariance matrix of a random vector, and compute the variance-covariance matrices of random vectors arising in simple linear regression.</li>
+<li>Compute the expectation and variance-covariance matrix of a matrix-vector product <span class="math">\(\mathbf{A} \mathbf{Y}\)</span> where <span class="math">\(\mathbf{A}\)</span> is a constant matrix and <span class="math">\(\mathbf{Y}\)</span> is a random vector with mean <span class="math">\(\boldsymbol{\mu}_{\mathbf{Y}}\)</span> and variance-covariance matrix <span class="math">\(\boldsymbol{\Sigma}_{\mathbf{Y}}\)</span>.</li>
+</ol>
+
+<p><strong>Section 5.9: Simple Linear Regression Model in Matrix Terms</strong></p>
+
+<ol>
+<li>State the Simple Linear Regression model as a matrix-vector equation.</li>
+<li>State the assumptions of the Simple Linear Regression model using matrix-vector notation.</li>
+</ol>
+
+<p><strong>Section 5.10: Least Squares Estimation of Regression Parameters</strong></p>
+
+<ol>
+<li>Relate minimizing the quadratic function <span class="math">\(L(b) = (y - xb)^{2}\)</span> using scalar calculus to minimizing the quadratic form <span class="math">\(L(\mathbf{b}) = (\mathbf{y} - \mathbf{X} \mathbf{b})^{T} (\mathbf{y} - \mathbf{X} \mathbf{b})\)</span> using matrix calculus.</li>
+<li>State the least squares estimator <span class="math">\(\mathbf{b}\)</span> for a simple linear regression model via matrix algebra involving the design matrix <span class="math">\(\mathbf{X}\)</span> and the vector of responses <span class="math">\(\mathbf{Y}\)</span>.</li>
+</ol>
+
+<p><strong>Section 5.13: Inferences in Regression Analysis</strong></p>
+
+<ol>
+<li>Derive the mean and variance-covariance matrix of the least squares estimator <span class="math">\(\mathbf{b}\)</span> under the Simple Linear Regression model assumptions.</li>
+</ol>
+
+<h2>Chapter 6</h2>
+
+<p><strong>Exploratory Data Analysis with Multiple Predictors (Lecture Notes for Lecture 13)</strong></p>
+
+<ol>
+<li>Explain what a matrix plot is, and how a matrix plot can be used to investigate the relationship between multiple predictors and a response.</li>
+<li>Interpret a 3D scatter plot showing the relationship between two predictors and a response.</li>
+</ol>
+
+<p><strong>Section 6.1: Multiple Linear Regression</strong></p>
+
+<ol>
+<li>Describe the overall goal of multiple linear regression from the perspective of prediction.</li>
+<li>State the multiple linear regression model with <span class="math">\(p\)</span> predictors per-unit.</li>
+<li>State the multiple linear regression model with <span class="math">\(p\)</span> predictors in matrix-vector form.</li>
+<li>Construct a response vector, predictor vector, and design matrix given a particular multiple linear regression model.</li>
+<li>Describe what the multiple linear regression function corresponds to, geometrically, using two predictors.</li>
+<li>Describe what the multiple linear regression function corresponds to, geometrically, using more than two predictors.</li>
+<li>Interpret the coefficients from a multiple linear regression model <strong>in the context of a given problem</strong>.</li>
+<li>Explain why economists and other end-users of regression talk about regression coefficients in terms of <em>ceteris paribus</em> (Latin for &#8220;other things equal&#8221;) or &#8220;controlling&#8221; for the other predictors, and why this sort of thinking is fuzzy at-best and entirely fallacious at-worst.</li>
+<li><strong>Carefully</strong> distinguish between statements such as &#8220;the response increases by <span class="math">\(u\)</span> units for each unit increase in the predictor&#8221; (a causal statement) and &#8220;the <strong>prediction</strong> of the response increases by <span class="math">\(u\)</span> units for each unit increase in the predictor&#8221; (a predictive statement).</li>
+<li>Explain why the interpretation of the coefficients from a multiple linear regression <strong>depend on the predictors included in the model</strong>.</li>
+</ol>
+
+<p><strong>Section 6.3: Estimation of Regression Coefficients</strong></p>
+
+<ol>
+<li>State the objective function that is minimized to determine the ordinary least squares estimator <span class="math">\(\mathbf{b}\)</span> for a multiple linear regression model.</li>
+<li>State the form of the ordinary least squares estimator in terms of the design matrix <span class="math">\(\mathbf{X}\)</span> and response vector <span class="math">\(\mathbf{Y}\)</span>.</li>
+</ol>
+
+<p><strong>Section 6.4: Fitted Values and Residuals</strong></p>
+
+<ol>
+<li>Explain how to compute the fitted (predicted) values of the response using the design matrix <span class="math">\(\mathbf{X}\)</span> and coefficient vector <span class="math">\(\mathbf{b}\)</span>.</li>
+</ol>
+
+<p><strong>R</strong></p>
+
+<ol>
+<li>Plot a matrix plot from a data frame containing a response variable and multiple predictors using <code>pairs</code>.</li>
+<li>Plot a 3D scatter plot of a response variable against two predictor variables using <code>plot3d</code> in the <code>rgl</code> package.</li>
+<li>Fit a multiple linear regression from a data frame using <code>lm</code>.</li>
+<li>Interpret the output of <code>lm</code> when used to fit a multiple linear regression.</li>
+<li>Plot the plane-of-best fit from a multiple linear regression with two predictor variables using <code>planes3d</code> in the <code>rgl</code> package.</li>
+</ol>
+
+<p><strong>Section 6.1: Multiple Regression Models</strong></p>
+
+<ol>
+<li>State the assumptions of the multiple linear regression (MLR) model as a system of equations when the distribution of the noise term is unspecified beyond its mean and variance-covariance.</li>
+<li>State the assumptions of the multiple linear regression model as matrix-vector equation when the distribution of the noise term is unspecified beyond its mean and variance-covariance.</li>
+<li>Sketch a drawing of the main parts of the multiple linear regression model with two predictors, including:
+
+<ul>
+<li>The population regression plane.</li>
+<li>The expected value of the response.</li>
+<li>The observed value of the response.</li>
+<li>The error term.</li>
+</ul></li>
+<li>State the assumptions of the multiple linear regression with Gaussian noise (MLRGN) model.</li>
+</ol>
+
+<p><strong>Section 6.8: Diagnostics and Remedial Measures</strong></p>
+
+<ol>
+<li>Explain the rationale for using the statistical properties of the residuals from a fitted multiple linear regression model as a proxy for the population errors.</li>
+<li>State the relevant residual diagnostic plots to generate after fitting a multiple linear regression model.</li>
+<li>Relate each residual diagnostic plot from the previous learning objective to the associated assumption of the multiple linear regression with Gaussian noise (MLRGN) model.</li>
+<li>Given a residual diagnostic plot, determine whether the plot indicates a departure from the assumptions of MLRGN.</li>
+</ol>
+
+<p><strong>Properties of the Ordinary Least Squares Estimators Under MLR and MLRGN (Lecture Notes for Lecture 14)</strong></p>
+
+<ol>
+<li>State the point estimator we will use for the population coefficients <span class="math">\(\boldsymbol{\beta}\)</span>.</li>
+<li>State the point estimator we will use for the population noise variance <span class="math">\(\sigma_{\epsilon}^{2}\)</span>.</li>
+<li>State the mean and variance-covariance matrix of the ordinary least squares estimator <span class="math">\(\mathbf{b}\)</span> under the MLR model.</li>
+<li>State the variance of the coefficient estimator <span class="math">\(b_{j}\)</span> under the MLR model.</li>
+<li>Describe how the variance of the coefficient estimator for the coefficient parameter for the <em>j</em>-th predictor under the MLR model varies with:
+
+<ul>
+<li>The sample size.</li>
+<li>The population noise variance.</li>
+<li>The standard deviation of <span class="math">\(j\)</span>-th predictor.</li>
+<li>The correlation between the <span class="math">\(j\)</span>-th predictor and the other predictors used in the model.</li>
+</ul></li>
+<li>Define the multiple <span class="math">\(R^2\)</span> between a predictor variable and the other predictor variables in the model.</li>
+<li>Reason about what makes the multiple <span class="math">\(R^2\)</span> between a predictor variable and the other predictor variables in the model large (<span class="math">\(\approx 1\)</span>) or small (<span class="math">\(\approx 0\)</span>).</li>
+<li>State the sampling distribution of the coefficient estimators under the multiple linear regression with Gaussian noise (MLRGN) model.</li>
+<li>State the sampling distribution of the studentized coefficient estimators under the multiple linear regression with Gaussian noise (MLRGN) model.</li>
+</ol>
+
+<p><strong>R (Lecture Notes for Lecture 14)</strong></p>
+
+<ol>
+<li>Create residual diagnostic plots &#8220;by-hand&#8221; using functions from <code>ggformula</code>.</li>
+<li>Create residual diagnostic plots using <code>gf_residuals_versus_predictors</code> from the <code>MUsaic</code> package.</li>
+</ol>
+
+<p><strong>Section 6.6: Inferences about Regression Parameters</strong></p>
+
+<ol>
+<li>Construct a <span class="math">\(1 - \alpha\)</span> confidence interval for a regression coefficient <span class="math">\(\beta_{j}\)</span> under the MLRGN model.</li>
+<li>Perform a significance level <span class="math">\(\alpha\)</span> test for a regression coefficient <span class="math">\(\beta_{j}\)</span> under the MLRGN model.</li>
+</ol>
+
+<p><strong>Standardizing Regression Coefficients (Lecture Notes for Lecture 15)</strong></p>
+
+<ol>
+<li>State the regression function for a Multiple Linear Regression (MLR) with standardized predictor variables.</li>
+<li>State how the coefficients of a MLR with standardized predictor variables are related to the coefficients of a MLR with unstandardized predictor variables.</li>
+<li>Explain why coefficients of a MLR with standardized predictor variables are more comparable than coefficients from a MLR with unstandardized predictor variables.</li>
+<li>Interpet the coefficients of a MLR with standardized predictor variables in the context of a given problem.</li>
+<li>Standardize the predictor variables in a data frame using the <code>mutate_*</code> functions from the <code>dplyr</code> package.</li>
+</ol>
+
+<p><strong>Coefficient Plots (Lecture Notes for Lecture 15)</strong></p>
+
+<ol>
+<li>Interpret coefficient plots for a fitted multiple linear regression.</li>
+<li>Create coefficient plots using <code>plot.lm.coef</code> from the <code>confcurve</code> package.</li>
+</ol>
+
+<p><strong>What Makes a Coefficient Estimate &#8220;Significantly Different from 0&#8221;? (Lecture Notes for Lecture 15)</strong></p>
+
+<ol>
+<li>Recognize that estimates, not parameters, are statistically significant.</li>
+<li>State the null hypothesis used by R for the <span class="math">\(P\)</span>-values reported by <code>summary</code>.</li>
+<li>Never, ever (ever) make the mistake of saying / writing (/ thinking?):
+
+<ul>
+<li>&#8220;a significant coefficient estimate means the associated predictor is important for prediction&#8221;</li>
+<li>&#8220;a non-significant coefficient estimate means the associated predictor is unimportant for prediction&#8221;</li>
+</ul></li>
+<li>Reason about what makes a coefficient estimate significantly different from zero in terms of:
+
+<ul>
+<li>the model(s) and underlying population parameter</li>
+<li>the estimated noise variance</li>
+<li>the standard deviation of the predictor</li>
+<li>the correlation between the predictor and the other predictors in the model</li>
+</ul></li>
+<li>Explain why a coefficient estimate can be statistically significant with one set of predictors and non-significant with another set of predictors.</li>
+<li>Explain in what way a <span class="math">\(P\)</span>-value mixes together the size of a population coefficient and the precision with which that population coefficient has been estimated.</li>
+</ol>
+
+<p><strong>Confidence Curves for Population Coefficients Under the MLRGN Model (Lecture Notes for Lecture 15)</strong></p>
+
+<ol>
+<li>State how to construct a confidence curve for a population coefficient under the MLRGN Model.</li>
+<li>Interpret and use a confidence curve for a population coefficient under the MLRGN Model to do all the usual things:
+
+<ul>
+<li>Identify the point estimate</li>
+<li>Construct confidence intervals</li>
+<li>Perform two-sided hypothesis tests</li>
+</ul></li>
+</ol>
+
+<p><strong>Bootstrap Sampling for Multiple Linear Regression (Lecture Notes for Lecture 17)</strong></p>
+
+<ol>
+<li>Describe the Case Resampling Bootstrap in the context of Multiple Linear Regression.</li>
+<li>Use functions from <code>confcurve</code> to construct confidence curves, confidence intervals, and perform hypothesis testing for single coefficients for a Multiple Linear Regression model via bootstrapping.</li>
+</ol>
+
+<p><strong>The Problem of Multiple Comparisons (Lecture Notes for Lecture 17)</strong></p>
+
+<ol>
+<li>State the problem of multiple comparisons in the context constructing more than one confidence interval for population coefficients for a multiple linear regression model.</li>
+<li>Perform computations for a toy model of multiple comparisons where <span class="math">\(m\)</span> independent samples are used to construct confidence intervals for a collection of <span class="math">\(m\)</span> population parameters.</li>
+</ol>
+
+<p><strong>The Bonferroni Correction for Multiple Comparisons (Lecture Notes for Lecture 17)</strong></p>
+
+<ol>
+<li>State the Bonferroni correction for adjusting the confidence levels of individual confidence intervals to attain an overall coverage of at least <span class="math">\(1 - \alpha\)</span>.</li>
+<li>Construct Bonferroni corrected confidence curves, confidence intervals, and coefficient plots in R.</li>
+</ol>
+
+<p><strong>Confidence Ellipses for Multiple Comparisons (Lecture Notes for Lecture 17)</strong></p>
+
+<ol>
+<li>Define a confidence level <span class="math">\(c\)</span> confidence ellipse for two population parameters.</li>
+<li>Explain what the confidence level <span class="math">\(c\)</span> for a confidence ellipse <strong>means</strong>.</li>
+<li>Given a two or more confidence ellipses for the same population parameters constructed from the same sample and the confidence levels used to construct those confidence ellipses, match a confidence ellipse with its confidence level.</li>
+<li>Construct confidence ellipses for two coefficients at a time using <code>car::confidenceEllipse</code>.</li>
+</ol>
+
+<h2>Chapter 7</h2>
+
+<p><strong>Section 7.3: Summary of Tests Concerning Regression Coefficients</strong></p>
+
+<ol>
+<li>Explain why one might want to test if <strong>many regression coefficients at a time</strong> are equal to zero in the context of a larger model.</li>
+<li>State the null and alternative hypotheses for a given claim about more than one regression coefficient in the context of a larger model.</li>
+<li>State the test statistic used in a hypothesis test about more than one regression coefficient in the context of a larger model.</li>
+<li>Explain, qualitatively, why an <span class="math">\(F\)</span>-statistic, as used in Multiple Linear Regression, will be large when the null hypothesis is false.</li>
+<li>State the null and alternative hypotheses for an &#8220;overall <span class="math">\(F\)</span>-test&#8221; for a multiple linear regression.</li>
+</ol>
+
+<p><strong>Performing an <span class="math">\(F\)</span>-test in R (Lecture Notes for Lecture 17)</strong></p>
+
+<ol>
+<li>Interpret the output of <code>anova</code> for an <span class="math">\(F\)</span>-test.</li>
+<li>Perform an <span class="math">\(F\)</span>-test for a given claim about more than one regression coefficient in the context of a larger model using <code>anova</code>.</li>
+</ol>
+
+<p><strong>Common Misinterpretations of <span class="math">\(F\)</span>-tests (Lecture Notes for Lecture 17)</strong></p>
+
+<ol>
+<li>Give examples where non-significant overall <span class="math">\(F\)</span>-tests do not indicate that the predictors are not relevant to predicting the response.</li>
+<li>Give examples where significant overall <span class="math">\(F\)</span>-tests do not indicate that the MLRGN model is correct.</li>
+</ol>
+
+<h2>Chapter 8</h2>
+
+<p><strong>Section 8.2: Interaction Regression Models</strong></p>
+
+<ol>
+<li>State the definition of non-interaction between two or more variables in terms of an appropriate partial derivative.</li>
+<li>Construct a design matrix that would incorporate a simple product interaction into a multiple linear regression model.</li>
+<li>Interpret the coefficient on a product term of two quantitative predictors in a multiple linear regression.</li>
+<li>Explain why the &#8220;expected change in the response for a unit change in the predictor, holding all other predictors constant&#8221; interpretation of a coefficient no longer makes sense when an interaction term is included in a multiple linear regression.</li>
+<li>Fit a multiple linear regression model with interaction terms in R using <code>:</code> and <code>*</code>.</li>
+<li>Interpret the output of <code>lm</code> when used to fit a multiple linear regression model with an interaction term.</li>
+<li>Give examples of models with interactions where an estimated multiple linear regression (without the interaction term) and its coefficient estimates would be highly significant, but the model is clearly wrong.</li>
+</ol>
+
+<p><strong>Section 8.3: Qualitative Predictors</strong></p>
+
+<ol>
+<li>Give examples of predictors that are appropriately modeled as categorical rather than quantitative variables.</li>
+<li>Explain how to introduce a categorical predictor taking two categories into a multiple linear regression using an indicator (&#8220;dummy&#8221;) variable.</li>
+<li>Interpret the coefficient on an indicator variable for a binary categorical predictor.</li>
+<li>Interpret the intercept in a multiple linear regression with a single binary categorical predictor.</li>
+<li>Describe, geometrically, what the coefficient on an indicator variable does to the multiple linear regression surface.</li>
+<li>Explain how to introduce a categorical predictor taking more than two categories into a multiple linear regression using indicator variables.</li>
+<li>Interpret the coefficients on indicator variables for a &gt;binary categorical predictor.</li>
+<li>Interpret the intercept in a multiple linear regression with a single &gt;binary categorical predictor.</li>
+</ol>
+
+<p><strong>Fitting Regressions with Categorical Variables in R (Lecture Notes for Lecture 18)</strong></p>
+
+<ol>
+<li>Describe the data type used by R for categorical variables.</li>
+<li>Use <code>relevel</code> to set the baseline level of a factor.</li>
+<li>Fit a multiple linear regression with a categorical predictor in R, and interpet the resulting coefficients <strong>in the context of the problem</strong>.</li>
+<li>Given the design matrix for a multiple linear regression with a categorical predictor and knowledge of which category is treated as the baseline, identify the category of a given unit using the design matrix.</li>
+<li>Explain how analysis of variance (ANOVA) and analysis of covariance (ANCOVA) are related to multiple linear regression.</li>
+</ol>
+
+<p><strong>Section 8.5: Modeling Interactions Between Quantitative and Qualitative Predictors</strong></p>
+
+<ol>
+<li>Construct a multiple linear regression model with an interaction between two categorical predictors.</li>
+<li>Interpret the coefficients in a multiple linear regression model with an interaction between two categorical predictors.</li>
+<li>Construct a multiple linear regression model with an interaction between a categorical predictor and a quantitative predictor.</li>
+<li>Interpret the coefficients in a multiple linear regression model with an interaction between a categorical predictor and a quantitative predictor.</li>
+<li>Explain, geometrically, what an interaction between a categorical predictor and a quantitative predictor incorporates into a multiple linear regression model.</li>
+</ol>
