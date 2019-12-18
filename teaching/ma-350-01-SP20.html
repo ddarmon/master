@@ -1,0 +1,251 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<title>MA 350-01 Computation and Statistics (Spring 2020)</title>
+
+<a href="http://www.thirdorderscientist.org"><em>David Darmon</em></a>
+
+<h1>MA 350-01, Computation and Statistics</h1>
+
+<h2>Spring 2020</h2>
+
+
+<center>
+Monday and Thursday, 1:15 PM &mdash; 2:35 PM, Howard Hall 307
+</center>
+
+<P>Lorem ipsum.
+
+<h4>Prerequisites</h4>
+
+<P>MA 116 or MA 118 or MA 126, passed with a grade of C- or higher, and MA 151 or MA 220 or BE 251, passed with a grade of C- or higher.
+
+<h4>Professor</h4>
+
+<table>
+<tr><td>Dr. David Darmon</td> <td></td><td>ddarmon [at] monmouth.edu</td></tr>
+<tr><td></td><td></td><td>Howard Hall 241</td></tr>
+</table>
+
+<h2>Topics, Notes, Readings</h2>
+
+<P>This is currently a <em>tentative</em> listing of topics, in order.
+
+
+<dl>
+	<dt><em>Statistical models for bivariate data:</em> Statistical prediction: the predictor and the response. The line of best fit as a data-summary device. A statistical model as a story for how the data are generated. Where does the 'randomness' come from in the first place? Populations, super-populations, and no-populations.
+	<dt><em>Exploratory Data Analysis with R:</em>  Histograms, scatter plots, and smoothers.
+	<dt><em>Statistical models for simple linear regression:</em> The least-squares line. Interpreting the regression coefficients: slope and intercept. Viewing the data as a random sample from a population. The standard line: simple linear regression with Gaussian noise (SLRGN).
+	<dt><em>Checking assumptions before we infer:</em> Sample residuals. Residual plots from the sample residuals. Where the SLRGN model can go wrong, and what it looks like. Checking validity using out-of-sample performance. Transforming the predictor and response to handle common violations. 
+	<dt><em>Inferences for parameters of a simple linear regression:</em> Properties of the simple linear regression estimators under random sampling from a population, in general, and under the SLRGN model, in particular. Estimation and hypothesis testing under the SLRGN model. Confidence curves as summaries of all available information about regression parameters. Bootstrapping: when the data is a population of its own. Confidence intervals and \(P\)-values via bootstrapping. Confidence curves via bootstrapping.
+	<dt><em>Inferences for expected values of a simple linear regression:</em> Standard errors and confidence sets for the population line. Prediction intervals for a new measurement from the population.
+	<dt><em>Assessing the simple linear regression as a predictive model:</em> Predictive error. In-sample error. Out-of-sample error. Cross-validated error. Bootstrapping estimates of errors.
+	<dt><em>Multiple linear regression:</em> Like simple linear regression, but more. Predicting a response with more than one predictor. Least squares and the hyperplane-of-best-fit. Interpreting the regression coefficients. The dependence of population-level regression coefficients on the predictors included in the model.
+	<dt><em>Statistical models for multiple linear regression and model checking:</em> The multiple linear regression with Gaussian noise (MLRGN) model. Assumption checking for the MLRGN model. Common departures from the MLRGN model, and how they show up in the sample residuals.
+	<dt><em>Inferences for parameters of a multiple linear regression:</em> The sampling distribution of multiple linear regression coefficients under the MLRGN model. Confidence curves for the coefficients of a multiple linear regression via both the MLRGN model and bootstrapping. Adjusting for multiple comparisons. Testing one, more, or all coefficients in a multiple linear regression. Do you really care so much about that \(P\)-value?
+	<dt><em>Enhancements and adjustments to multiple linear regression:</em> Nonlinearity in predictor variables. Categorical predictors. Multicollinearity amongst predictors. Interactions between predictors. Influential points and outliers.
+	<dt><em>Model selection:</em> Choosing amongst a set of candidate models. Predictor variable selection as model selection. Theoretical and data-driven approaches to model selection. The perils of naive inference post-model selection.
+	<dt><em>Beyond Ordinary Least Squares:</em> Heteroskedasticity in the noise. Weighted least squares for handling heteroskedasticity. Nonparametric regression. Regression as a smoothing problem. Nearest neighbor and kernel regressions. Tuning parameters in nonparametric regression, and how to tune them.
+</dl>
+
+See the <a href = "#schedule">end of this page</a> for the current lecture schedule, subject to revision.  Homework and additional resources will be linked there, as available.
+
+<h2>Course Mechanics</h2>
+
+<h4>Office Hours</h4>
+
+<p>I will have office hours at the following four times each week:
+
+<center><table>
+    <tr><td>Tuesday, &nbsp;&nbsp;03:00&ndash;04:00 PM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
+    <tr><td>Thursday, 10:00&ndash;11:00 AM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
+    <tr><td>Thursday, 01:30&ndash;02:30 PM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
+    <tr><td>Friday, &nbsp;&nbsp;&nbsp;&nbsp;09:00&ndash;10:00 AM</td> <td>Howard Hall 241</td></tr>
+</table></center>
+
+<p>I have an open-door policy during those times: you can show up unannounced. If you cannot make the scheduled office hours, please e-mail me about making an appointment.
+
+<p>If you are struggling with the homework, having difficulty with the quizzes, or just want to chat, please visit me during my office hours. I am here to help.
+
+<h4>Grading Policy</h4> 
+
+Your final grade will be determined by the following weighting scheme:
+
+<dl>
+	<dd> 20% for quizzes
+	<dd> 20% for labs and homework problem sets
+	<dd> 30% for final project
+	<dd> 20% for comprehensive final exam
+	<dd> 10% coding journal
+</dl>
+
+I will use the standard 10-point breakdown to assign letter grades to numerical grades:
+<ul>
+	<li> \([90, 100] \to \text{A}\)
+	<li> \([80, 90) \,\,\, \to \text{B}\)
+	<li> \([70, 80) \,\,\, \to \text{C}\)
+	<li> \([60, 70) \,\,\, \to \text{D}\)
+	<li> \([0, 60) \,\,\,\,\,\, \to \text{F}\)
+</ul>
+with pluses and minuses assigned by dividing the intervals into thirds.
+
+<h4>Homework</h4>
+
+Homework will be assigned regularly, and listed in the <a href="#schedule">Schedule</a> section of this page.
+
+<h4>Labs</h4>
+
+<p>There will be (approximately) weekly labs.
+
+<h4>Class Participation</h4>
+
+I expect you to be fully engaged during each class, to ask questions when confused, and to attempt to answer questions when called on. During class, attempting to answer a question is more important than getting the correct answer.
+
+<h4>Attendance</h4>
+
+Required. If you expect to miss 2-3 sessions of the course, you should take the course during another semester.
+
+<h4>Examination Absences</h4>
+
+If you miss an examination your grade will be zero for that exam.  If you know you will be absent for an exam you must let me know at least one week in advance to schedule a make-up exam.
+
+<h4>Textbook</h4>
+
+<P>The <strong>required</strong> textbook is:
+<ul>
+<li>Norman Matloff. <em>The Art of R Programming: A Tour of Statistical Software Design</em> (No Starch Press, 2011).
+<li>J.D. Long and Paul Teetor. <em>R Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics</em>, 2nd edition (O'Reilly Media, 2019).
+</ul>
+
+<h4>Collaboration, Cheating, and Plagiarism</h4>
+
+All submitted work should be your own. You are welcome and encouraged to consult with others while working on an assignment, including other students in the class and tutors in the <a href="https://www.monmouth.edu/department-mathematics/math-learning-center/">Mathematics Learning Center</a>.  However, whenever you have had assistance with a problem, you must state so at the beginning of the problem solution.  Unless this mechanism is abused, there will be no reduction in credit for using and reporting such assistance.  This policy applies to both individual and group work. In group work, you only need to acknowledge help from outside the group. This policy does <b>not</b> apply to examinations.
+
+<h4>Statement on Special Accommodations</h4>
+
+Students with disabilities who need special accommodations for this class are encouraged to meet with me or the appropriate disability service provider on campus as soon as possible.  In order to receive accommodations, students must be registered with the appropriate disability service provider on campus as set forth in the student handbook and must follow the University procedure for self-disclosure, which is stated in the University <em>Guide to Services and Accommodations for Students with Disabilities</em>.  Students will not be afforded any special accommodations for academic work completed prior to the disclosure of the disability, nor will they be afforded any special accommodations prior to the completion of the documentation process with the appropriate disability office.
+
+<div id="R"><h2>R</h2></div>
+
+<P>We will use R regularly throughout the semester.
+
+<p>You can access R from any web accessible computer using <a href = "https://rstudio.cloud">RStudio Cloud</a>. You will need to create an account on RStudio Cloud from their <a href = "https://login.rstudio.cloud/register">Registration page</a>. I will send out a link via email for you to join a Space on RStudio Cloud for this course. Resources for homeworks, labs, etc., will be hosted on RStudio Cloud for easy access.
+	
+<p>You should also install R on your personal computer, if you have one. You can install R by following the instructions <a href="https://cran.rstudio.com/bin/windows/base/">for Windows here</a>, <a href="https://cran.rstudio.com/bin/macosx/">for macOS here</a>, or <a href="https://cran.rstudio.com/bin/linux/">for Linux here</a>. You will also want to install RStudio, and Integrated Development Environment for R, which you can find <a href="https://www.rstudio.com/products/rstudio/download/#download">here</a>.
+
+<div id="anki"><h2>Anki</h2></div>
+
+<P> You may use <a href = "https://ankiweb.net/about">Anki</a> for spaced retrieval practice throughout the semester. Anki is open-source, free (as in both <a href = "https://en.wikipedia.org/wiki/Gratis_versus_libre"><em>gratis</em> and <em>libre</em></a>) software. You can download Anki to your personal computer from <a href = "https://apps.ankiweb.net/#download">this link</a>. If you have ever used flashcards, then Anki should be fairly intuitive. If you would like more details you can find Anki's User Manual <a href = "https://apps.ankiweb.net/docs/manual.html">here</a>.
+
+<P> Anki decks will be provided after most classes covering the material that I expect you to know for homework assignments, labs, etc. You may also want to make your own Anki cards.
+
+<div id="schedule"><h2>Schedule</h2></div>
+
+<strong>Subject to revision</strong>.  Assignments and solutions will all be linked here, as they are available.  All readings are from the textbook by Kutner, Nachtsheim, and Neter unless otherwise noted.
+
+<dl>
+<dt>January 23, Lecture 1:
+	<dd><b>Topics: </b>Intro to course. Statistical Computing and Computational Statistics. R. Basic data types and data structures.
+	<dd><b>Sections: </b>
+
+<dt>January 27, Lecture 2:
+	<dd><b>Topics: </b>More advanced data structures: arrays, lists, and data frames.
+	<dd><b>Sections: </b>
+
+<dt>January 30, Lecture 3:
+	<dd><b>Topics: </b>Lab.
+	<dd><b>Sections: </b>
+
+<dt>February 3, Lecture 4:
+	<dd><b>Topics: </b>Conditional statements. Iteration.
+	<dd><b>Sections: </b>
+
+<dt>February 6, Lecture 5:
+	<dd><b>Topics: </b>Vectorization to avoid iteration. <tt>apply</tt>.
+	<dd><b>Sections: </b>
+
+<dt>February 10, Lecture 6:
+	<dd><b>Topics: </b>Text. Characters and Strings. Substrings. Splitting strings. Building strings. Counting strings.
+	<dd><b>Sections: </b>
+
+<dt>February 13, Lecture 7:
+	<dd><b>Topics: </b>Lab.
+	<dd><b>Sections: </b>
+
+<dt>February 17, Lecture 8:
+	<dd><b>Topics: </b>Functions. Writing functions.
+	<dd><b>Sections: </b>
+
+<dt>February 20, Lecture 9:
+	<dd><b>Topics: </b>More with functions.
+	<dd><b>Sections: </b>
+
+<dt>February 24, Lecture 10:
+	<dd><b>Topics: </b>Plotting in R. Base R Graphics. ggplot and ggformula. Exploratory data analysis with R.
+	<dd><b>Sections: </b>
+
+<dt>February 27, Lecture 11:
+	<dd><b>Topics: </b>Lab.
+	<dd><b>Sections: </b>
+
+<dt>March 2, Lecture 12:
+	<dd><b>Topics: </b>Using randomness for fun and profit. Randomness in nature. Pseudo-random number generators. Basic R functions for parametric distributions.
+	<dd><b>Sections: </b>
+
+<dt>March 5, Lecture 13:
+	<dd><b>Topics: </b>Summarizing data. The empirical distribution function. Density estimation. Numerical summaries. Sampling distributions of test statistics via simulation.
+	<dd><b>Sections: </b>
+
+<dt>March 9, Lecture 14:
+	<dd><b>Topics: </b>Summarizing data. Fitting models to data. Fitting distributions. <tt>fitdistr</tt> in the <tt>MASS</tt> package.
+	<dd><b>Sections: </b>
+
+<dt>March 12, Lecture 15:
+	<dd><b>Topics: </b>Lab.
+	<dd><b>Sections: </b>
+
+<dt>March 23, Lecture 16:
+	<dd><b>Topics: </b>Debugging and testing code. Interpreting an error message from R. When in doubt, internet. How to read a Stack Overflow (or similar) page. Debugging with <tt>cat</tt> and <tt>print</tt>.
+	<dd><b>Sections: </b>
+
+<dt>March 26, Lecture 17:
+	<dd><b>Topics: </b>Debugging with <tt>browser</tt>. Assertions to catch bugs. Unit testing.
+	<dd><b>Sections: </b> 
+
+<dt>March 30, Lecture 18:
+	<dd><b>Topics: </b>Version control and git. GitHub. Creating your very own R package.
+	<dd><b>Sections: </b>
+
+<dt>April 2, Lecture 19:
+	<dd><b>Topics: </b>Lab.
+	<dd><b>Sections: </b>
+
+<dt>April 6, Lecture 20:
+	<dd><b>Topics: </b>Simulation in place of thinking. Simulation to assess a statistical procedure. Equivalence testing. Simulating to assess the properties of the TOST test.
+	<dd><b>Sections: </b>
+
+<dt>April 9, Lecture 21:
+	<dd><b>Topics: </b>Simulation in the place of thinking. Simulation to assess the properties of a confidence interval. Asymptotic analysis makes an ass out of you and me: Fisher's confidence interval for a population correlation.
+	<dd><b>Sections: </b>
+
+<dt>April 13, Lecture 22:
+	<dd><b>Topics: </b>Bootstrapping as a special type of simulation. The parametric bootstrap. The nonparametric bootstrap. The <tt>boot</tt> package.
+	<dd><b>Sections: </b>
+
+<dt>April 16, Lecture 23:
+	<dd><b>Topics: </b>Lab.
+	<dd><b>Sections: </b>
+
+<dt>April 20, Lecture 24:
+	<dd><b>Topics: </b>The tidyverse Part I. Pipes. <tt>dplyr</tt>.
+	<dd><b>Sections: </b>
+
+<dt>April 23, Lecture 25:
+	<dd><b>Topics: </b>The tidyverse Part II. <tt>tidyr</tt>.
+	<dd><b>Sections: </b>
+
+<dt>April 27, Lecture 26:
+	<dd><b>Topics: </b>Have a class on numerical methods like quadrature, numerical derivatives, optimization, etc.?.
+	<dd><b>Sections: </b>
+</dl>
