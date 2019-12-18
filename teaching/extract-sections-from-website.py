@@ -1,5 +1,7 @@
-fname_prefix = 'ma-151-02-FA19'
+# fname_prefix = 'ma-151-02-FA19'
 # fname_prefix = 'ma-440-01-FA19'
+# fname_prefix = 'ma-115-02-SP20'
+fname_prefix = 'ma-220-02-SP20'
 
 
 with open('{}_for_rescheduling.txt'.format(fname_prefix), 'w') as wfile:

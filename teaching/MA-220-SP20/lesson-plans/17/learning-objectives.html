@@ -1,0 +1,36 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<p><strong>Section 8.1: Basic Properties of Confidence Intervals</strong></p>
+
+<ol>
+<li>Give the correct interpretation of the confidence level <span class="math">\(c\)</span> associated with an interval estimator, and explain what is wrong with some common <strong>mis</strong>interpretations of confidence intervals.</li>
+<li>Explain how the width of a confidence interval for the population mean of a Gaussian population with known standard deviation \(\sigma\) varies as you change:
+
+<ul>
+<li>the confidence level <span class="math">\(c\)</span>;</li>
+<li>the sample size <span class="math">\(n\)</span>; or</li>
+<li>the population standard deviation <span class="math">\(\sigma\)</span>.</li>
+</ul></li>
+<li>Construct confidence level <span class="math">\(c\)</span> confidence upper bounds and lower bounds for a population mean <span class="math">\(\mu\)</span> for a Gaussian population with both <strong>known</strong> and <strong>unknown</strong> population standard deviation <span class="math">\(\sigma\)</span>.</li>
+<li>Sketch confidence level <span class="math">\(c\)</span> upper bounds and lower bounds for a population mean <span class="math">\(\mu\)</span> for a Gaussian population with both <strong>known</strong> and <strong>unknown</strong> population standard deviation <span class="math">\(\sigma\)</span>.</li>
+<li>Relate the form of confidence upper / lower bounds for a population mean to the endpoints of the two-sided confidence interval for the same mean.</li>
+</ol>
+
+<p><strong>Section 8.2: Large Sample Confidence Intervals for a Population Mean and Proportion</strong></p>
+
+<ol>
+<li>Identify when a &#8216;word problem&#8217; asks for a confidence interval for a population proportion and/or a success probability from a binomial experiment.</li>
+<li>State the standardization of the success proportion <span class="math">\(\widehat{p}_{n} = X/n\)</span> used in constructing the Agresti-Coull confidence interval, and explain why this standardized variable approximately follows a standard Gaussian distribution.</li>
+<li>Use the <tt>binom.agresti.coull</tt> function in the R package <tt>binom</tt> to compute the Agresti-Coull confidence interval for a population proportion.</li>
+<li>State how the confidence level passed to <tt>binom.agresti.coull</tt> must be modified to use <tt>binom.agresti.coull</tt> to construct confidence upper / lower bounds.</li>
+<li>Sketch confidence level <span class="math">\(c\)</span> confidence intervals, confidence upper bounds, and confidence lower bounds for a population proportion based on the Agresti-Coull confidence interval.</li>
+<li>Distinguish between &#8216;word problems&#8217; that call for the use of:
+
+<ul>
+<li><span class="math">\(\bar{x}_{n} \pm z_{\alpha/2} \cdot \sigma / \sqrt{n}\)</span>;</li>
+<li><span class="math">\(\bar{x}_{n} \pm t_{\alpha/2, n-1} \cdot s / \sqrt{n}\)</span>;</li>
+<li>the Agresti-Coull confidence interval; or</li>
+<li>none of the above<br/>
+</li>
+</ul>or their upper / lower bound equivalents.</li>
+</ol>
