@@ -7,12 +7,11 @@
 
 <h2>Spring 2020</h2>
 
-
 <center>
 Monday and Thursday, 1:15 PM &mdash; 2:35 PM, Howard Hall 307
 </center>
 
-<P>Lorem ipsum.
+<P>The modern approach to statistics can broadly be broken into two distinct tasks: <em>algorithms</em> for computing statistical quantities (point estimates, confidence intervals, \(P\)-values, etc.) from data and <em>inferences</em> to be made from those quantities based on statistical models of how the data were generated. Until now in your statistical education, the focus has been on the <em>inferential</em> aspect of statistics. This class is a first course on the <em>algorithmic</em> side of statistics. You will learn the core concepts of programming &mdash; functions, objects, data structures, flow control, debugging, logical design, and abstraction &mdash; by writing code to implement these statistical algorithms. You will also learn how to use stochastic simulation to evaluate a statistical algorithm in terms of its inferential properties. Programming and programming languages are inherently social, so you will also learn the customs and conventions of the tribe of programmers who use R as well as best-practices for organizing and commenting your code.
 
 <h4>Prerequisites</h4>
 
@@ -31,7 +30,20 @@ Monday and Thursday, 1:15 PM &mdash; 2:35 PM, Howard Hall 307
 
 
 <dl>
-	<dt><em>Lorem:</em> ipsum.
+	<dt><em>Introduction to R:</em> The R console. Using R as a fancy calculator. The RStudio integrated development environment. R Markdown for literate programming.
+	<dt><em>Objects, the atoms of programming:</em> Objects and data types. Variables. Floats and integers. Booleans. Characters and strings.
+	<dt><em>Data structures:</em> Vectors for one-dimensional collections of the same data type. Arrays for multi-dimensional collections of the same data type. Lists for one-dimensional collections of different data types. Data frames for multi-dimensional collections of different data types.
+	<dt><em>Flow control:</em> If-Else and more complex conditional statements. Iteration. For loops and while loops. Vectorization to avoid iteration. <tt>*apply</tt> for vectorization with multi-dimensional objects.
+	<dt><em>Operating on text:</em> More on the character data type. Extracting substrings of a string. Splitting strings at delimiters. Building strings from a pattern. Counting strings.
+	<dt><em>Functions, the verbs of programming:</em> Using functions to collect together related commands. Functions as an input-output device. Arguments (inputs) and return values (outputs). Named arguments and defaults. Scope of variables in a function.
+	<dt><em>Plotting in R:</em> Use the eyes that Nature gave you! Base R graphics. <tt>ggplot</tt> and <tt>ggformula</tt>. Exploratory data analysis using <tt>mosaic</tt>.
+	<dt><em>Stochastic simulation:</em> Random numbers. Sources of randomness in nature. Pseudo-random numbers, and how to generate them. Pseudo-random number generators in R. The <tt>p*</tt>, <tt>d*</tt>, <tt>q*</tt>, and <tt>r*</tt> functions in R.
+	<dt><em>Summarizing data:</em> The empirical distribution function to summarize a univariate data set. Density estimation as a smoothed summary of a data set. Numerical summaries: mean, median, standard deviation, range, and much much more. Assessing the statistical properties of numerical summaries via stochastic simulation. Summarizing data through statistical models. Parameter estimation via maximum likelihood.
+	<dt><em>Debugging and testing code:</em> What is R trying to tell you with all that red text? Let me Google that for you: using the internet <em>wisely</em> for help. Debugging by brute-<tt>print</tt>. Debugging intelligently using <tt>browser</tt> in RStudio. Using assertions to catch bugs. Using unit testing to keep code bug-free.
+	<dt><em>Version control:</em> Allows click save. Version control systems. <tt>git</tt> and GitHub. Committing changes. Pushing and pulling commits. Using GitHub to create your own R package.
+	<dt><em>Statistical simulation:</em> Using simulation when the math is too hard. Why simulation can perform complicated computations as-if by magic. Simulation to assess the level and power of a hypothesis test, with an application to equivalence testing. Simulation to assess the coverage and expected width of a confidence interval, with an application to the population correlation coefficient.
+	<dt><em>Welcome to the <tt>tidyverse</tt>:</em> Hadley Whickham and the <tt>tidyverse</tt>. <tt>dplyr</tt> and the Split/Apply/Combine pattern for analyzing a structured data set. Tidy data and <tt>tidyr</tt>.
+	<dt><em>Numerical methods:</em> Root finding: determining where a function takes a value. Optimization: finding the peaks and valleys of a function. Quadrature: integrating under a curve. Symbolic differentiation: a computer is <b>really good</b> at Calculus I.
 </dl>
 
 See the <a href = "#schedule">end of this page</a> for the current lecture schedule, subject to revision.  Homework and additional resources will be linked there, as available.
@@ -124,11 +136,11 @@ Students with disabilities who need special accommodations for this class are en
 
 <div id="schedule"><h2>Schedule</h2></div>
 
-<strong>Subject to revision</strong>.  Assignments and solutions will all be linked here, as they are available.  All readings are from the textbook by Kutner, Nachtsheim, and Neter unless otherwise noted.
+<strong>Subject to revision</strong>.  Assignments and solutions will all be linked here, as they are available.
 
 <dl>
 <dt>January 23, Lecture 1:
-	<dd><b>Topics: </b>Intro to course. Statistical Computing and Computational Statistics. R. Basic data types and data structures.
+	<dd><b>Topics: </b>Intro to course. Statistical Computing and Computational Statistics. A (Brief) History of Statistical Computing. R. Basic data types and data structures.
 	<dd><b>Sections: </b>
 
 <dt>January 27, Lecture 2:
@@ -136,98 +148,98 @@ Students with disabilities who need special accommodations for this class are en
 	<dd><b>Sections: </b>
 
 <dt>January 30, Lecture 3:
-	<dd><b>Topics: </b>Lab.
+	<dd><b>Topics: </b>Lab 1.
 	<dd><b>Sections: </b>
 
 <dt>February 3, Lecture 4:
-	<dd><b>Topics: </b>Conditional statements. Iteration.
+	<dd><b>Topics: </b>Conditional statements. Iteration. Vectorization to avoid iteration. <tt>apply</tt>.
 	<dd><b>Sections: </b>
 
 <dt>February 6, Lecture 5:
-	<dd><b>Topics: </b>Vectorization to avoid iteration. <tt>apply</tt>.
-	<dd><b>Sections: </b>
-
-<dt>February 10, Lecture 6:
 	<dd><b>Topics: </b>Text. Characters and Strings. Substrings. Splitting strings. Building strings. Counting strings.
 	<dd><b>Sections: </b>
 
-<dt>February 13, Lecture 7:
-	<dd><b>Topics: </b>Lab.
+<dt>February 10, Lecture 6:
+	<dd><b>Topics: </b>Lab 2.
 	<dd><b>Sections: </b>
 
-<dt>February 17, Lecture 8:
+<dt>February 13, Lecture 7:
 	<dd><b>Topics: </b>Functions. Writing functions.
 	<dd><b>Sections: </b>
 
-<dt>February 20, Lecture 9:
+<dt>February 17, Lecture 8:
 	<dd><b>Topics: </b>More with functions.
 	<dd><b>Sections: </b>
 
+<dt>February 20, Lecture 9:
+	<dd><b>Topics: </b>Plotting in R. Base R Graphics. <tt>ggplot</tt> and <tt>ggformula</tt>. Exploratory data analysis with R using <tt>mosaic</tt>.
+	<dd><b>Sections: </b>
+
 <dt>February 24, Lecture 10:
-	<dd><b>Topics: </b>Plotting in R. Base R Graphics. ggplot and ggformula. Exploratory data analysis with R.
+	<dd><b>Topics: </b>Lab 3.
 	<dd><b>Sections: </b>
 
 <dt>February 27, Lecture 11:
-	<dd><b>Topics: </b>Lab.
+	<dd><b>Topics: </b>Using randomness for fun and profit. Randomness in nature. Pseudo-random number generators. Why generate pseudo-random numbers? They're the (H-)bomb. Basic R functions for parametric distributions.
 	<dd><b>Sections: </b>
 
 <dt>March 2, Lecture 12:
-	<dd><b>Topics: </b>Using randomness for fun and profit. Randomness in nature. Pseudo-random number generators. Basic R functions for parametric distributions.
-	<dd><b>Sections: </b>
-
-<dt>March 5, Lecture 13:
 	<dd><b>Topics: </b>Summarizing data. The empirical distribution function. Density estimation. Numerical summaries. Sampling distributions of test statistics via simulation.
 	<dd><b>Sections: </b>
 
-<dt>March 9, Lecture 14:
+<dt>March 5, Lecture 13:
 	<dd><b>Topics: </b>Summarizing data. Fitting models to data. Fitting distributions. <tt>fitdistr</tt> in the <tt>MASS</tt> package.
 	<dd><b>Sections: </b>
 
+<dt>March 9, Lecture 14:
+	<dd><b>Topics: </b>Lab 4.
+	<dd><b>Sections: </b>
+
 <dt>March 12, Lecture 15:
-	<dd><b>Topics: </b>Lab.
+	<dd><b>Topics: </b>Debugging and testing code. Interpreting an error message from R. When in doubt, internet. How to read a Stack Overflow (or similar) page. Debugging with <tt>cat</tt> and <tt>print</tt>. Debugging with <tt>browser</tt>.
 	<dd><b>Sections: </b>
 
 <dt>March 23, Lecture 16:
-	<dd><b>Topics: </b>Debugging and testing code. Interpreting an error message from R. When in doubt, internet. How to read a Stack Overflow (or similar) page. Debugging with <tt>cat</tt> and <tt>print</tt>.
+	<dd><b>Topics: </b>Assertions to catch bugs. Unit testing. Version control and git. GitHub. Interfacing GitHub with RStudio Cloud. Creating your very own R package.
 	<dd><b>Sections: </b>
 
 <dt>March 26, Lecture 17:
-	<dd><b>Topics: </b>Debugging with <tt>browser</tt>. Assertions to catch bugs. Unit testing.
-	<dd><b>Sections: </b> 
+	<dd><b>Topics: </b>Lab 5.
+	<dd><b>Sections: </b>
 
 <dt>March 30, Lecture 18:
-	<dd><b>Topics: </b>Version control and git. GitHub. Creating your very own R package.
-	<dd><b>Sections: </b>
-
-<dt>April 2, Lecture 19:
-	<dd><b>Topics: </b>Lab.
-	<dd><b>Sections: </b>
-
-<dt>April 6, Lecture 20:
 	<dd><b>Topics: </b>Simulation in place of thinking. Simulation to assess a statistical procedure. Equivalence testing. Simulating to assess the properties of the TOST test.
 	<dd><b>Sections: </b>
 
-<dt>April 9, Lecture 21:
+<dt>April 2, Lecture 19:
 	<dd><b>Topics: </b>Simulation in the place of thinking. Simulation to assess the properties of a confidence interval. Asymptotic analysis makes an ass out of you and me: Fisher's confidence interval for a population correlation.
 	<dd><b>Sections: </b>
 
-<dt>April 13, Lecture 22:
+<dt>April 6, Lecture 20:
 	<dd><b>Topics: </b>Bootstrapping as a special type of simulation. The parametric bootstrap. The nonparametric bootstrap. The <tt>boot</tt> package.
 	<dd><b>Sections: </b>
 
-<dt>April 16, Lecture 23:
-	<dd><b>Topics: </b>Lab.
+<dt>April 9, Lecture 21:
+	<dd><b>Topics: </b>Lab 6.
 	<dd><b>Sections: </b>
 
-<dt>April 20, Lecture 24:
+<dt>April 13, Lecture 22:
 	<dd><b>Topics: </b>The tidyverse Part I. Pipes. <tt>dplyr</tt>.
 	<dd><b>Sections: </b>
 
-<dt>April 23, Lecture 25:
+<dt>April 16, Lecture 23:
 	<dd><b>Topics: </b>The tidyverse Part II. <tt>tidyr</tt>.
 	<dd><b>Sections: </b>
 
+<dt>April 20, Lecture 24:
+	<dd><b>Topics: </b>Lab 7.
+	<dd><b>Sections: </b>
+
+<dt>April 23, Lecture 25:
+	<dd><b>Topics: </b>Numerical methods in R. Root finding. optimization. Numerical quadrature (i.e. integration). Symbolic differentiation.
+	<dd><b>Sections: </b>
+
 <dt>April 27, Lecture 26:
-	<dd><b>Topics: </b>Have a class on numerical methods like quadrature, numerical derivatives, optimization, etc.?.
+	<dd><b>Topics: </b>TBD.
 	<dd><b>Sections: </b>
 </dl>
