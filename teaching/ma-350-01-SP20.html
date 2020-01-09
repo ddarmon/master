@@ -31,15 +31,15 @@ Monday and Thursday, 1:15 PM &mdash; 2:35 PM, Howard Hall 307
 
 <dl>
 	<dt><em>Introduction to R:</em> The R console. Using R as a fancy calculator. The RStudio integrated development environment. R Markdown for literate programming.
-	<dt><em>Objects, the atoms of programming:</em> Objects and data types. Variables. Floats and integers. Booleans. Characters and strings.
+	<dt><em>Objects, the nouns of programming:</em> Objects and data types. Variables. Floats and integers. Booleans. Characters and strings.
 	<dt><em>Data structures:</em> Vectors for one-dimensional collections of the same data type. Arrays for multi-dimensional collections of the same data type. Lists for one-dimensional collections of different data types. Data frames for multi-dimensional collections of different data types.
 	<dt><em>Flow control:</em> If-Else and more complex conditional statements. Iteration. For loops and while loops. Vectorization to avoid iteration. <tt>*apply</tt> for vectorization with multi-dimensional objects.
 	<dt><em>Operating on text:</em> More on the character data type. Extracting substrings of a string. Splitting strings at delimiters. Building strings from a pattern. Counting strings.
-	<dt><em>Functions, the verbs of programming:</em> Using functions to collect together related commands. Functions as an input-output device. Arguments (inputs) and return values (outputs). Named arguments and defaults. Scope of variables in a function.
+	<dt><em>Functions, the verbs of programming:</em> Using functions to collect together related commands. Functions as input-output devices. Arguments (inputs) and return values (outputs). Named arguments and defaults. Scope of variables in a function.
 	<dt><em>Plotting in R:</em> Use the eyes that Nature gave you! Base R graphics. <tt>ggplot</tt> and <tt>ggformula</tt>. Exploratory data analysis using <tt>mosaic</tt>.
 	<dt><em>Stochastic simulation:</em> Random numbers. Sources of randomness in nature. Pseudo-random numbers, and how to generate them. Pseudo-random number generators in R. The <tt>p*</tt>, <tt>d*</tt>, <tt>q*</tt>, and <tt>r*</tt> functions in R.
-	<dt><em>Summarizing data:</em> The empirical distribution function to summarize a univariate data set. Density estimation as a smoothed summary of a data set. Numerical summaries: mean, median, standard deviation, range, and much much more. Assessing the statistical properties of numerical summaries via stochastic simulation. Summarizing data through statistical models. Parameter estimation via maximum likelihood.
-	<dt><em>Debugging and testing code:</em> What is R trying to tell you with all that red text? Let me Google that for you: using the internet <em>wisely</em> for help. Debugging by brute-<tt>print</tt>. Debugging intelligently using <tt>browser</tt> in RStudio. Using assertions to catch bugs. Using unit testing to keep code bug-free.
+	<dt><em>Summarizing data:</em> Using the empirical distribution function to summarize a univariate data set. Density estimation as a smoothed summary of a data set. Numerical summaries: mean, median, standard deviation, range, and much much more. Assessing the statistical properties of numerical summaries via stochastic simulation. Summarizing data through statistical models. Parameter estimation via maximum likelihood.
+	<dt><em>Debugging and testing code:</em> What is R trying to tell you with all that red text? Let me Google that for you: using the internet <em>wisely</em> for help with programming. Debugging by brute-<tt>print</tt>. Debugging intelligently using <tt>browser</tt> in RStudio. Using assertions to catch bugs. Using unit testing to keep code bug-free.
 	<dt><em>Version control:</em> Allows click save. Version control systems. <tt>git</tt> and GitHub. Committing changes. Pushing and pulling commits. Using GitHub to create your own R package.
 	<dt><em>Statistical simulation:</em> Using simulation when the math is too hard. Why simulation can perform complicated computations as-if by magic. Simulation to assess the level and power of a hypothesis test, with an application to equivalence testing. Simulation to assess the coverage and expected width of a confidence interval, with an application to the population correlation coefficient.
 	<dt><em>Welcome to the <tt>tidyverse</tt>:</em> Hadley Whickham and the <tt>tidyverse</tt>. <tt>dplyr</tt> and the Split/Apply/Combine pattern for analyzing a structured data set. Tidy data and <tt>tidyr</tt>.
@@ -73,11 +73,11 @@ See the <a href = "#schedule">end of this page</a> for the current lecture sched
 Your final grade will be determined by the following weighting scheme:
 
 <dl>
-	<dd> 20% for quizzes
-	<dd> 20% for labs and homework problem sets
-	<dd> 30% for final project
-	<dd> 20% for comprehensive final exam
-	<dd> 10% coding journal
+	<dd> 30% for homework problem sets
+	<dd> 10% for labs
+	<dd> 30% for quizzes
+	<dd> 20% for final project
+	<dd> 10% for programming journal
 </dl>
 
 I will use the standard 10-point breakdown to assign letter grades to numerical grades:
@@ -92,11 +92,31 @@ with pluses and minuses assigned by dividing the intervals into thirds.
 
 <h4>Homework</h4>
 
-Homework will be assigned regularly, and listed in the <a href="#schedule">Schedule</a> section of this page.
+<p>Homework will be assigned regularly, announced in class, and listed in the <a href="#schedule">Schedule</a> section of this page.
+
+<p>Each homework problem will be graded out of three points: one point for making an honest effort to complete the problem, one point for a technically-correct solution, and one point for clean, well-formatted, documented, and easily readable code.
+
+<p>You will have the opportunity to revise your homework within a week after it is returned and resubmit the new solution to earn back partial credit.
 
 <h4>Labs</h4>
 
-<p>There will be (approximately) weekly labs.
+<p>There will be (approximately) weekly labs. The labs will involve brief exercises related to the latest homework assignment. Attending labs is mandatory. If you miss a lab, your grade for that lab will be a 0.
+
+<p><em>Pair programming:</em> Labs will be completed in groups using "pair programming," a software development technique where programmers alternate between two roles: a <em>driver</em> who writes the code and an <em>observer</em> who reviews each line of code for correctness and strategizes ways to improve the code moving forward. For each lab, you will randomly be assigned to a partner and the role of either driver or observer. Halfway through the lab, you will switch roles with your partner.
+	
+<h4>Quizzes</h4>
+
+There will be a 20-minute quiz at the beginning of each lab session. Each quiz will contain problems related to the material covered in the readings and during the lectures for a given unit of material. If you miss a quiz, your grade will be a zero for that quiz. Your lowest two quiz grades of the semester will be dropped.
+
+<h4>Final Project</h4>
+
+There will be a month-long final project at the end of the course. You will be assigned into small groups, or, if you prefer, may work alone. You will select a project topic from a list provided by me in the beginning of April. You will write code, document it, write a report, and prepare a presentation on your work to present during the final exam period for this class.
+
+<h4>Programming Journal</h4>
+
+<p>Learning to program, like learning any new skill, can be frustrating. The computer will always do what you tell it do, which is not always what you want it to do, and determining how to bridge that gap is simultaneously the challenge and the reward of programming. Over the course of the semester, you will keep a <em>programming journal</em>, a document where you record your thoughts about your journey into programming, the struggles you have faced, and the challenges you have overcome. You will also use the programming journal to document common errors that you run into and how to solve them.
+
+<p>You should maintain your programming journal regularly, as you would a personal journal. Updates to your programming journal will be due on the first lecture following each lab.
 
 <h4>Class Participation</h4>
 
@@ -106,13 +126,9 @@ I expect you to be fully engaged during each class, to ask questions when confus
 
 Required. If you expect to miss 2-3 sessions of the course, you should take the course during another semester.
 
-<h4>Examination Absences</h4>
-
-If you miss an examination your grade will be zero for that exam.  If you know you will be absent for an exam you must let me know at least one week in advance to schedule a make-up exam.
-
 <h4>Textbook</h4>
 
-<P>The <strong>required</strong> textbook is:
+<P>The <strong>required</strong> textbooks are:
 <ul>
 <li>Norman Matloff. <em>The Art of R Programming: A Tour of Statistical Software Design</em> (No Starch Press, 2011).
 <li>J.D. Long and Paul Teetor. <em>R Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics</em>, 2nd edition (O'Reilly Media, 2019).
@@ -120,7 +136,7 @@ If you miss an examination your grade will be zero for that exam.  If you know y
 
 <h4>Collaboration, Cheating, and Plagiarism</h4>
 
-All submitted work should be your own. You are welcome and encouraged to consult with others while working on an assignment, including other students in the class and tutors in the <a href="https://www.monmouth.edu/department-mathematics/math-learning-center/">Mathematics Learning Center</a>.  However, whenever you have had assistance with a problem, you must state so at the beginning of the problem solution.  Unless this mechanism is abused, there will be no reduction in credit for using and reporting such assistance.  This policy applies to both individual and group work. In group work, you only need to acknowledge help from outside the group. This policy does <b>not</b> apply to examinations.
+All submitted work should be your own. You are welcome and encouraged to use the Internet and consult with others while working on an assignment.  However, whenever you have had assistance with a problem, you must state so at the beginning of the problem solution.  Unless this mechanism is abused, there will be no reduction in credit for using and reporting such assistance. This policy applies to both individual and group work. In group work, you only need to acknowledge help from outside the group.
 
 <h4>Statement on Special Accommodations</h4>
 
@@ -140,7 +156,7 @@ Students with disabilities who need special accommodations for this class are en
 
 <dl>
 <dt>January 23, Lecture 1:
-	<dd><b>Topics: </b>Intro to course. Statistical Computing and Computational Statistics. A (Brief) History of Statistical Computing. R. Basic data types and data structures.
+	<dd><b>Topics: </b>Intro to course. Statistical Computing and Computational Statistics. A (brief) history of statistical computing. R. Basic data types and data structures.
 	<dd><b>Sections: </b>
 
 <dt>January 27, Lecture 2:
