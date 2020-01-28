@@ -1,0 +1,72 @@
+---
+title: "Lab and Homework Formatting Instructions"
+subtitle: MA 350-01, Spring 2020
+date: 30 January 2020
+output: html_document
+---
+
+Your lab and homework submissions should be **well-formatted**, **well-written**, and **include comments** as-appropriate.
+
+**Markdown:** You should use Markdown to help organize your work. The markup characters `#`, `##`, `###`, etc., will generate headers, sub-headers, sub-sub-headers, etc., in the resulting HTMl file. You should use these to generate headers for your labs and homeworks, such as
+
+# Part I
+
+## Problem 1
+
+for the first problem in the first part of your lab.
+
+# Part II
+
+## Problem 4
+
+### Part a
+
+**Code Chunks:** All code that functions as a unit (for example, provides a solution to a single sub-problem in the lab) should be in its own code chunk:
+
+```{r}
+# All of the code to do Problem 4(a) should be here.
+
+```
+
+**Comments:** If you are doing something non-obvious in your code, you should include in-line comments explaining the purpose of parts of the code. What counts as "non-obvious" will depend on the programming and statistical background of the reader and will thus vary from person-to-person. For now, include comments liberally.
+
+*Example:* Don't worry if you don't completely understand what this code chunk is doing. Hopefully, if I have commented it well, you should be able to infer what each part is doing using what you learned in introductory statistics!
+
+```{r}
+# The following code computes a 1 - alpha confidence interval
+# for a population mean under a Gaussian population model with
+# the population standard deviation known:
+
+n     <- 5  # The sample size
+xbar  <- 5  # The sample mean
+sigma <- 10 # The population standard deviation
+
+c <- 0.95 # The confidence level
+alpha <- 1 - c # The area in both tails
+
+# The critical value that puts area alpha / 2 in the right
+# tail of a standard Gaussian density:
+
+z.crit <- qnorm(1 - alpha/2)
+
+# The margin of error for the sample mean
+
+E <- sigma/sqrt(n)
+
+# A confidence level c = 1 - alpha confidence interval
+# for the population mean:
+
+C <- xbar + c(-1, 1)*E
+C
+
+```
+
+# Part III
+
+## Problem 6
+
+### Part b
+
+**Explanations:** If a problem asks a question that requires a written response, you should write your response **in complete sentences** as plain text.
+
+**Math Expressions:** Ideally (though I will not grade you on this), you should use LaTeX to typeset mathematical expressions. For example, typing \(\lambda\) will typeset the lowercase Greek letter lambda, \(\sigma^{2}\) will typeset the lowercase Greek letter sigma raised to the second power, etc. See Section 16.11 of **R Cookbook** for more on LaTeX, or ask me if you want to know how to typeset a given mathematical expression.
