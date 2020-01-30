@@ -1,0 +1,48 @@
+---
+title: "Programming Journal"
+subtitle: "MA 350-01, Spring 2020"
+author: Your Name
+output: pdf_document
+---
+
+# Unit 1
+
+## 30 Jan 2020
+
+<!-- 
+
+NOTE: The following are **suggestions** for what you might write about. But you should make this programming journal **your own**, and write about whatever you 
+
+-->
+
+During the lab I [any observation could go here].
+
+During the lab, at first I was not sure how to do [problem], so I decided to [solution approach]. [Partner] recommended that we [other solution], which I had not thought of doing. After trying out [approaches], we finally [...].
+
+An error that I kept encountering was [error]. For example, in the code chunk below,
+
+```{r}
+
+set.seed(1)
+
+n <- 1000
+
+x <- rnorm(n)
+
+# x.mat = matrix(x) # Forgot the nrow argument
+
+x.mat = matrix(x, nrow = 10)
+
+```
+
+I forgot to include the argument to the `matrix` function.
+
+I was not sure how to use `apply`. Reading the documentation was confusing until I realized [realization]. Now I know that going forward, when I read documentation for R functions, I should [new appraoch].
+
+Overall, I found the lab very frustrating until I figured out all of the syntax for R. There are a lot of things in R that do not make sense to me, but I am interested to learn how I can use R to solve statistical problems, so I plan to keep working at getting R into my mind and fingers.
+
+\newpage <!-- This creates a new page in the PDF. You should create a new page for each Unit we cover, which is the material from the lectures, lab, and homework assignment.-->
+
+# Unit 2
+
+## dd MMM yyyy
