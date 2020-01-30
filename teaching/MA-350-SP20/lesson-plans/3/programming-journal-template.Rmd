@@ -11,7 +11,7 @@ output: pdf_document
 
 <!-- 
 
-NOTE: The following are **suggestions** for what you might write about. But you should make this programming journal **your own**, and write about whatever you 
+NOTE: The following are **suggestions** for what you might write about. But you should make this programming journal **your own**, and write about whatever you want related to learning to program or the course.
 
 -->
 
