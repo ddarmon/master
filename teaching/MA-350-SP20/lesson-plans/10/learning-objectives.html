@@ -1,0 +1,87 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h3 id="graphicsinr">Graphics in R</h3>
+
+<h4 id="plot"><code>plot()</code></h4>
+
+<ol>
+<li>Use <code>plot()</code> to generate scatter plots and line graphs from numeric vectors.</li>
+<li>Use the arguments of <code>plot()</code> to:
+
+<ul>
+<li>Set the main (title) text.</li>
+<li>Label the horizontal and vertical axes.</li>
+<li>Set the horizontal and vertical limits of the plot.</li>
+<li>Set the color of points / lines.</li>
+<li>Set the type and size of points.</li>
+<li>Set the type and line width of lines.</li>
+</ul></li>
+<li>Use the <code>mfrow</code> argument of <code>par()</code> to create a grid of plots.</li>
+<li>Save a PDF of a plot using <code>pdf()</code> in combination with <code>graphics.off()</code></li>
+</ol>
+
+<h4 id="pointslinesandabline"><code>points()</code>, <code>lines()</code>, and <code>abline()</code></h4>
+
+<ol>
+<li>Add a scatter plot or line graph to an existing plot using <code>points()</code> and <code>lines()</code>, respectively.</li>
+<li>Add horizontal and vertical lines to an existing plot using <code>abline</code>.</li>
+<li>Add a line with a given intercept and slope to an existing plot using <code>abline</code>.</li>
+<li>Construct a multi-layer graph using <code>plot()</code> in combination with <code>points()</code>, <code>lines()</code>, and <code>abline()</code>.</li>
+</ol>
+
+<h4 id="histanddensity"><code>hist</code> and <code>density</code></h4>
+
+<ol>
+<li>Create a histogram from a numeric vector using <code>hist()</code>.</li>
+<li>Use the arguments of <code>hist()</code> to:
+
+<ul>
+<li>Toggle between a frequency and density histogram.</li>
+<li>Set the placement of the bins for the histogram.</li>
+<li>Add a new histogram to an existing histogram.</li>
+</ul></li>
+<li>Compute and plot a kernel density estimate (more on this in a later lecture) using <code>density()</code>.</li>
+</ol>
+
+<h4 id="curveandrug"><code>curve</code> and <code>rug</code></h4>
+
+<ol>
+<li>Use <code>curve()</code> to plot the graph of an expression on a desired interval.</li>
+<li>Use <code>curve()</code> to add the plot of the graph of an expression to an existing plot.</li>
+<li>Add a rug plot to an existing plot using <code>rug()</code>.</li>
+</ol>
+
+<h4 id="colorpalettes">Color Palettes</h4>
+
+<ol>
+<li><strong>You do <em>not</em> need to memorize the function names for the different color palettes.</strong></li>
+<li>State the argument and return value for the functions for the different color palettes in R.</li>
+<li>Use <code>colorRampPalette()</code> to generate a custom color palette along a gradient of colors.</li>
+</ol>
+
+<h4 id="ggformula"><code>ggformula</code></h4>
+
+<ol>
+<li>Explain what the <code>gg</code> in <code>ggformula</code> stands for.</li>
+<li>Give the general grammar used by all plotting functions in <code>ggformula</code>.</li>
+<li>Use <code>ggformula</code> to generate:
+
+<ul>
+<li>histograms</li>
+<li>density plots</li>
+<li>boxplots</li>
+<li>rug plots</li>
+<li>scatter plots</li>
+</ul></li>
+<li>Use the pipe operator <code>%&gt;%</code> to add elements to a <code>ggformula</code> plot.</li>
+<li>Use the <code>|</code> operator to condition (&#8220;facet&#8221;) a graph on a categorical variable.</li>
+<li>Use <code>gf_lm</code> and <code>gf_smooth</code> to add a least-squares line / nonparametric smoother to a scatter plot.</li>
+</ol>
+
+<h3 id="packagesinr">Packages in R</h3>
+
+<ol>
+<li>Explain what an R package does.</li>
+<li>Install an R package from CRAN using <code>install.packages()</code>.</li>
+<li>Load an R package using <code>library()</code>.</li>
+</ol>
