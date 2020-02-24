@@ -1,0 +1,165 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h2 id="learningobjectivesforquiz1">Learning Objectives for Quiz 3</h2>
+
+<h3 id="functions">Functions</h3>
+
+<h4 id="whyusefunctions">Why Use Functions?</h4>
+
+<ol>
+<li>Explain how functions are analogous to data structures in terms of the &#8220;nouns&#8221; versus &#8220;verbs&#8221; of programming.</li>
+<li>Give situations when a block of code should be turned into a function.</li>
+</ol>
+
+<h4 id="functionsyntaxinr">Function Syntax in R</h4>
+
+<ol>
+<li>State the syntax for defining a function in R using <code>function()</code>.</li>
+<li>Given a block of code to turn into a function, produce a function using <code>function()</code>.</li>
+<li>State the names for the inputs and outputs of a function in R.</li>
+</ol>
+
+<h4 id="namedargumentsanddefaultvalues">Named Arguments and Default Values</h4>
+
+<ol>
+<li>Include named arguments in a function to pass desired inputs into the function.</li>
+<li>State and use the appropriate operator to bind a function argument when calling a function.</li>
+<li>Include named arguments with default values in a function.</li>
+<li>Call a function using named and unnamed arguments.</li>
+<li>Determine the output of a given function with named or unnamed arguments.</li>
+<li>Use <code>stopifnot()</code> to check function arguments for desired / necessary characteristics.</li>
+</ol>
+
+<h4 id="functionenvironmentsandinterfacingwithfunctions">Function Environments and Interfacing with Functions</h4>
+
+<ol>
+<li>Explain the difference between a <strong>global</strong> environment and <strong>local</strong> / <strong>internal</strong> environment in R.</li>
+<li>Describe the rules for how the interval environment of a function interfaces with the global environment.</li>
+<li>Given a block of code including a function definition, describe the values stored in the global and internal environments before, during, and after a function call.</li>
+<li>State the best-practices for interfacing with a function.</li>
+</ol>
+
+<h4 id="gradientsteepestdescent">Gradient / Steepest Descent</h4>
+
+<ol>
+<li>Explain how to find the minima / maxima of a smooth function of a single variable using calculus.</li>
+<li>Describe the procedure for using gradient descent to find the minima of a function, and relate this to the analogy of walking down a hill when you can only see one step ahead of you at any given time.</li>
+<li>Explain why gradient descent may not find the <strong>global</strong> minimum of a function when multiple minima exist, and relate this to the hill analogy.</li>
+<li>Explain the rationale for the stopping criteria for gradient descent.</li>
+<li>Implement gradient descent, or some portion of the gradient descent algorithm, as a function in R.</li>
+</ol>
+
+<h4 id="writingafamilyoffunctionsforrelatedtasks">Writing a Family of Functions for Related Tasks</h4>
+
+<ol>
+<li>Explain why you might want to write a collection of functions to perform tasks related to a single object.</li>
+<li>Describe good coding conventions for writing functions for:
+
+<ul>
+<li>the same <strong>kind of object</strong></li>
+<li>the same <strong>kind of task</strong></li>
+</ul></li>
+</ol>
+
+<h4 id="sourcingafile">Sourcing a File</h4>
+
+<ol>
+<li>Compare and contrast an R Markdown file and an R script.</li>
+<li>Create an R script in RStudio.</li>
+<li>Give the file suffix for R Markdown files and R scripts.</li>
+<li>Source functions from an R script using <code>source()</code>.</li>
+</ol>
+
+<h4 id="functiondocumentation">Function Documentation</h4>
+
+<ol>
+<li>Explain why you should <strong>always</strong> (yes, always) write documentation for a function you write.</li>
+<li>State the three things (at the very least) you should document when writing a function header.</li>
+<li>Use <a href="http://r-pkgs.had.co.nz/man.html">roxygen-style</a> formatting (that&#8217;s the <code>#'</code> stuff) to write header comments for a given function.</li>
+</ol>
+
+<h3 id="graphicsinr">Graphics in R</h3>
+
+<h4 id="plot"><code>plot()</code></h4>
+
+<ol>
+<li>Use <code>plot()</code> to generate scatter plots and line graphs from numeric vectors.</li>
+<li>Use the arguments of <code>plot()</code> to:
+
+<ul>
+<li>Set the main (title) text.</li>
+<li>Label the horizontal and vertical axes.</li>
+<li>Set the horizontal and vertical limits of the plot.</li>
+<li>Set the color of points / lines.</li>
+<li>Set the type and size of points.</li>
+<li>Set the type and line width of lines.</li>
+</ul></li>
+<li>Use the <code>mfrow</code> argument of <code>par()</code> to create a grid of plots.</li>
+<li>Save a PDF of a plot using <code>pdf()</code> in combination with <code>graphics.off()</code></li>
+</ol>
+
+<h4 id="pointslinesandabline"><code>points()</code>, <code>lines()</code>, and <code>abline()</code></h4>
+
+<ol>
+<li>Add a scatter plot or line graph to an existing plot using <code>points()</code> and <code>lines()</code>, respectively.</li>
+<li>Add horizontal and vertical lines to an existing plot using <code>abline</code>.</li>
+<li>Add a line with a given intercept and slope to an existing plot using <code>abline</code>.</li>
+<li>Construct a multi-layer graph using <code>plot()</code> in combination with <code>points()</code>, <code>lines()</code>, and <code>abline()</code>.</li>
+</ol>
+
+<h4 id="histanddensity"><code>hist</code> and <code>density</code></h4>
+
+<ol>
+<li>Create a histogram from a numeric vector using <code>hist()</code>.</li>
+<li>Use the arguments of <code>hist()</code> to:
+
+<ul>
+<li>Toggle between a frequency and density histogram.</li>
+<li>Set the placement of the bins for the histogram.</li>
+<li>Add a new histogram to an existing histogram.</li>
+</ul></li>
+<li>Compute and plot a kernel density estimate (more on this in a later lecture) using <code>density()</code>.</li>
+</ol>
+
+<h4 id="curveandrug"><code>curve</code> and <code>rug</code></h4>
+
+<ol>
+<li>Use <code>curve()</code> to plot the graph of an expression on a desired interval.</li>
+<li>Use <code>curve()</code> to add the plot of the graph of an expression to an existing plot.</li>
+<li>Add a rug plot to an existing plot using <code>rug()</code>.</li>
+</ol>
+
+<h4 id="colorpalettes">Color Palettes</h4>
+
+<ol>
+<li><strong>You do <em>not</em> need to memorize the function names for the different color palettes.</strong></li>
+<li>State the argument and return value for the functions for the different color palettes in R.</li>
+<li>Use <code>colorRampPalette()</code> to generate a custom color palette along a gradient of colors.</li>
+</ol>
+
+<h4 id="ggformula"><code>ggformula</code></h4>
+
+<ol>
+<li>Explain what the <code>gg</code> in <code>ggformula</code> stands for.</li>
+<li>Give the general grammar used by all plotting functions in <code>ggformula</code>.</li>
+<li>Use <code>ggformula</code> to generate:
+
+<ul>
+<li>histograms</li>
+<li>density plots</li>
+<li>boxplots</li>
+<li>rug plots</li>
+<li>scatter plots</li>
+</ul></li>
+<li>Use the pipe operator <code>%&gt;%</code> to add elements to a <code>ggformula</code> plot.</li>
+<li>Use the <code>|</code> operator to condition (&#8220;facet&#8221;) a graph on a categorical variable.</li>
+<li>Use <code>gf_lm</code> and <code>gf_smooth</code> to add a least-squares line / nonparametric smoother to a scatter plot.</li>
+</ol>
+
+<h3 id="packagesinr">Packages in R</h3>
+
+<ol>
+<li>Explain what an R package does.</li>
+<li>Install an R package from CRAN using <code>install.packages()</code>.</li>
+<li>Load an R package using <code>library()</code>.</li>
+</ol>
