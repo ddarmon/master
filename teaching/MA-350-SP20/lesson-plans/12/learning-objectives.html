@@ -1,0 +1,49 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h3 id="randomnumbergeneration">Random Number Generation</h3>
+
+<h4 id="extractingrandomnumbersfromnature">Extracting Random Numbers from Nature</h4>
+
+<ol>
+<li>State two natural sources of random numbers.</li>
+<li>State what devices are used to &#8220;extract&#8221; the random numbers from the two sources in the previous learning objective.</li>
+</ol>
+
+<h4 id="pseudorandomnumbergeneratorsprng">Pseudorandom Number Generators (PRNG)</h4>
+
+<ol>
+<li>Explain how pseudorandom numbers differ from truly random numbers.</li>
+</ol>
+
+<h4 id="linearcongruentialgenerators">Linear Congruential Generators</h4>
+
+<ol>
+<li>State the algorithm for generating pseudorandom numbers using a linear congruential generator (LCG).</li>
+<li>Given the modulus, multiplier, and increment for a LCG and a seed, generate variates from the LCG.</li>
+<li>Evaluate expressions <span class="math">\(a \operatorname{mod} m\)</span> involving the modulo operation by-hand.</li>
+<li>Compute expressions <span class="math">\(a \operatorname{mod} m\)</span> using R.</li>
+<li>State the possible values that a LCG with a given modulus could generate.</li>
+<li>Given iterates from a LCG with a relatively small period, identify the period of the LCG.</li>
+</ol>
+
+<h4 id="desirablepropertiesofvariatesfromaprng">Desirable Properties of Variates from a PRNG</h4>
+
+<ol>
+<li>State three desirable properties of iterates from a PRNG.</li>
+</ol>
+
+<h4 id="generatingnon-uniformvariatesfromuniformvariates">Generating Non-uniform Variates from Uniform Variates</h4>
+
+<ol>
+<li>Convert variates uniform on <span class="math">\(\{0, 1, 2, \ldots, m - 1\}\)</span> to variates approximately uniform on <span class="math">\((0, 1)\)</span>.</li>
+<li>Compute the quantile function of a given distribution using R.</li>
+<li>Given the quantile function <span class="math">\(q_{F_{X}}\)</span> of a distribution <span class="math">\(F_{X}\)</span> and variates uniform on <span class="math">\((0, 1)\)</span>, generate non-uniform variates following <span class="math">\(F_{X}\)</span>.</li>
+</ol>
+
+<h4 id="rsprngs">R&#8217;s PRNGs</h4>
+
+<ol>
+<li>Use R to generate pseudorandom numbers following a given distribution.</li>
+<li>Set the seed of the PRNG in R, and explain what setting the seed does.</li>
+<li>Explain why it may or may not be appropriate to set the seed in R.</li>
+</ol>
