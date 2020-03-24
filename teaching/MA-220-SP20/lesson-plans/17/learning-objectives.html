@@ -20,16 +20,15 @@
 
 <ol>
 <li>Identify when a &#8216;word problem&#8217; asks for a confidence interval for a population proportion and/or a success probability from a binomial experiment.</li>
-<li>State the standardization of the success proportion <span class="math">\(\widehat{p}_{n} = X/n\)</span> used in constructing the Agresti-Coull confidence interval, and explain why this standardized variable approximately follows a standard Gaussian distribution.</li>
-<li>Use the <tt>binom.agresti.coull</tt> function in the R package <tt>binom</tt> to compute the Agresti-Coull confidence interval for a population proportion.</li>
-<li>State how the confidence level passed to <tt>binom.agresti.coull</tt> must be modified to use <tt>binom.agresti.coull</tt> to construct confidence upper / lower bounds.</li>
-<li>Sketch confidence level <span class="math">\(c\)</span> confidence intervals, confidence upper bounds, and confidence lower bounds for a population proportion based on the Agresti-Coull confidence interval.</li>
+<li>State the standardization of the success proportion <span class="math">\(\widehat{p}_{n} = X/n\)</span> used in constructing Wilson's confidence interval, and explain why this standardized variable approximately follows a standard Gaussian distribution.</li>
+<li>Use the <tt>binom.test()</tt> function to compute Wilson's confidence interval for a population proportion.</li>
+<li>Sketch confidence level <span class="math">\(c\)</span> confidence intervals, confidence upper bounds, and confidence lower bounds for a population proportion based on Wilson's confidence interval.</li>
 <li>Distinguish between &#8216;word problems&#8217; that call for the use of:
 
 <ul>
 <li><span class="math">\(\bar{x}_{n} \pm z_{\alpha/2} \cdot \sigma / \sqrt{n}\)</span>;</li>
 <li><span class="math">\(\bar{x}_{n} \pm t_{\alpha/2, n-1} \cdot s / \sqrt{n}\)</span>;</li>
-<li>the Agresti-Coull confidence interval; or</li>
+<li>Wilson's confidence interval; or</li>
 <li>none of the above<br/>
 </li>
 </ul>or their upper / lower bound equivalents.</li>
