@@ -3,7 +3,8 @@
 # fname_prefix = 'ma-151-02-FA19'
 # fname_prefix = 'ma-440-01-FA19'
 # fname_prefix = 'ma-115-02-SP20'
-fname_prefix = 'ma-220-02-SP20'
+# fname_prefix = 'ma-220-02-SP20'
+fname_prefix = 'ma-350-01-SP20'
 
 
 with open('{}_for_rescheduling.txt'.format(fname_prefix), 'w') as wfile:
@@ -38,10 +39,15 @@ with open('{}_for_rescheduling.txt'.format(fname_prefix), 'w') as wfile:
 
 			line = ofile.readline()
 
-			sections = line.split('<dd><b>Sections: </b>')[1]
+			if "Sections" in line:
+				sections = line.split('<dd><b>Sections: </b>')[1]
 
-			sections_for_file = ' ! '.join(sections.strip().split(', '))
+				sections_for_file = ' ! '.join(sections.strip().split(', '))
 
-			print()
+				print()
 
-			wfile.write('{}\t{}\t{}\n'.format(day_ind, topics_for_file, sections_for_file))
+				wfile.write('{}\t{}\t{}\n'.format(day_ind, topics_for_file, sections_for_file))
+			else:
+				print()
+
+				wfile.write('{}\t{}\t\n'.format(day_ind, topics_for_file))
