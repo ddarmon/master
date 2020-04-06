@@ -1,0 +1,49 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h3 id="inferentialstatistics">Inferential Statistics</h3>
+
+<ol>
+<li>State the three main tasks of inferential statistics.</li>
+<li>State the three procedures used to perform the three main tasks of inferential statistics.</li>
+<li>Explain why the outcomes of inferential procedures are themselves random.</li>
+<li>Explain what it means for an inferential procedure to have desirable frequency properties.</li>
+</ol>
+
+<h3 id="simulation">Simulation</h3>
+
+<h4 id="bigpicture">Big Picture</h4>
+
+<ol>
+<li>Explain the analogy between <span class="math">\(X_{1}, X_{2}, \ldots, X_{n} \stackrel{\text{iid}}{\sim} D\)</span> (in math) and <code>Xs &lt;- rD(n)</code> (in R).</li>
+</ol>
+
+<h4 id="samplingdistributionsviasimulation">Sampling Distributions via Simulation</h4>
+
+<ol>
+<li>Given a population distribution and a sample statistic that can be calculated using R, construct a single realization of the sample statistic in R.</li>
+<li>Use <code>replicate()</code> to repeatedly generate a random sample and calculate an associated sample statistic.</li>
+<li>Compare the empirical sampling distribution from simulation to a known sampling distribution from theory.</li>
+</ol>
+
+<h4 id="fishersconfidenceintervalforrho">Fisher&#8217;s Confidence Interval for <span class="math">\(\rho\)</span></h4>
+
+<ol>
+<li>State Fisher&#8217;s confidence interval for the population correlation <span class="math">\(\rho\)</span> of a bivariate Gaussian based on his <span class="math">\(Z\)</span>-transformation of the sample correlation <span class="math">\(R\)</span>.</li>
+<li>Compute the hyperbolic functions <span class="math">\(\sinh x\)</span>, <span class="math">\(\cosh x\)</span>, and <span class="math">\(\tanh x\)</span> and their inverses using R.</li>
+<li>Compute Fisher&#8217;s confidence interval in R from two vectors <code>x</code> and <code>y</code> both:
+
+<ul>
+<li>directly from the formulas</li>
+<li>using <code>cor.test()</code></li>
+</ul></li>
+</ol>
+
+<h4 id="coverageofconfidenceintervalsviasimulation">Coverage of Confidence Intervals via Simulation</h4>
+
+<ol>
+<li>Given a population distribution and an interval estimator that can be calculated using R, construct a single realization of the interval estimator, i.e. a confidence interval.</li>
+<li>Use <code>replicate()</code> to repeatedly generate a random sample and calculate an associated confidence interval.</li>
+<li>Check the coverage of confidence intervals returned by <code>replicate()</code> when given the true value of a population parameter.</li>
+<li>Explain why the number of confidence intervals in a simulation that cover the true value follows a binomial distribution.</li>
+<li>Use <code>prop.test()</code> to construct an interval estimate for the true coverage of a confidence interval using simulation.</li>
+</ol>
