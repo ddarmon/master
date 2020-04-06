@@ -1,0 +1,51 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h2 id="learningobjectivesforquiz1">Learning Objectives for Quiz 6</h2>
+
+<h3 id="numericalmethodsinr">Numerical Methods in R</h3>
+
+<h4 id="rootfinding">Root Finding</h4>
+
+<ol>
+<li>Define a root of a function <span class="math">\(f\)</span>.</li>
+<li>Explain why we might need to find roots of a function <span class="math">\(f\)</span> numerically, rather than algebraically.</li>
+<li>Give an example of a function where we cannot, in general, find its roots algebraically.</li>
+<li>Use <code>uniroot()</code> to find a root of function <span class="math">\(f\)</span>.</li>
+<li>State the special case of the intermediate value theorem involving roots, and sketch a picture of why the intermediate value must be true under the hypotheses of the intermediate value theorem.</li>
+<li>Give a (rough) description of how the Bisection Method finds a root of a function.</li>
+<li>Use <code>uniroot()</code> to find where a function <span class="math">\(f\)</span> takes a <strong>non-zero</strong> value.</li>
+<li>Use <code>uniroot()</code> to find the quantiles of a continuous random variable <span class="math">\(X\)</span> given its cumulative distribution function <span class="math">\(F\)</span>.</li>
+</ol>
+
+<h4 id="optimization">Optimization</h4>
+
+<ol>
+<li>Explain why statisticians care about optimization.</li>
+<li>State the 3 main methods in Base R used for numerical optimization.</li>
+<li>Use <code>optimize()</code> to find local minima and / or maxima of a function <span class="math">\(f\)</span> of a scalar variable <span class="math">\(x\)</span>.</li>
+<li>Give a (rough) description of how successive parabolic interpolation can be used to find local optima of a function <span class="math">\(f\)</span>.</li>
+<li>Use <code>Vectorize()</code> to vectorize a function in terms of one or more of its arguments.</li>
+<li>Use <code>curve()</code> to find a reasonable starting value for the <code>interval</code> argument of <code>optimize()</code>.</li>
+</ol>
+
+<h4 id="numericalquadrature">Numerical Quadrature</h4>
+
+<ol>
+<li>Define numerical quadrature.</li>
+<li>Explain why one might need to use numerical quadrature rather than use an indefinite integral and the Fundamental Theorem of Calculus to find the area under a curve.</li>
+<li>Use <code>integrate()</code> to evaluate a definite integral.
+
+<ul>
+<li>Both <strong>proper</strong> and <strong>improper</strong> definite integrals.</li>
+</ul></li>
+<li>Find the cumulative distribution function <span class="math">\(F\)</span> of a continuous random variable <span class="math">\(X\)</span> using its probability density function <span class="math">\(f\)</span> and <code>integrate()</code>.</li>
+</ol>
+
+<h4 id="symbolicdifferentiationwiththederivpackage">Symbolic Differentiation with the <code>Deriv</code> Package</h4>
+
+<ol>
+<li>Define a symbolic derivative.</li>
+<li>Use <code>Deriv()</code> to compute the symbolic derivative of a function <span class="math">\(f\)</span> up to some order.</li>
+<li>Define the <span class="math">\(r\)</span>-th moment of a random variable <span class="math">\(X\)</span>.</li>
+<li>Use a given moment generating function <span class="math">\(M_{X}(t)\)</span> of a random variable <span class="math">\(X\)</span> to find its <span class="math">\(r\)</span>-th moment using <code>Deriv()</code>.</li>
+</ol>
