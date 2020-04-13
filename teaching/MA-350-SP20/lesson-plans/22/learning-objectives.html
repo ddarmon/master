@@ -1,0 +1,55 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h3 id="hypothesistests">Hypothesis Tests</h3>
+
+<ol>
+<li>You are expected to know all of the intro stats-level material about hypothesis testing, including but not limited to:
+
+<ul>
+<li>setting up the null and alternative hypotheses for a claim</li>
+<li>under a given pair of hypotheses, stating the meaning of a Type I or Type II Error</li>
+<li>defining the Type I and Type II Error Rates of a test</li>
+<li>defining the power of a test</li>
+<li>performing a given hypothesis test using:
+
+<ol>
+<li>a rejection region</li>
+<li>a confidence interval</li>
+<li>a <span class="math">\(P\)</span>-value</li>
+</ol></li>
+</ul></li>
+<li>Define the size of a hypothesis test.</li>
+<li>Explain what it means for a hypothesis test to have (significance) level <span class="math">\(\alpha\)</span>.</li>
+</ol>
+
+<h3 id="nonparametrichypothesistests">Nonparametric Hypothesis Tests</h3>
+
+<ol>
+<li>Explain what it means for a distribution to be parametric.</li>
+<li>Give examples of parametric distributions and state their parameters.</li>
+<li>Explain the advantages of a nonparametric hypothesis test compared to a parametric hypothesis test.</li>
+</ol>
+
+<h4 id="theone-samplesigntest">The One-sample Sign Test</h4>
+
+<ol>
+<li>State the null and alternative hypotheses for the one-sample sign test.</li>
+<li>State the test statistic for the one-sample sign test and its sampling distribution under the null hypothesis.</li>
+<li>Give the rationale for the test statistic for the one-sample sign test.</li>
+<li>Perform a one-sample sign test using <code>SignTest()</code> from the <code>DescTools</code> package.</li>
+<li>Explain why there are a discrete set of <span class="math">\(P\)</span>-values for the one-sample sign test.</li>
+<li>Describe the general shape of the sampling distribution of <span class="math">\(P\)</span>-values for a one-sample sign test when the null hypothesis is true.</li>
+</ol>
+
+<h3 id="simulation">Simulation</h3>
+
+<h4 id="statisticalcharacteristicsofhypothesistests">Statistical Characteristics of Hypothesis Tests</h4>
+
+<ol>
+<li>Given a population distribution and its mean, simulate a one-sample <span class="math">\(t\)</span>-test from that population under the null or alternative hypothesis using <code>t.test()</code>.</li>
+<li>Given a population distribution and its median, simulate a one-sample sign test from that population under the null or alternative hypothesis using <code>SignTest()</code> from the <code>DescTools</code> package.</li>
+<li>Use <code>replicate()</code> to simulate many <span class="math">\(P\)</span>-values for a one-sample <span class="math">\(t\)</span>-test or sign test under the null or alternative hypotheses.</li>
+<li>Use <code>ecdf()</code> to approximate either the Type I Error Rate or Power of a hypothesis test from the simulated <span class="math">\(P\)</span>-values.</li>
+<li>Explain what the sampling distribution of <span class="math">\(P\)</span>-values should look like under a point null hypothesis <span class="math">\(H_{0} : \theta = \theta_{0}\)</span> when the null hypothesis is <strong>true</strong>.</li>
+<li>Explain what the sampling distribution of <span class="math">\(P\)</span>-values should look like under a point null hypothesis <span class="math">\(H_{0} : \theta = \theta_{0}\)</span> when the null hypothesis is <strong>false</strong>.</li>
+</ol>
