@@ -1,0 +1,137 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h2 id="learningobjectivesforquiz1">Learning Objectives for Quiz 7</h2>
+
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h3 id="inferentialstatistics">Inferential Statistics</h3>
+
+<ol>
+<li>State the three main tasks of inferential statistics.</li>
+<li>State the three procedures used to perform the three main tasks of inferential statistics.</li>
+<li>Explain why the outcomes of inferential procedures are themselves random.</li>
+<li>Explain what it means for an inferential procedure to have desirable frequency properties.</li>
+</ol>
+
+<h4 id="fishersconfidenceintervalforrho">Fisher&#8217;s Confidence Interval for <span class="math">\(\rho\)</span></h4>
+
+<ol>
+<li>State Fisher&#8217;s confidence interval for the population correlation <span class="math">\(\rho\)</span> of a bivariate Gaussian based on his <span class="math">\(Z\)</span>-transformation of the sample correlation <span class="math">\(R\)</span>.</li>
+<li>Compute the hyperbolic functions <span class="math">\(\sinh x\)</span>, <span class="math">\(\cosh x\)</span>, and <span class="math">\(\tanh x\)</span> and their inverses using R.</li>
+<li>Compute Fisher&#8217;s confidence interval in R from two vectors <code>x</code> and <code>y</code> both:
+
+<ul>
+<li>directly from the formulas</li>
+<li>using <code>cor.test()</code></li>
+</ul></li>
+</ol>
+
+<h4 id="hypothesistests">Hypothesis Tests</h4>
+
+<ol>
+<li>You are expected to know all of the intro stats-level material about hypothesis testing, including but not limited to:
+
+<ul>
+<li>setting up the null and alternative hypotheses for a claim</li>
+<li>under a given pair of hypotheses, stating the meaning of a Type I or Type II Error</li>
+<li>defining the Type I and Type II Error Rates of a test</li>
+<li>defining the power of a test</li>
+<li>performing a given hypothesis test using:
+
+<ol>
+<li>a rejection region</li>
+<li>a confidence interval</li>
+<li>a <span class="math">\(P\)</span>-value</li>
+</ol></li>
+</ul></li>
+<li>Define the size of a hypothesis test.</li>
+<li>Explain what it means for a hypothesis test to have (significance) level <span class="math">\(\alpha\)</span>.</li>
+</ol>
+
+<h4 id="nonparametrichypothesistests">Nonparametric Hypothesis Tests</h4>
+
+<ol>
+<li>Explain what it means for a distribution to be parametric.</li>
+<li>Give examples of parametric distributions and state their parameters.</li>
+<li>Explain the advantages of a nonparametric hypothesis test compared to a parametric hypothesis test.</li>
+</ol>
+
+<h4 id="theone-samplesigntest">The One-sample Sign Test</h4>
+
+<ol>
+<li>State the null and alternative hypotheses for the one-sample sign test.</li>
+<li>State the test statistic for the one-sample sign test and its sampling distribution under the null hypothesis.</li>
+<li>Give the rationale for the test statistic for the one-sample sign test.</li>
+<li>Perform a one-sample sign test using <code>SignTest()</code> from the <code>DescTools</code> package.</li>
+<li>Explain why there are a discrete set of <span class="math">\(P\)</span>-values for the one-sample sign test.</li>
+<li>Describe the general shape of the sampling distribution of <span class="math">\(P\)</span>-values for a one-sample sign test when the null hypothesis is true.</li>
+</ol>
+
+<h3 id="simulation">Simulation</h3>
+
+<h4 id="bigpicture">Big Picture</h4>
+
+<ol>
+<li>Explain the analogy between <span class="math">\(X_{1}, X_{2}, \ldots, X_{n} \stackrel{\text{iid}}{\sim} D\)</span> (in math) and <code>Xs &lt;- rD(n)</code> (in R).</li>
+</ol>
+
+<h4 id="samplingdistributionsviasimulation">Sampling Distributions via Simulation</h4>
+
+<ol>
+<li>Given a population distribution and a sample statistic that can be calculated using R, construct a single realization of the sample statistic in R.</li>
+<li>Use <code>replicate()</code> to repeatedly generate a random sample and calculate an associated sample statistic.</li>
+<li>Compare the empirical sampling distribution from simulation to a known sampling distribution from theory.</li>
+</ol>
+
+<h4 id="coverageofconfidenceintervalsviasimulation">Coverage of Confidence Intervals via Simulation</h4>
+
+<ol>
+<li>Given a population distribution and an interval estimator that can be calculated using R, construct a single realization of the interval estimator, i.e. a confidence interval.</li>
+<li>Use <code>replicate()</code> to repeatedly generate a random sample and calculate an associated confidence interval.</li>
+<li>Check the coverage of confidence intervals returned by <code>replicate()</code> when given the true value of a population parameter.</li>
+<li>Explain why the number of confidence intervals in a simulation that cover the true value follows a binomial distribution.</li>
+<li>Use <code>prop.test()</code> to construct an interval estimate for the true coverage of a confidence interval using simulation.</li>
+</ol>
+
+<h4 id="statisticalcharacteristicsofhypothesistests">Statistical Characteristics of Hypothesis Tests</h4>
+
+<ol>
+<li>Given a population distribution and its mean, simulate a one-sample <span class="math">\(t\)</span>-test from that population under the null or alternative hypothesis using <code>t.test()</code>.</li>
+<li>Given a population distribution and its median, simulate a one-sample sign test from that population under the null or alternative hypothesis using <code>SignTest()</code> from the <code>DescTools</code> package.</li>
+<li>Use <code>replicate()</code> to simulate many <span class="math">\(P\)</span>-values for a one-sample <span class="math">\(t\)</span>-test or sign test under the null or alternative hypotheses.</li>
+<li>Use <code>ecdf()</code> to approximate either the Type I Error Rate or Power of a hypothesis test from the simulated <span class="math">\(P\)</span>-values.</li>
+<li>Explain what the sampling distribution of <span class="math">\(P\)</span>-values should look like under a point null hypothesis <span class="math">\(H_{0} : \theta = \theta_{0}\)</span> when the null hypothesis is <strong>true</strong>.</li>
+<li>Explain what the sampling distribution of <span class="math">\(P\)</span>-values should look like under a point null hypothesis <span class="math">\(H_{0} : \theta = \theta_{0}\)</span> when the null hypothesis is <strong>false</strong>.</li>
+</ol>
+
+<h4 id="parametricdistributions">Parametric Distributions</h4>
+
+<ol>
+<li>Explain why the plug-in estimator for a property of a parametric distribution is so-named.</li>
+<li>Given a parametric distribution, estimates for its parameters, and a function for how the parameters are related to a particular property of the distribution, compute a plug-in estimate for that property.</li>
+</ol>
+
+<h4 id="theparametricbootstrap">The Parametric Bootstrap</h4>
+
+<ol>
+<li>Explain the two &#8220;levels&#8221; of the parametric bootstrap in terms of what has actually happened in the real world and what is being simulated in bootstrap world.</li>
+<li>State the &#8220;recipe&#8221; for generating bootstrap estimates from a parametric distribution.</li>
+<li>Given a parametric distribution and estimators for its parameters, use the parametric bootstrap to obtain bootstrap estimates of a property of that distribution.</li>
+</ol>
+
+<h4 id="thenonparametricbootstrap">The Nonparametric Bootstrap</h4>
+
+<ol>
+<li>Compare and contrast the parametric and nonparametric bootstraps.</li>
+<li>Explain the two &#8220;levels&#8221; of the nonparametric bootstrap in terms of what has actually happened in the real world and what is being simulated in bootstrap world.</li>
+<li>State the &#8220;recipe&#8221; for generating bootstrap estimates using the nonparametric bootstrap.</li>
+<li>Explain how to sample from the ECDF of a sample using <code>sample()</code>.</li>
+<li>Given an estimator for a property of a distribution, use the nonparametric bootstrap to obtain bootstrap estimates of that property of the distribution.</li>
+<li>Explain under what scenarios a parametric or nonparametric bootstrap is more appropriate.</li>
+</ol>
+
+<h4 id="thebootstrappercentileconfidenceinterval">The Bootstrap Percentile Confidence Interval</h4>
+
+<ol>
+<li>Construct a coverage <span class="math">\(1 - \alpha\)</span> bootstrap percentile confidence interval for a property of a distribution using either parametric or nonparametric bootstrap estimates of that property.</li>
+</ol>
