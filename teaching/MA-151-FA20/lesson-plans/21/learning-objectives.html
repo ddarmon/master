@@ -1,0 +1,54 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h3 id="chapter24">Chapter 24</h3>
+
+<h4 id="comparingseveralmeans">Comparing several means</h4>
+
+<ol>
+<li>Use boxplots generated using <code>gf_boxplot</code> to compare samples from two more more populations.</li>
+<li>State the null and alternative hypotheses for a claim about equality amongst three or more population means.</li>
+<li>Explain why the alternative hypothesis of a &#8220;all means are equal&#8221; null hypothesis does not specify precisely <strong>which</strong> population means, if any, differ.</li>
+<li>Recognize that a test related to three or more population means is called an Analysis of Variance.</li>
+<li>Recognize the acronym ANOVA for Analysis of Variance.</li>
+</ol>
+
+<h4 id="thefstatistic">The <span class="math">\(F\)</span> statistic</h4>
+
+<ol>
+<li>State the test statistic for a one-way ANOVA.</li>
+<li>Explain the effect on the <span class="math">\(F\)</span>-statistic of increasing / decreasing the variability amongst the sample means and increasing / decreasing the variability within each sample.</li>
+<li>Indicate what values of an <span class="math">\(F\)</span>-statistic indicate evidence <strong>against</strong> a null hypothesis.</li>
+<li>Given rug plots and box plots for several samples, indicate whether the <span class="math">\(F\)</span>-statistic will be small or large.</li>
+<li>State the sampling distribution of the <span class="math">\(F\)</span> statistic when the null hypothesis is true.</li>
+<li>State the type of <span class="math">\(P\)</span>-value (right-sided, left-sided, or two-sided) computed from the <span class="math">\(F\)</span> distribution, and explain why this type of <span class="math">\(P\)</span>-value is used.</li>
+</ol>
+
+<h4 id="theanalysisofvarianceftest">The analysis of variance <span class="math">\(F\)</span> test</h4>
+
+<ol>
+<li>Use the functions <code>aov</code> and <code>summary</code> to perform an <span class="math">\(F\)</span> test in R.</li>
+<li>Interpret the output of an <code>aov</code> object passed to <code>summary</code>.</li>
+</ol>
+
+<h4 id="conditionsforanova">Conditions for ANOVA</h4>
+
+<ol>
+<li>State the assumptions of a one-way ANOVA.</li>
+<li>State an alternative to a one-way ANOVA when the assumptions of the one-way ANOVA fail or cannot be checked.</li>
+</ol>
+
+<h3 id="pairwisecomparisonslecturenotesforlecture21">Pairwise Comparisons (Lecture Notes for Lecture 21)</h3>
+
+<ol>
+<li>Explain why pairwise comparisons are necessary after finding a statistically significant <span class="math">\(F\)</span> statistic.</li>
+<li>Recognize Tukey&#8217;s Honest Significant Difference as a pairwise comparison method.</li>
+<li>Use the function <code>TukeyHSD</code> to perform pairwise comparsisons in R.</li>
+<li>Interpret the output of <code>TukeyHSD</code> when passed an output from <code>aov</code>, including:
+
+<ul>
+<li>the estimated pairwise differences</li>
+<li>the left and right confidence intervals for the pairwise differences</li>
+<li>the adjusted <span class="math">\(P\)</span>-value for the pairwise comparisons</li>
+</ul></li>
+<li>State the null hypothesis implicit in the <span class="math">\(P\)</span>-values reported by <code>TukeyHSD</code>.</li>
+</ol>

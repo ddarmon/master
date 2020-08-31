@@ -1,0 +1,199 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<h1>Study Guide for Exam 3</h1>
+
+<p>This will be a closed-book exam. You will be allowed to use R on a <strong>school</strong> computer for computations. This means you will not have access to, nor will you need to use, anything beyond Base R (e.g. <tt>mosaic</tt>, <tt>MUsaic</tt>, etc.) for the exam.</p>
+
+<p>To do well on the exam, you should be able to do the following:</p>
+
+<h3 id="chapter15">Chapter 15</h3>
+
+<h4 id="howconfidenceintervalsbehave">How confidence intervals behave</h4>
+
+<ol>
+<li>Distinguish between an interval estimator and an interval estimate (aka &#8220;confidence interval&#8221;).</li>
+<li>Explain what the probability <span class="math">\(c\)</span> is associated with for a confidence level <span class="math">\(c\)</span> confidence interval.</li>
+<li>Identify how the width of a confidence interval varies as <span class="math">\(n\)</span>, <span class="math">\(c\)</span>, and <span class="math">\(s_{X}\)</span> vary.</li>
+</ol>
+
+<h3 id="chapter17">Chapter 17</h3>
+
+<h4 id="thetdistributions">The <span class="math">\(t\)</span> distributions</h4>
+
+<ol>
+<li>State the sampling distribution of a <span class="math">\(Z\)</span>-score for a sample mean from a Normal population.</li>
+<li>State the sampling distribution of a <span class="math">\(T\)</span>-score for a sample mean from a Normal population.</li>
+<li>Identify the degrees of freedom for the <span class="math">\(t\)</span> distribution resulting from a <span class="math">\(T\)</span>-score for a sample mean.</li>
+<li>Compare and contrast the density curve for a <span class="math">\(t\)</span>-distributed random variable to the density curve of a standard Normal random variable.</li>
+<li>Identify how the shape of the density curve of a <span class="math">\(t\)</span>-distributed random variable changes as its degrees of freedom increase.</li>
+<li>Compute a critical value <span class="math">\(t_{\alpha, n-1}\)</span> for a <span class="math">\(t\)</span>-distribution with <span class="math">\(n - 1\)</span> degrees of freedom using <tt>qt</tt> in R.</li>
+</ol>
+
+<h4 id="theone-sampletconfidenceinterval">The one-sample <span class="math">\(t\)</span> confidence interval</h4>
+
+<ol>
+<li>Compute a <span class="math">\(t\)</span>-based confidence interval given relevant information about a random sample from a Normal population.</li>
+<li>Sketch how the <span class="math">\(t\)</span>-based confidence interval for a population mean is related to the sample mean, critical value, and estimate of the standard error of the sample mean.</li>
+</ol>
+
+<h3 id="chapter14">Chapter 14</h3>
+
+<h4 id="hypothesistesting">Hypothesis testing</h4>
+
+<ol>
+<li>Identify what types of quantities a statistical hypothesis always addresses.</li>
+<li>Identify the population parameter from a statistical claim.</li>
+<li>Given a claim about a population parameter <span class="math">\(\theta\)</span> as a &#8220;word problem,&#8221; write the claim as <span class="math">\(\theta \, \, \square \, \, \theta_{0}\)</span> where the &#8220;box&#8221; <span class="math">\(\square\)</span> contains one of <span class="math">\(=, \neq, \leq, \geq, <,\)</span> or <span class="math">\(>\)</span> and <span class="math">\(\theta_{0}\)</span> is the claimed value of the population parameter.</li>
+<li>Define null hypothesis and alternative hypothesis.</li>
+<li>Given a claim in the form <span class="math">\(\theta \, \, \square \, \, \theta_{0}\)</span>, identify whether the claim is a null hypothesis or an alternative hypothesis.</li>
+<li>Given a claim in the form <span class="math">\(\theta \, \, \square \, \, \theta_{0}\)</span>, identify the associated null and alternative hypotheses for the claim.</li>
+<li>Recognize the symbols <span class="math">\(H_{0}\)</span> (&#8220;H-naught&#8221;) and <span class="math">\(H_{a}\)</span> (&#8220;H-a&#8221;) as denoting the null and alternative hypotheses, respectively.</li>
+<li>Explain why it <strong>never</strong> (no really, <strong>never</strong>) makes sense to frame a statistical hypothesis in terms of a sample statistic.</li>
+</ol>
+
+<h4 id="testsforapopulationmean">Tests for a population mean</h4>
+
+<ol>
+<li>Given a claim about a population mean <span class="math">\(\mu_{X}\)</span> as a &#8220;word problem,&#8221; write the claim as <span class="math">\(\mu_{X} \, \, \square \, \, \mu_{0}\)</span> where the &#8220;box&#8221; <span class="math">\(\square\)</span> contains one of <span class="math">\(=, \neq, \leq, \geq, <,\)</span> or <span class="math">\(>\)</span> and <span class="math">\(\mu_{0}\)</span> is the claimed value of the population mean.</li>
+<li>Given a claim about a population mean <span class="math">\(\mu_{X}\)</span> as a &#8220;word problem,&#8221; determine the corresponding null and alternative hypotheses.</li>
+<li>State a reasonable test statistic for testing a claim about a population mean.</li>
+</ol>
+
+<h3 id="chapter14">Chapter 14</h3>
+
+<h4 id="theone-samplettest">The one-sample <span class="math">\(t\)</span> test</h4>
+
+<ol>
+<li>Explain why a <span class="math">\(T\)</span>-score can be used to test a claim about a population mean.</li>
+<li>Compute the observed <span class="math">\(T\)</span>-score, denoted <span class="math">\(t_{\text{obs}}\)</span>, from a &#8220;word problem&#8221; about a population mean.</li>
+<li>Given an observed sample mean, sample standard deviation, and sample size, and a pair of null / alternative hypotheses, determine whether the observed sample mean provides evidence <strong>against</strong> the null hypothesis (equivalently, <strong>for</strong> the alternative hypothesis).</li>
+<li>State the sampling distribution of the <span class="math">\(T\)</span>-score under the null hypothesis when the population distribution is Normal (or approximately so).</li>
+</ol>
+
+<h3 id="chapter14">Chapter 14</h3>
+
+<h4 id="p-valueandstatisticalsignificance"><span class="math">\(P\)</span>-value and statistical significance</h4>
+
+<ol>
+<li>State how a <span class="math">\(P\)</span>-value is defined for an observed test statistic and a given null hypothesis.</li>
+<li>State the rejection rule for using the <span class="math">\(P\)</span>-value of an observed test statistic to reject (or not) the null hypothesis at a given significance level <span class="math">\(\alpha\)</span>.</li>
+</ol>
+
+<h3 id="chapter15">Chapter 15</h3>
+
+<h4 id="howhypothesistestsbehave">How hypothesis tests behave</h4>
+
+<ol>
+<li>Define the two types of errors one can make in a hypothesis test, and state their names.</li>
+<li>Relate the two types of errors that one can make in a hypothesis test to decisions in legal trials and during warfare.</li>
+<li>Define the two error rates of a hypothesis test.</li>
+<li>Recognize <span class="math">\(\alpha\)</span> as indicating the Type I Error Rate of a hypothesis test.</li>
+<li>Recognize the synonym of &#8220;significance level&#8221; for the Type I Error Rate <span class="math">\(\alpha\)</span>.</li>
+<li>State which of the two error rates are explicitly controlled for in constructing a hypothesis test.</li>
+<li>Define test statistic, and explain the distinction between a test statistic and an observed test statistic.</li>
+<li>Define the rejection region of a hypothesis test, and state how the rejection region is used to make a conclusion about a null hypothesis.</li>
+<li>State the 7 step procedure for testing a claim about a population using a hypothesis test that controls the Type I Error Rate.</li>
+</ol>
+
+<h3 id="chapter17">Chapter 17</h3>
+
+<h4 id="theone-samplettest">The one-sample <span class="math">\(t\)</span> test</h4>
+
+<ol>
+<li>State the test statistic that is used for a one-sample <span class="math">\(t\)</span>-test, and give its sampling distribution when underlying the population is Normal and the null hypothesis is true.</li>
+<li>State the left-sided, right-sided, and two-sided rejection regions for the one-sample <span class="math">\(t\)</span> test.</li>
+<li>Identify when a left-sided, right-sided, or two-sided rejection region is appropriate to test a given null hypothesis.</li>
+<li>Construct a left-sided, right-sided, or two-sided rejection region given a claim about a population and a significance level <span class="math">\(\alpha\)</span>.</li>
+<li>Determine whether an observed test statistic &#8220;falls in&#8221; a rejection region.</li>
+<li>Determine the appropriate tail of the <span class="math">\(t\)</span>-distribution to use to compute a <span class="math">\(P\)</span>-value for a given null hypothesis.</li>
+<li>Compute the <span class="math">\(P\)</span>-value for an observed <span class="math">\(t\)</span>-statistic, and use the <span class="math">\(P\)</span>-value to conclude whether or not to reject a given null hypothesis.</li>
+</ol>
+
+<h3 id="chapter17">Chapter 17</h3>
+
+<h4 id="testingatwo-sidedhypothesisusingaconfidenceintervallecturenotesforlecture16">Testing a Two-sided Hypothesis Using a Confidence Interval (Lecture Notes for Lecture 16)</h4>
+
+<ol>
+<li>State the procedure for testing a null hypothesis <span class="math">\(\mu_{X} = \mu_{0}\)</span> at significance level <span class="math">\(\alpha\)</span> using a confidence interval.</li>
+<li>State the rationale for why we can test a null hypothesis <span class="math">\(\mu_{X} = \mu_{0}\)</span> at significance level <span class="math">\(\alpha\)</span> using a confidence interval with confidence level <span class="math">\(c = 1 - \alpha\)</span>.</li>
+<li>Perform a hypothesis test for the null hypothesis <span class="math">\(\mu_{X} = \mu_{0}\)</span> given all of the relevant information.</li>
+</ol>
+
+<h4 id="one-samplet-testsinrlecturenotesforlecture16">One-sample <span class="math">\(t\)</span>-tests in R (Lecture Notes for Lecture 16)</h4>
+
+<ol>
+<li>Perform a one-sample <span class="math">\(t\)</span>-test from a variable in a data frame using <code>t.test</code> from <code>mosaic</code>.</li>
+<li>Perform a one-sample <span class="math">\(t\)</span>-test from summary statistics using <code>one.sample.t.test</code> from <code>MUsaic</code>.</li>
+<li>Construct a confidence level <span class="math">\(c\)</span> confidence interval from a variable in a data frame using <code>t.test</code> from <code>mosaic</code>.</li>
+<li>Construct a confidence level <span class="math">\(c\)</span> confidence interval from summary statistics using <code>one.sample.t.test</code> from <code>MUsaic</code>.</li>
+</ol>
+
+<h3 id="chapter18">Chapter 18</h3>
+
+<h4 id="comparingtwopopulationmeans">Comparing two population means</h4>
+
+<ol>
+<li>Give examples of scientific questions that would warrant comparisons of two population means.</li>
+<li>Recognize the Greek letter <span class="math">\(\delta\)</span>, the Greek analog to the Roman letter <span class="math">\(d\)</span>, which is used to indicate <span class="math">\(\delta\text{ifferences}\)</span> between population parameters.</li>
+<li>State a claim about two population means <span class="math">\(\mu_{X}\)</span> and <span class="math">\(\mu_{Y}\)</span> as an equality / inequality involving the difference <span class="math">\(\delta = \mu_{X} - \mu_{Y}\)</span> between the population means.</li>
+</ol>
+
+<h4 id="two-sampletprocedures">Two-sample <span class="math">\(t\)</span> procedures</h4>
+
+<ol>
+<li>State the test statistic used in the two-sample <span class="math">\(t\)</span>-test.</li>
+<li>Determine, qualitatively, whether an observed test statistic from the two-sample <span class="math">\(t\)</span>-test provides evidence against a null hypothesis.</li>
+<li>State the sampling distribution of the test statistic used in the two-sample <span class="math">\(t\)</span>-test, and the assumptions that must hold for that sampling distribution to be correct.</li>
+</ol>
+
+<h4 id="two-samplet-testsinrlecturenotesforlecture17">Two-sample <span class="math">\(t\)</span>-tests in R (Lecture Notes for Lecture 17)</h4>
+
+<ol>
+<li>Interpret the output of <code>two.sample.t.test</code> in <code>MUsaic</code>, including:
+
+<ul>
+<li>where <span class="math">\(t_{\text{obs}}\)</span> is reported</li>
+<li>where the estimated degrees of freedom for the <span class="math">\(t\)</span>-distribution is reported</li>
+<li>where the <span class="math">\(P\)</span>-value for <span class="math">\(t_{\text{obs}}\)</span> is reported</li>
+<li>where the confidence interval is reported</li>
+</ul></li>
+<li>Use <code>two.sample.t.test</code> to perform a two-sample <span class="math">\(t\)</span>-test in R.</li>
+<li>Use <code>two.sample.t.test</code> to construct a two-sided confidence interval for the population difference <span class="math">\(\delta\)</span> in R.</li>
+<li><strong>Interpret</strong> a two-sided confidence interval for a population difference <span class="math">\(\delta\)</span> <strong>in the context of a given problem</strong>.</li>
+</ol>
+
+<h3 id="chapter17">Chapter 17</h3>
+
+<h4 id="matchedpairstprocedures">Matched pairs <span class="math">\(t\)</span> procedures</h4>
+
+<ol>
+<li>Define a matched pairs design.</li>
+<li>State examples of statistical questions where a matched pairs design would be appropriate.</li>
+<li>Describe the setup of a data set collected from a matched pairs design.</li>
+<li>State the sampling distribution of the average difference score from a matched pairs design when we assume the population of difference scores is Normally distributed.</li>
+<li>State the <span class="math">\(T\)</span>-statistic used in a matched pairs design.</li>
+<li>State the sampling distribution of the <span class="math">\(T\)</span>-statistic used in a matched pairs design when we assume the population of difference scores is Normally distributed.</li>
+<li>Perform a hypothesis test for a population difference from data fitting a matched pairs design using the appropriate matched pairs <span class="math">\(t\)</span>-test.</li>
+<li>Construct a confidence interval for a population difference from data fitting a matched pairs design using the appropriate matched pairs <span class="math">\(t\)</span>-test.</li>
+<li>Use <code>one.sample.t.test</code> to test a hypothesis or construct a confidence interval using summary data from a matched pairs design.</li>
+<li>Give reasons why we must <strong>carefully identify</strong> whether an independent samples <span class="math">\(t\)</span>-test or matched pairs <span class="math">\(t\)</span>-test is most appropriate for analyzing a data set.</li>
+</ol>
+
+<h3 id="chapter11">Chapter 11</h3>
+
+<h4 id="normalquantileplots">Normal Quantile Plots</h4>
+
+<ol>
+<li>Explain why we should check for the Normality of an underlying population before performing any of the <span class="math">\(t\)</span>-tests or constructing any of the <span class="math">\(t\)</span>-based confidence intervals we have developed so far in the class.</li>
+<li>Construct a density plot in R from a data set, and diagnose whether the density plot indicates any clear departures from Normality in the underlying population.</li>
+<li>Explain, loosely, what a Q-Q plot is showing, and what a &#8220;good&#8221; and &#8220;bad&#8221; Q-Q plot looks like.</li>
+<li>Construct a Q-Q plot in R from a data set, and diagnose whether the Q-Q plot indicates any clear departures from Normality in the underlying population.</li>
+<li>Given a Q-Q plot, identify whether the Q-Q plot points towards:
+
+<ul>
+<li>Normality</li>
+<li>Left-skewness</li>
+<li>Right-skewness</li>
+<li>Heavy tails</li>
+</ul></li>
+<li>Identify which property of a population, overall, is most problematic to <span class="math">\(t\)</span>-based inferential procedures.</li>
+</ol>
