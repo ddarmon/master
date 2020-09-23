@@ -1,7 +1,7 @@
 # Making an edit.
 
 # fname_prefix = 'ma-151-02-FA19'
-fname_prefix = 'ma-115-03-FA19'
+fname_prefix = 'ma-237-01-FA20'
 
 
 with open('{}_for_rescheduling.txt'.format(fname_prefix), 'w') as wfile:
@@ -30,7 +30,7 @@ with open('{}_for_rescheduling.txt'.format(fname_prefix), 'w') as wfile:
 
 			topics = line.split('<dd><b>Topics: </b>')[1]
 
-			topics_for_file = ' ! '.join(topics.split('.')[:-1])
+			topics_for_file = ' !'.join(topics.split('.')[:-1])
 
 			print(topics_for_file)
 
