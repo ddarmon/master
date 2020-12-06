@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Practically Insignificant  | Mid P-values</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.62.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Mid P-values" />
+<meta property="og:description" content="Mid-\(P\) Confidence Intervals: A Brief Review by Berry and Armitage.
+\[\begin{aligned} H_{0} &amp;: p \leq 1/2\\ H_{1} &amp;: p &gt; 1/2 \end{aligned}\]
+\[P\mathrm{-value} = P(X \geq x_{\text{obs}})\]
+\[\begin{aligned} P\mathrm{-value} &amp;= P(X \geq x_{\text{obs}}) \\ &amp;= 1 - P(X &lt; x_{\text{obs}}) \\ &amp;= 1 - P(X \leq x_{\text{obs}} - 1)\end{aligned}\]
+n &lt;- 10 p0 &lt;- 0.5 xs &lt;- 0:n Ps &lt;- 1-pbinom(xs-1, n, p0) data.frame(xs, Ps) ## xs Ps ## 1 0 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/mid-p-values/" />
+<meta property="article:published_time" content="2020-06-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-29T00:00:00+00:00" />
+<meta itemprop="name" content="Mid P-values">
+<meta itemprop="description" content="Mid-\(P\) Confidence Intervals: A Brief Review by Berry and Armitage.
+\[\begin{aligned} H_{0} &amp;: p \leq 1/2\\ H_{1} &amp;: p &gt; 1/2 \end{aligned}\]
+\[P\mathrm{-value} = P(X \geq x_{\text{obs}})\]
+\[\begin{aligned} P\mathrm{-value} &amp;= P(X \geq x_{\text{obs}}) \\ &amp;= 1 - P(X &lt; x_{\text{obs}}) \\ &amp;= 1 - P(X \leq x_{\text{obs}} - 1)\end{aligned}\]
+n &lt;- 10 p0 &lt;- 0.5 xs &lt;- 0:n Ps &lt;- 1-pbinom(xs-1, n, p0) data.frame(xs, Ps) ## xs Ps ## 1 0 1.">
+<meta itemprop="datePublished" content="2020-06-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="343">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mid P-values"/>
+<meta name="twitter:description" content="Mid-\(P\) Confidence Intervals: A Brief Review by Berry and Armitage.
+\[\begin{aligned} H_{0} &amp;: p \leq 1/2\\ H_{1} &amp;: p &gt; 1/2 \end{aligned}\]
+\[P\mathrm{-value} = P(X \geq x_{\text{obs}})\]
+\[\begin{aligned} P\mathrm{-value} &amp;= P(X \geq x_{\text{obs}}) \\ &amp;= 1 - P(X &lt; x_{\text{obs}}) \\ &amp;= 1 - P(X \leq x_{\text{obs}} - 1)\end{aligned}\]
+n &lt;- 10 p0 &lt;- 0.5 xs &lt;- 0:n Ps &lt;- 1-pbinom(xs-1, n, p0) data.frame(xs, Ps) ## xs Ps ## 1 0 1."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Practically Insignificant
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Mid P-values</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-06-29T00:00:00Z">June 29, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<p><a href="https://www.jstor.org/stable/2348891#metadata_info_tab_contents">Mid-<span class="math inline">\(P\)</span> Confidence Intervals: A Brief Review</a> by Berry and Armitage.</p>
+<p><span class="math display">\[\begin{aligned} H_{0} &amp;: p \leq 1/2\\ H_{1} &amp;: p &gt; 1/2 \end{aligned}\]</span></p>
+<p><span class="math display">\[P\mathrm{-value} = P(X \geq x_{\text{obs}})\]</span></p>
+<p><span class="math display">\[\begin{aligned} P\mathrm{-value} &amp;= P(X \geq x_{\text{obs}}) \\ &amp;= 1 - P(X &lt; x_{\text{obs}}) \\ &amp;= 1 - P(X \leq x_{\text{obs}} - 1)\end{aligned}\]</span></p>
+<pre class="r"><code>n &lt;- 10
+p0 &lt;- 0.5
+
+xs &lt;- 0:n
+
+Ps &lt;- 1-pbinom(xs-1, n, p0)
+
+data.frame(xs, Ps)</code></pre>
+<pre><code>##    xs           Ps
+## 1   0 1.0000000000
+## 2   1 0.9990234375
+## 3   2 0.9892578125
+## 4   3 0.9453125000
+## 5   4 0.8281250000
+## 6   5 0.6230468750
+## 7   6 0.3769531250
+## 8   7 0.1718750000
+## 9   8 0.0546875000
+## 10  9 0.0107421875
+## 11 10 0.0009765625</code></pre>
+<p><span class="math display">\[\begin{aligned} p_{m}(x) &amp;= P(X &gt; x_{\text{obs}}) + \frac{1}{2} P(X = x_{\text{obs}}) \\ &amp;= P(X \geq x_{\text{obs}}) - \frac{1}{2} P(X = x_{\text{obs}}) \end{aligned}\]</span></p>
+<pre class="r"><code>n &lt;- 10
+p0 &lt;- 0.5
+
+xs &lt;- 0:n
+
+Ps.mid &lt;- (1 - pbinom(xs-1, n, p0)) - 0.5*dbinom(xs, n, p0)
+
+data.frame(xs, Ps, Ps.mid)</code></pre>
+<pre><code>##    xs           Ps       Ps.mid
+## 1   0 1.0000000000 0.9995117188
+## 2   1 0.9990234375 0.9941406250
+## 3   2 0.9892578125 0.9672851562
+## 4   3 0.9453125000 0.8867187500
+## 5   4 0.8281250000 0.7255859375
+## 6   5 0.6230468750 0.5000000000
+## 7   6 0.3769531250 0.2744140625
+## 8   7 0.1718750000 0.1132812500
+## 9   8 0.0546875000 0.0327148438
+## 10  9 0.0107421875 0.0058593750
+## 11 10 0.0009765625 0.0004882812</code></pre>
+<pre class="r"><code>sum(Ps*dbinom(xs, n, p0))</code></pre>
+<pre><code>## [1] 0.5880985</code></pre>
+<pre class="r"><code>sum(Ps.mid*dbinom(xs, n, p0))</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+<pre class="r"><code>t1er.mid.p &lt;- function(alpha){
+  sum(dbinom(xs, n, p0)[Ps.mid &lt;= alpha])
+}
+
+t1er.mid.p &lt;- Vectorize(t1er.mid.p)
+
+t1er.exact.p &lt;- function(alpha){
+  sum(dbinom(xs, n, p0)[Ps &lt;= alpha])
+}
+
+t1er.exact.p &lt;- Vectorize(t1er.exact.p)
+
+curve(t1er.mid.p, from = 0, to = 1, n = 2001,
+      xlab = &#39;Nominal Significance Level&#39;, ylab = &#39;Type I Error Rate&#39;, col = &#39;red&#39;)
+curve(t1er.exact.p, col = &#39;blue&#39;, n = 2001, add = TRUE, lty = 2)
+curve(punif, add = TRUE, lty = 3)</code></pre>
+<p><img src="/post/2020-06-29-mid-p-values_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>curve(t1er.mid.p(x) - x, from = 0, to = 0.1, n = 2001,
+      xlab = &#39;Nominal Significance Level&#39;, ylab = &#39;T1ER - Nominal Rate&#39;, col = &#39;red&#39;)
+curve(t1er.exact.p(x) - x, col = &#39;blue&#39;, n = 2001, add = TRUE, lty = 2)
+abline(h = 0, lty = 3)</code></pre>
+<p><img src="/post/2020-06-29-mid-p-values_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >
+    &copy; 2020 Practically Insignificant
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

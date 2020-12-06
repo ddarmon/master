@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Practically Insignificant</title>
+    <link>/</link>
+    <description>Recent content on Practically Insignificant</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mid P-values</title>
+      <link>/post/mid-p-values/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/mid-p-values/</guid>
+      <description>Mid-\(P\) Confidence Intervals: A Brief Review by Berry and Armitage.
+\[\begin{aligned} H_{0} &amp;amp;: p \leq 1/2\\ H_{1} &amp;amp;: p &amp;gt; 1/2 \end{aligned}\]
+\[P\mathrm{-value} = P(X \geq x_{\text{obs}})\]
+\[\begin{aligned} P\mathrm{-value} &amp;amp;= P(X \geq x_{\text{obs}}) \\ &amp;amp;= 1 - P(X &amp;lt; x_{\text{obs}}) \\ &amp;amp;= 1 - P(X \leq x_{\text{obs}} - 1)\end{aligned}\]
+n &amp;lt;- 10 p0 &amp;lt;- 0.5 xs &amp;lt;- 0:n Ps &amp;lt;- 1-pbinom(xs-1, n, p0) data.frame(xs, Ps) ## xs Ps ## 1 0 1.</description>
+    </item>
+    
+    <item>
+      <title>Quantum Statistics: Exact Tests with Discrete Test Statistics</title>
+      <link>/post/the-land-of-lost-significance-exact-tests-with-discrete-test-statistics/</link>
+      <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-land-of-lost-significance-exact-tests-with-discrete-test-statistics/</guid>
+      <description>For those who ended up here looking for information about quantum statistical mechanics or particle statistics: apologies! But sometimes I feel like physicists took all the exciting names, so I’m stealing the term quanta as it relates to an observable that can take on only discrete (not continuous values). That has interesting consequences for inferential procedures based on such discrete (“quantum”) statistics, as we will see in this post.</description>
+    </item>
+    
+    <item>
+      <title>Salvaging Lost Significance via Randomization: Randomized \(P\)-values for Discrete Test Statistics</title>
+      <link>/post/salvaging-lost-significance-via-randomization-randomized-p-values-for-discrete-test-statistics/</link>
+      <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/salvaging-lost-significance-via-randomization-randomized-p-values-for-discrete-test-statistics/</guid>
+      <description>Last time, we saw that when performing a hypothesis test with a discrete test statistic, we will typically lose size unless we happen to be very lucky and have the significance level \(\alpha\) exactly match one of our possible \(P\)-values. In this post, I will introduce a randomized hypothesis test that will regain the size we lost. Unlike a lot of randomization in statistics, the randomization here comes at the end: we randomize the \(P\)-value in order to recover the size.</description>
+    </item>
+    
+  </channel>
+</rss>

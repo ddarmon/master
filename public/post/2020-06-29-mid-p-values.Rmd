@@ -1,0 +1,76 @@
+---
+title: Mid P-values
+author: ''
+date: '2020-06-29'
+slug: mid-p-values
+categories: []
+tags: []
+draft: yes
+---
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+[Mid-$P$ Confidence Intervals: A Brief Review](https://www.jstor.org/stable/2348891#metadata_info_tab_contents) by Berry and Armitage.
+
+$$\begin{aligned} H_{0} &: p \leq 1/2\\ H_{1} &: p > 1/2 \end{aligned}$$
+
+$$P\mathrm{-value} = P(X \geq x_{\text{obs}})$$
+
+$$\begin{aligned} P\mathrm{-value} &= P(X \geq x_{\text{obs}}) \\ &= 1 - P(X < x_{\text{obs}}) \\ &= 1 - P(X \leq x_{\text{obs}} - 1)\end{aligned}$$
+
+```{r}
+
+n <- 10
+p0 <- 0.5
+
+xs <- 0:n
+
+Ps <- 1-pbinom(xs-1, n, p0)
+
+data.frame(xs, Ps)
+```
+
+$$\begin{aligned} p_{m}(x) &= P(X > x_{\text{obs}}) + \frac{1}{2} P(X = x_{\text{obs}}) \\ &= P(X \geq x_{\text{obs}}) - \frac{1}{2} P(X = x_{\text{obs}}) \end{aligned}$$
+
+```{r}
+
+n <- 10
+p0 <- 0.5
+
+xs <- 0:n
+
+Ps.mid <- (1 - pbinom(xs-1, n, p0)) - 0.5*dbinom(xs, n, p0)
+
+data.frame(xs, Ps, Ps.mid)
+```
+
+```{r}
+sum(Ps*dbinom(xs, n, p0))
+sum(Ps.mid*dbinom(xs, n, p0))
+```
+```{r}
+t1er.mid.p <- function(alpha){
+  sum(dbinom(xs, n, p0)[Ps.mid <= alpha])
+}
+
+t1er.mid.p <- Vectorize(t1er.mid.p)
+
+t1er.exact.p <- function(alpha){
+  sum(dbinom(xs, n, p0)[Ps <= alpha])
+}
+
+t1er.exact.p <- Vectorize(t1er.exact.p)
+
+curve(t1er.mid.p, from = 0, to = 1, n = 2001,
+      xlab = 'Nominal Significance Level', ylab = 'Type I Error Rate', col = 'red')
+curve(t1er.exact.p, col = 'blue', n = 2001, add = TRUE, lty = 2)
+curve(punif, add = TRUE, lty = 3)
+```
+
+```{r}
+curve(t1er.mid.p(x) - x, from = 0, to = 0.1, n = 2001,
+      xlab = 'Nominal Significance Level', ylab = 'T1ER - Nominal Rate', col = 'red')
+curve(t1er.exact.p(x) - x, col = 'blue', n = 2001, add = TRUE, lty = 2)
+abline(h = 0, lty = 3)
+```
+
