@@ -1,0 +1,300 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<title>CS 201-A01, Introduction to Computer Programming for Data Science (Spring 2021)</title>
+
+<a href="http://www.thirdorderscientist.org"><em>David Darmon</em></a>
+
+<h1>CS 201-A01, Introduction to Computer Programming for Data Science</h1>
+
+<h2>Spring 2021</h2>
+
+<center>
+Monday, 2:50 PM &mdash; 4:10 PM, Howard Hall 307
+</center>
+
+<P>The modern approach to statistics can broadly be broken into two distinct tasks: <em>algorithms</em> for computing statistical quantities (point estimates, confidence intervals, \(P\)-values, etc.) from data and <em>inferences</em> to be made from those quantities based on statistical models of how the data were generated. Until now in your statistical education, the focus has been on the <em>inferential</em> aspect of statistics. This class is a first course on the <em>algorithmic</em> side of statistics. You will learn the core concepts of programming &mdash; functions, objects, data structures, flow control, debugging, logical design, and abstraction &mdash; by writing code to implement statistical algorithms. You will also learn how to use stochastic simulation to evaluate a statistical algorithm in terms of its inferential properties. Programming and programming languages are inherently social, so you will also learn the customs and conventions of the tribe of programmers who use R as well as best-practices for organizing and commenting your code.
+
+<h4>Prerequisites</h4>
+
+<P>IT-100 or IT-102 or CS-104
+
+<h4>Professor</h4>
+
+<table>
+<tr><td>Dr. David Darmon</td> <td></td><td>ddarmon [at] monmouth.edu</td></tr>
+<tr><td></td><td></td><td>Howard Hall 241</td></tr>
+</table>
+
+<h2>Topics, Notes, Readings</h2>
+
+<P>This is currently a <em>tentative</em> listing of topics, in order.
+
+
+<dl>
+	<dt><em>Introduction to R:</em> The R console. Using R as a fancy calculator. The RStudio integrated development environment. R Markdown for literate programming.
+	<dt><em>Objects, the nouns of programming:</em> Objects and data types. Variables. Floats and integers. Booleans. Characters and strings.
+	<dt><em>Data structures:</em> Vectors for one-dimensional collections of the same data type. Arrays for multi-dimensional collections of the same data type. Lists for one-dimensional collections of different data types. Data frames for multi-dimensional collections of different data types.
+	<dt><em>Flow control:</em> If-Else and more complex conditional statements. Iteration. For loops and while loops. Vectorization to avoid iteration. <tt>*apply</tt> for vectorization with multi-dimensional objects.
+	<dt><em>Functions, the verbs of programming:</em> Using functions to collect together related commands. Functions as input-output devices. Arguments (inputs) and return values (outputs). Named arguments and defaults. Scope of variables in a function.
+	<dt><em>Plotting in R:</em> Use the eyes that Nature gave you! Base R graphics. <tt>ggplot</tt> and <tt>ggformula</tt>. Exploratory data analysis using <tt>mosaic</tt>.
+	<dt><em>Debugging and testing code:</em> What is R trying to tell you with all that red text? Let me Google that for you: using the internet <em>wisely</em> for help with programming. Debugging by brute-<tt>print</tt>. Debugging intelligently using <tt>browser</tt> in RStudio. Using assertions to catch bugs. Using unit testing to keep code bug-free.
+</dl>
+
+See the <a href = "#schedule">end of this page</a> for the current lecture schedule, subject to revision.  Homework and additional resources will be linked there, as available.
+
+<h2>Course Mechanics</h2>
+
+<h4>Office Hours</h4>
+
+<p>I will have office hours at the following four times each week:
+
+<center><table>
+    <tr><td>Monday, &nbsp;&nbsp;10:00&mdash;11:00 AM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
+    <tr><td>Tuesday, &nbsp;&nbsp;03:00&mdash;04:00 PM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
+    <tr><td>Thursday, 10:00&mdash;11:00 AM</td> <td>Howard Hall 241</td></tr>
+</td></tr>
+    <tr><td>Thursday, 03:00&mdash;04:00 PM</td> <td>Howard Hall 241</td></tr>
+</table></center>
+
+<p>I have an open-door policy during those times: you can show up unannounced. If you cannot make the scheduled office hours, please e-mail me about making an appointment.
+
+<p>If you are struggling with the homework, having difficulty with the quizzes, or just want to chat, please visit me during my office hours. I am here to help.
+
+<h4>Grading Policy</h4> 
+
+Your final grade will be determined by the following weighting scheme:
+
+<dl>
+	<dd> 30% for homework problem sets
+	<dd> 10% for labs
+	<dd> 30% for quizzes
+	<dd> 20% for final project
+	<dd> 10% for programming journal
+</dl>
+
+I will use the standard 10-point breakdown to assign letter grades to numerical grades:
+<ul>
+	<li> \([90, 100] \to \text{A}\)
+	<li> \([80, 90) \,\,\, \to \text{B}\)
+	<li> \([70, 80) \,\,\, \to \text{C}\)
+	<li> \([60, 70) \,\,\, \to \text{D}\)
+	<li> \([0, 60) \,\,\,\,\,\, \to \text{F}\)
+</ul>
+with pluses and minuses assigned by dividing the intervals into thirds.
+
+<h4>Homework</h4>
+
+<p>Homework will be assigned regularly, announced in class, and listed in the <a href="#schedule">Schedule</a> section of this page.
+
+<p>Each homework problem will be graded out of three points: one point for making an honest effort to complete the problem, one point for a technically-correct solution, and one point for clean, well-formatted, documented, and easily readable code.
+
+<p>You will have the opportunity to revise your homework within a week after it is returned and resubmit the new solution to earn back partial credit.
+
+<h4>Labs</h4>
+
+<p>There will be two labs during the semester. The labs will involve brief exercises related to the latest homework assignment. Attending labs is mandatory. If you miss a lab, your grade for that lab will be a 0.
+
+<p><em>Pair programming:</em> Labs will be completed in groups using "pair programming," a software development technique where programmers alternate between two roles: a <em>driver</em> who writes the code and an <em>observer</em> who reviews each line of code for correctness and strategizes ways to improve the code moving forward. For each lab, you will randomly be assigned to a partner and the role of either driver or observer. Halfway through the lab, you will switch roles with your partner.
+	
+<h4>Quizzes</h4>
+
+There will be a 20-minute quiz at the beginning of each lab session. Each quiz will contain problems related to the material covered in the readings and during the lectures for a given unit of material. If you miss a quiz, your grade will be a zero for that quiz. Your lowest two quiz grades will be dropped.
+
+<h4>Final Project</h4>
+
+There will be a month-long final project at the end of the course. You will be assigned into small groups, or, if you prefer, may work alone. You will select a project topic from a list provided by me in the beginning of April. You will write code, document it, write a report, and prepare a presentation on your work to present during the final exam period for this class.
+
+<h4>Programming Journal</h4>
+
+<p>Learning to program, like learning any new skill, can be frustrating. The computer will always do what you tell it do, which is not always what you want it to do, and determining how to bridge that gap is simultaneously the challenge and the reward of programming. Over the course of the semester, you will keep a <em>programming journal</em>, a document where you record your thoughts about your journey into programming, the struggles you have faced, and the challenges you have overcome. You will also use the programming journal to document common errors that you run into and how to solve them.
+
+<p>You should maintain your programming journal regularly, as you would a personal journal. Updates to your programming journal will be due on the first lecture following each lab.
+
+<h4>Class Participation</h4>
+
+I expect you to be fully engaged during each class, to ask questions when confused, and to attempt to answer questions when called on. During class, attempting to answer a question is more important than getting the correct answer.
+
+<h4>Attendance</h4>
+
+Required. If you expect to miss 2-3 sessions of the course, you should take the course during another semester.
+
+<h4>Textbook</h4>
+
+<P>The <strong>required</strong> textbooks are:
+<ul>
+<li>Norman Matloff. <em>The Art of R Programming: A Tour of Statistical Software Design</em> (No Starch Press, 2011).
+<li>J.D. Long and Paul Teetor. <em>R Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics</em>, 2nd edition (O'Reilly Media, 2019).
+</ul>
+
+<h4>Collaboration, Cheating, and Plagiarism</h4>
+
+All submitted work should be your own. You are welcome and encouraged to use the Internet and consult with others while working on an assignment.  However, whenever you have had assistance with a problem, you must state so at the beginning of the problem solution.  Unless this mechanism is abused, there will be no reduction in credit for using and reporting such assistance. This policy applies to both individual and group work. In group work, you only need to acknowledge help from outside the group.
+
+<h4>Statement on Special Accommodations</h4>
+
+Students with disabilities who need special accommodations for this class are encouraged to meet with me or the appropriate disability service provider on campus as soon as possible.  In order to receive accommodations, students must be registered with the appropriate disability service provider on campus as set forth in the student handbook and must follow the University procedure for self-disclosure, which is stated in the University <em>Guide to Services and Accommodations for Students with Disabilities</em>.  Students will not be afforded any special accommodations for academic work completed prior to the disclosure of the disability, nor will they be afforded any special accommodations prior to the completion of the documentation process with the appropriate disability office.
+
+<h4>School of Science Commitment to Equity and Inclusion</h4>
+
+The School of Science does not discriminate based on race, gender, ethnicity, sexual orientation, or religion. We strive to create a learning environment that allows everyone to succeed and grow. Towards that end, we are here to assist you in any way we can. Should you experience any difficulties or challenges due to discriminatory or harassing behaviors of any sort in your classes, please know that many people are available to help. You can contact your professor, your academic advisor, the department chair, or any of the Deans (Dean Bachrach, Associate Dean Duckett and Assistant Dean Tiedemann) by email or phone or to meet in person by appointment.  There are also resources available in the larger University community including the Office of Equity and Diversity and the Intercultural Center.
+
+<h4>COVID-19 and In-person Meetings</h4>
+ 
+<p>During the COVID-19 pandemic, it is critically important that we care for ourselves and each other by taking strict measures to avoid spreading SARS-CoV-2. It is therefore a requirement that face masks are worn properly and appropriate physical distancing is maintained at all times during all classes. 
+
+<p>When entering a room, please pick up disinfectant wipes and move as far into the classroom as possible in order to help maintain physical distances. Similarly, leave the room in an orderly fashion and dispose of the wipes on the way out.
+
+<p>Students should wipe down their desktops upon arrival.
+
+<p>Students are expected to wipe down keyboards and monitors with disinfectant wipes (provided) both before and after use.
+
+<p>For further information about COVID-19-related policies, please refer to the Student Handbook.
+
+<h4>FERPA Video Prohibition</h4>
+
+Under the Family Educational Rights and Privacy Act (FERPA), your education records as a student are confidential and protected. Under most circumstances your records will not be released without your written and signed consent. Part of a student's protected and confidential education records include video and / or audio recordings of students within the classroom. As such, students are <b>strictly prohibited</b> from video or audio recording distance learning lectures off of any platform utilized by professors (Zoom, Webex, etc.). A prohibited recording includes, but is not limited to recordings using the platform, a cell phone, tablet, video camera, audio capture device, etc. Students may be subject to disciplinary action under the Student Code of Conduct if found to have made any video and/or audio recording distance learning lectures without proper consent.
+
+<div id="R"><h2>R</h2></div>
+
+<P>We will use R, a programming language for statistical computing, throughout the semester for in-class activities and homework assignments. I will cover the relevant features of R throughout the course.
+	
+<p>You should install R on your personal computer. You can install R by following the instructions <a href="https://cran.rstudio.com/bin/windows/base/">for Windows here</a>, <a href="https://cran.rstudio.com/bin/macosx/">for macOS here</a>, or <a href="https://cran.rstudio.com/bin/linux/">for Linux here</a>. You will also want to install RStudio, and Integrated Development Environment for R, which you can find <a href="https://www.rstudio.com/products/rstudio/download/#download">here</a>.
+
+<div id="schedule"><h2>Schedule</h2></div>
+
+<strong>Subject to revision</strong>.  Assignments and solutions will all be linked here, as they are available.
+
+<dl>
+<dt>January 23, Lecture 1:
+	<dd><b>Topics: </b>Intro to course. Statistical Computing and Computational Statistics. R. Basic data types and data structures.
+	<dd><b>Sections: </b><em>TARP</em>: 1.2, 1.4, 1.7 <em>RC</em>: 1.4, 1.8, 2.1, 2.2, 16.1, 16.2, 16.3, 16.4, 16.6
+	<dd><a href="MA-350-SP20/lesson-plans/1/learning-objectives.html">Learning Objectives</a>
+
+<dt>January 27, Lecture 2:
+	<dd><b>Topics: </b>Data structures: vectors, arrays, lists, and data frames.
+	<dd><b>Sections: </b><em>TARP</em>: 2.1, 2.2, 2.4, 2.8, 3.1, 3.2, 3.5, 4.1, 4.2, 4.3, 5.1, 5.2, 5.3
+	<dd><a href="MA-350-SP20/lesson-plans/2/learning-objectives.html">Learning Objectives</a>
+
+<dt>January 30, Lecture 3:
+	<dd><b>Topics: </b>Lab 1.
+	<dd><a href="MA-350-SP20/lesson-plans/3/learning-objectives.html">Study Guide for Quiz 1</a>
+	<dd><b>Lab and Homework Formatting Instructions:</b> <a href="MA-350-SP20/lesson-plans/3/lab-formatting-instructions.Rmd">Rmd File</a>, <a href="MA-350-SP20/lesson-plans/3/lab-formatting-instructions.html">HTML</a>
+	<dd><b>Programming Journal Template:</b> <a href="MA-350-SP20/lesson-plans/3/programming-journal-template.Rmd">Rmd file</a>
+
+<dt>February 3, Lecture 4:
+	<dd><b>Topics: </b>Conditional statements. Iteration. Vectorization to avoid iteration. <tt>apply</tt>.
+	<dd><b>Sections: </b><em>TARP</em>: 7.1, 2.6 <em>RC</em>: 15.1, 15.2, 6.3, 6.4
+	<dd><a href="MA-350-SP20/lesson-plans/4/learning-objectives.html">Learning Objectives</a>
+
+<dt>February 6, Lecture 5:
+	<dd><b>Topics: </b>Text. Characters and strings. Substrings. Splitting strings. Building strings. Counting strings.
+	<dd><b>Sections: </b><em>TARP</em>: 11.1 <em>RC</em>: 7.1, 7.2, 7.3, 7.4, 7.6
+	<dd><a href="MA-350-SP20/lesson-plans/5/learning-objectives.html">Learning Objectives</a>
+
+<dt>February 10, Lecture 6:
+	<dd><b>Topics: </b>Lab 2.
+	<dd><a href="MA-350-SP20/lesson-plans/6/learning-objectives.html">Study Guide for Quiz 2</a>
+
+<dt>February 13, Lecture 7:
+	<dd><b>Topics: </b>Lab 2 (cont'd).
+
+<dt>February 17, Lecture 8:
+	<dd><b>Topics: </b>Functions. Writing functions.
+	<dd><b>Sections: </b><em>TARP</em>: 1.3, 7.3, 7.4, 7.5, 7.13
+	<dd><a href="MA-350-SP20/lesson-plans/8/learning-objectives.html">Learning Objectives</a>
+	<dd><a href="MA-350-SP20/lesson-plans/8/gmp.dat"><tt>gmp.dat</tt></a> file
+	<dd><a href="https://ddarmon.shinyapps.io/steepest-descent-demo/">Demo of Steepest Descent</a>
+
+<dt>February 20, Lecture 9:
+	<dd><b>Topics: </b>More with functions. Families of functions for acting on the same object. Sub-functions for breaking up a large task. Sourcing functions from a file.
+	<dd><b>Sections: </b>Handout
+	<dd><a href="MA-350-SP20/lesson-plans/9/learning-objectives.html">Learning Objectives</a>
+
+<dt>February 24, Lecture 10:
+	<dd><b>Topics: </b>Plotting in R. Base R graphics: <tt>plot</tt>, <tt>points</tt>, <tt>lines</tt>. "Decorating" Base R graphics. <tt>ggformula</tt> graphics: <tt>gf_*</tt> functions.
+	<dd><b>Sections: </b><em>TARP</em>: 12.1, 12.2, 12.3
+	<dd><a href="MA-350-SP20/lesson-plans/10/learning-objectives.html">Learning Objectives</a>
+
+<dt>February 27, Lecture 11:
+	<dd><b>Topics: </b>Lab 3.
+	<dd><a href="MA-350-SP20/lesson-plans/11/learning-objectives.html">Study Guide for Quiz 3</a>
+
+<dt>March 2, Lecture 12:
+	<dd><b>Topics: </b>Using randomness for fun and profit. Randomness in nature. Pseudo-random number generators. Why generate pseudo-random numbers? They're the (H-)bomb. Basic R functions for parametric distributions.
+	<dd><b>Sections: </b><em>TARP</em>: 8.2, 8.6 <em>RC</em>: 8.3, 8.4, 8.5
+	<dd><a href="MA-350-SP20/lesson-plans/12/learning-objectives.html">Learning Objectives</a>
+
+<dt>March 5, Lecture 13:
+	<dd><b>Topics: </b>Summarizing data. The empirical distribution function. Density estimation. Numerical summaries. Sampling distributions of test statistics via simulation.
+	<dd><b>Sections: </b>Handout
+	<dd><a href="MA-350-SP20/lesson-plans/13/learning-objectives.html">Learning Objectives</a>
+	<dd><a href="https://ddarmon.shinyapps.io/kde-demo/">Demo of Kernel Density Estimation</a>
+
+<dt>March 9, Lecture 14:
+	<dd><b>Topics: </b>Lab 4.
+	<dd><a href="MA-350-SP20/lesson-plans/14/learning-objectives.html">Study Guide for Quiz 4</a>
+
+<dt>March 12, Lecture 15:
+	<dd><b>Topics: </b>Debugging and testing code. Interpreting an error message from R. Debugging with <tt>cat</tt> and <tt>print</tt>. Debugging with <tt>browser</tt>.
+	<dd><b>Sections: </b><em>TARP</em>: 13.1, 13.2, 13.3, 13.4
+	<dd><a href="MA-350-SP20/lesson-plans/15/learning-objectives.html">Learning Objectives</a>
+
+<dt>March 23, Lecture 16:
+	<dd><b>Topics: </b>Adding break points to R scripts. When in doubt, internet: how to read a Stack Overflow (or similar) page. Version control and <tt>git</tt>. GitHub. Interfacing GitHub with RStudio Cloud.
+	<dd><b>Sections: </b>Handout
+	<dd><a href="MA-350-SP20/lesson-plans/16/learning-objectives.html">Learning Objectives</a>
+	<dd><a href="MA-350-SP20/lesson-plans/16/github-rstudio-cloud-setup.html">Walkthrough of Interfacing RStudio Cloud and GitHub</a>
+
+<dt>March 26, Lecture 17:
+	<dd><b>Topics: </b>Lab 5.
+	<dd><a href="MA-350-SP20/lesson-plans/17/learning-objectives.html">Study Guide for Quiz 5</a>
+	<dd><a href="MA-350-SP20/lesson-plans/17/github-collaboration-setup.html">Setting up a GitHub Repo for Collaborating on Lab 5</a>
+
+<dt>March 30, Lecture 18:
+	<dd><b>Topics: </b>Numerical methods in R. Root finding. Optimization.
+	<dd><b>Sections: </b><em>RC</em>: 8.1
+	<dd><a href="MA-350-SP20/lesson-plans/18/learning-objectives.html">Learning Objectives</a>
+	<dd><a href="https://ddarmon.shinyapps.io/successive-parabolic-interpolation/">Demo of Successive Parabolic Interpolation</a>
+
+<dt>April 2, Lecture 19:
+	<dd><b>Topics: </b>Numerical methods in R. Numerical quadrature (i.e. integration). Symbolic differentiation.
+	<dd><b>Sections: </b>Handout
+	<dd><a href="MA-350-SP20/lesson-plans/19/learning-objectives.html">Learning Objectives</a>
+
+<dt>April 6, Lecture 20:
+	<dd><b>Topics: </b>Simulation.  Simulation to approximate sampling distributions.  Simulation to assess the properties of a confidence interval.  Fisher's confidence interval for a population correlation.
+	<dd><b>Sections: </b>Handout
+	<dd><a href="MA-350-SP20/lesson-plans/20/learning-objectives.html">Learning Objectives</a>
+
+<dt>April 9, Lecture 21:
+	<dd><b>Topics: </b>Lab 6.
+	<dd><a href="MA-350-SP20/lesson-plans/21/learning-objectives.html">Study Guide for Quiz 6</a>
+
+<dt>April 13, Lecture 22:
+	<dd><b>Topics: </b>More simulation.  Simulation to assess the properties of a hypothesis test.  The one-sample sign test for medians.  Simulating to assess the properties of a one-sample sign test.
+	<dd><b>Sections: </b>Handout
+	<dd><a href="MA-350-SP20/lesson-plans/22/learning-objectives.html">Learning Objectives</a>
+
+<dt>April 16, Lecture 23:
+	<dd><b>Topics: </b>Bootstrapping as a special type of simulation. The parametric bootstrap. The nonparametric bootstrap.
+	<dd><b>Sections: </b><em>RC</em>: 13.8
+	<dd><a href="MA-350-SP20/lesson-plans/23/learning-objectives.html">Learning Objectives</a>
+
+<dt>April 20, Lecture 24:
+	<dd><b>Topics: </b>Lab 7.
+	<dd><a href="MA-350-SP20/lesson-plans/24/learning-objectives.html">Study Guide for Quiz 7</a>
+	<dd><a href="https://ddarmon.shinyapps.io/pca-3d-demo/">Demo of Principal Component Analysis (PCA) for Trivariate Data</a>
+
+<dt>April 23, Lecture 25:
+	<dd><b>Topics: </b>No Lecture. Work on final projects.
+	<dd><b>Sections: </b>
+
+<dt>April 27, Lecture 26:
+	<dd><b>Topics: </b>No Lecture. Work on final projects.
+	<dd><b>Sections: </b>
+		
+<dt>May 4, Final Exam:
+	<dd><b>Time: </b>2:40 PM - 5:30 PM
+	<dd><b>Location: </b> <strike>Howard Hall 307 (HH 307)</strike> Remote
+</dl>

@@ -1,0 +1,41 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<h1>Homework 12</h1>
+
+<h2>Additional Directions</h2>
+
+<p> For each of the following problems:
+	
+	<ol>
+		<li> Sketch the probability density function of the Gaussian random variable (i.e. get the general shape and placement of the probability density function correct).
+		<li> Indicate the area under the curve that you are computing to answer the given probability query.
+		<li> Use R to compute the probability, and give the R command you used.
+	</ol>
+
+<p><b>Example:</b> If \(X \sim N(1, 2^{2})\), and you are asked to compute \(P(0 \leq X \leq 2)\),
+you should sketch:
+
+<p><center><img src = "pdf-example.jpg" width = 500x></img></center>
+<p>as well as state and find \[ \begin{aligned} P(0 \leq X \leq 2) &= P(X \leq 2) - P(X \leq 0) \\ &= \texttt{pnorm(2, mean = 1, sd = 2) - pnorm(0, mean = 1, sd = 2)} \end{aligned} \]
+
+<p><b>Notice:</b> I have marked the horizontal axis with \(\mu \pm k \sigma\) for \(k = 0, 1, 2, 3\).
+
+<p><b>Hint:</b> You may find <a href="https://ddarmon.shinyapps.io/normal-area-demo/">this Shiny demo</a> useful as you get familiar with the Gaussian curve and using R to compute Gaussian probabilities. <a href="https://ddarmon.shinyapps.io/normal-probability-queries-practice/">This Shiny app</a> will generate practice problems you can work through and then check your work.
+
+<h2>Problems</h2>
+
+<p><h3>Section 4.3: </h3>
+<ul>
+	<li>39</b>
+	<li>43; for this problem use <tt>pnorm</tt> with arguments <tt>mean = 0</tt> and <tt>sd = 1</tt>. This means you need to <b>standardize</b> \(X\) <b>first</b>.
+	<li>44</b>
+</ul>
+
+<p> Read pages 178-180 (up to but not including "Nonstandard Normal Distributions") and page 183 (up to but not including "The Normal Distribution and Discrete Populations") in Devore & Berk about percentiles of the Gaussian (normal) distribution, and solve the following problems.
+
+<p><h3>Section 4.3: </h3>
+<ul>
+	<li>41
+	<li>42
+	<li>52; <strong>Note:</strong> This is a challenging problem. Please see me during office hours or email me if you would like any hints after attempting this problem.
+</ul>

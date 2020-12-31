@@ -1,0 +1,165 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<h1>Study Guide for Exam 1</h1>
+
+<h2>Exam Format</h2>
+
+<p>This will be a closed-book, closed-notes exam. You will need a calculator. A calculator that performs arithmetic operations, reciprocals, square roots, powers and logarithms (base 10) is sufficient. Graphing calculators are permitted.</p>
+
+The exam will consist of 6 problems, 5 of which will be open-ended and 1 of which will be multiple choice. All open-ended problems will be multi-part.
+
+<h2>Advice for Preparing for the Exam</h2>
+
+This is a mathematics exam. As such, you will be expected to <strong>do mathematics</strong>. A common misconception made by students is that, in preparing for a mathematics exam, it suffices to make sure you can understand the solution to a given problem <strong>with the solution in front of you</strong>. The exam, however, tests your ability to <strong>solve the problem yourself from scratch</strong>. Thus, you should practice solving problems from scratch in preparation for the exam. The homework and quizzes are part of this practice, but only completing those once will likely not lead to a strong performance on the exam.
+
+<p>With the ultimate goal of solving problems yourself from scratch in mind, a possible study check list is below:
+<ol>
+	<li> Make sure you can correctly answer all of the Anki cards I provided, and any additional Anki cards you made. If you are still unclear on the material on any of the Anki cards, <strong>see me</strong>.
+	<li> Exam questions will be modeled off of in-class examples, homework problems, and quiz problems. As such, go through homework and quiz problems, <strong>especially those you found difficult or that were marked as incorrect / incomplete</strong>, and make sure you can solve them from scratch, <strong>without the solution in front of you.</strong>
+	<ul>
+		<li>I have provided blank copies of all of the quizzes on eCampus so you can re-solve a given problem from scratch.
+		<li>Since problems on the exam will not come tagged with the chapter / section relevant to their solutions, you might try solving the quiz and homework problems in a random order. If you would like help with this, I can show you how to construct a randomized list of problems using R.
+	</ul>
+	<li> Review the compilation of learning objectives below, and make sure you can perform each action below <strong>without your notes or book</strong>. If there is a particular learning objective you are unclear on, <strong>email or see me</strong>.
+	<li><strong>Cramming</strong> (studying right before the exam) combined with <strong>massed practice</strong> (solving lots of problems all at once) is an <strong>ineffective</strong> study strategy. Instead, <strong>distribute</strong> your study sessions <strong>over the remaining time until the exam</strong>. Study for at most 60 to 90 minutes at a time, and <strong>take breaks</strong>, whether legitimate breaks (go for a walk, hang out with friends, etc.), or a transition to studying for another course. The sooner before the exam you start studying, the better.
+</ol>
+
+<p>To do well on the exam, you should be able to do the following:</p>
+<h3>Chapter 1 and Triola & Triola Excerpt</h3>
+
+<p><strong>Triola &amp; Triola Section 1.1: Overview</strong></p>
+
+<ol>
+<li>Describe what a statistician does using action verbs.</li>
+<li>Distinguish between a population and a sample from a population.</li>
+<li>Given a statistical query, determine the relevant population, and propose a useful sample from that population.</li>
+</ol>
+
+<p><strong>Triola &amp; Triola Section 1.2: Types of Data</strong></p>
+
+<ol>
+<li>Distinguish between a parameter of a population and a statistic of a sample.</li>
+<li>Specify the characteristics of the two types of data (quantitative / qualitative) and the types of quantitative data (discrete / continuous), and identify the type of a given measurement.</li>
+</ol>
+
+<p><strong>Triola &amp; Triola Section 1.3: Design of Experiments (or Where Do Data Come From?)</strong></p>
+
+<ol>
+<li>Distinguish between an observational study and an experimental study, and identify which category a study falls into given its description.</li>
+<li>Describe how an unobserved mechanism can cause confounding between two observed outcomes.</li>
+<li>Explain the slogan &#8220;association does not imply causation,&#8221; and relate the slogan to confounding.</li>
+</ol>
+
+<p><strong>Section 1.1: Populations and Samples</strong></p>
+
+<ol>
+<li>Distinguish between descriptive and inferential statistics.</li>
+</ol>
+
+<p><strong>Section 1.2: Pictorial and Tabular Methods in Descriptive Statistics</strong></p>
+
+<ol>
+<li>Construct a rug plot given a (small) data set. <strong>Note:</strong> rug plots are not covered in the text. See <a href="https://en.wikipedia.org/wiki/Rug_plot">here</a> for a reminder about rug plots.</li>
+<li>Construct a histogram by hand given a (small) data set.</li>
+<li>Identify the &#8220;5 number summary&#8221; that is used to construct a boxplot.</li>
+<li>Construct a boxplot given a 5 number summary of a data set.</li>
+<li>Use rug plots, histograms, and boxplots to compare data sets from two or more groups.</li>
+<li>Construct rug plots, histograms, and boxplots using R.</li>
+<li>Construct a frequency, relative frequency, or density histogram given a (small) data set.</li>
+<li>Compare and contrast frequency, relative frequency, and density histograms in terms of how they represent the distribution of a data set on the real line.</li>
+</ol>
+
+<p><strong>General Note:</strong> Below, where it says &#8216;define the [statistic] of a data set,&#8217; this means you should <strong>know the procedure</strong> for computing a given statistic, and be able to express that procedure as a mathematical expression. Generally, you will not be expected to compute sample means, medians, variances, etc., by hand, but I do expect you to <strong>know how to</strong> compute them by hand.</p>
+
+<p><strong>Section 1.3: Measures of Location</strong></p>
+
+<ol>
+<li>Define the sample mean of a data set, and specify how we will denote the sample mean.</li>
+<li>Explain how the sample mean is related to the &#8216;center of mass&#8217; of a data set.</li>
+<li>Define the sample median of a data set.</li>
+<li>Compare and contrast the sample mean and sample median in terms of what sense of &#8216;center&#8217; of a data set they summarize.</li>
+</ol>
+
+<p><strong>Section 1.4: Measures of Variability</strong></p>
+
+<ol>
+<li>Define the sample variance and sample standard deviation of a data set, and specify how we will denote the sample variance and sample standard deviation.</li>
+<li>Explain why the sample standard deviation is more interpretable than the sample variance.</li>
+<li>Define the mean absolute deviation of a data set.</li>
+</ol>
+
+<p><strong>R:</strong></p>
+
+<ol>
+<li>Construct a vector <tt>x</tt> in R containing a list of numbers.</li>
+<li>Compute the mean, median, variance, and standard deviation of a data set using R.</li>
+</ol>
+
+<h3>Chapter 2</h3>
+
+<p><strong>Section 2.1: Sample Spaces and Events</strong></p>
+
+<ol>
+<li>Define an experiment, outcome, and sample space in the context of the mathematical model of an experiment.</li>
+<li>State the sample space of an experiment given a verbal description of the experiment.</li>
+<li>Compare and contrast discrete and continuous sample spaces.</li>
+<li>Define an event in the context of the mathematical model of an experiment.</li>
+<li>Describe what it means for an event to occur.</li>
+<li>State meaning of set-union <span class="math">\(\cup\)</span>, set-intersect <span class="math">\(\cap\)</span>, and set-complement <span class="math">\('\)</span> from set theory.</li>
+<li>Use a Venn diagram to reason about set operations.</li>
+<li>State the meaning of set-union <span class="math">\(\cup\)</span>, set-intersect <span class="math">\(\cap\)</span>, and set-complement <span class="math">\('\)</span> when applied to events.</li>
+<li>State what it means for two sets / events to be disjoint / mutually exclusive.</li>
+</ol>
+
+<p><strong>Section 2.2: Axioms, Interpretations, and Properties of Probability</strong></p>
+
+<ol>
+<li>Define a set function and give examples from earlier courses in mathematics.</li>
+<li>State the three axioms that a set function must satisfy to be a probability set function.</li>
+<li>Compute probabilities of events defined using set operations using the results derived from the three axioms of probability theory.</li>
+<li>Define a simple event and use simple events to compute the probability of a non-simple event.</li>
+</ol>
+
+<p><strong>Section 2.4: Conditional Probability</strong></p>
+
+<ol>
+<li>Define the conditional probability of an event <span class="math">\(A\)</span> given an event <span class="math">\(B\)</span>: <span class="math">\(P(A \mid B)\)</span></li>
+<li>Identify conditional probabilities using keywords such as <strong>if</strong> and <strong>given</strong>.</li>
+<li>Explain how a conditional probability is a regular probability with a reduced sample space.</li>
+<li>State and use the product rule to factor probabilities of events constructed as intersections (&#8220;ANDs&#8221;) of other events.</li>
+<li>Define a partition of a set.</li>
+<li>Define a partition of a sample space.</li>
+<li>State the Law of Total Probability, and use the law to solve problems given the relevant information.</li>
+<li>State Bayes&#8217; Theorem, and use Bayes&#8217; Theorem to solve problems given the relevant information.</li>
+<li>Construct a tree diagram as a visual representation of the product rule for outcomes that occur in stages, and use tree diagrams to reason about the probabilities of sequences of events.</li>
+</ol>
+
+<h3>Chapter 3</h3>
+
+<p><strong>Section 3.1: Random Variables</strong></p>
+
+<ol>
+<li>Give the definition of a random variable as a function from a sample space to the real numbers.</li>
+<li>Properly use the convention of denoting a random variable by an uppercase Roman letter (e.g. <span class="math">\(X, Y, Z\)</span>), a particular value that random variable can take by the corresponding lowercase Roman letter (e.g. <span class="math">\(x, y, z\)</span>), and its range by the corresponding calligraphic Roman letter (e.g. <span class="math">\(\mathcal{X}, \mathcal{Y}, \mathcal{Z}\)</span>).</li>
+<li>Distinguish between a discrete random variable and a continuous random variable.</li>
+<li>Explain in what sense a random variable is a &#8216;&#8216;number that could have been otherwise.&#8217;&#8217;</li>
+<li>Given a sample space and a description of a random variable, determine the range of the random variable, and determine what values of the sample space map to each value of the random variable&#8217;s range.</li>
+</ol>
+
+<p><strong>Section 3.2: Probability Distributions for Discrete Random Variables</strong></p>
+
+<ol>
+<li>Define the probability mass function <span class="math">\(p(x) = P(X = x)\)</span> for a random variable <span class="math">\(X\)</span> in terms of the underlying sample space <span class="math">\(\mathcal{S}\)</span>.</li>
+<li>State the two characteristics a function <span class="math">\(p\)</span> must have to be a valid probability mass function, and identify when a given function <span class="math">\(p\)</span> does or does not satisfy these conditions.</li>
+<li>Use a probability mass function <span class="math">\(p\)</span> to compute the probability <span class="math">\(P(X \in Q)\)</span> that <span class="math">\(X\)</span> falls in some query set <span class="math">\(Q \subseteq \mathbb{R}\)</span>.</li>
+<li>Use the &#8220;Probability Dictionary&#8221; to map from statements such as &#8220;at least <span class="math">\(x\)</span>,&#8221; &#8220;at most <span class="math">\(x\)</span>,&#8221; etc., to the corresponding query set <span class="math">\(Q\)</span>.</li>
+<li>Define the cumulative distribution function <span class="math">\(F(x) = P(X \leq x)\)</span> for a random variable <span class="math">\(X\)</span> in terms of the underlying sample space <span class="math">\(\mathcal{S}\)</span>.</li>
+<li>State the four properties a function <span class="math">\(F\)</span> must have to be a valid cumulative distribution function.</li>
+<li>Define what it means for a function <span class="math">\(f\)</span> to be continuous and right-continuous.</li>
+<li>Sketch the graph of a cumulative distribution function <span class="math">\(F\)</span> for a discrete random variable <span class="math">\(X\)</span> given either its <span class="math">\(p\)</span> or <span class="math">\(F\)</span>.</li>
+<li>Compute <span class="math">\(F\)</span> from <span class="math">\(p\)</span>, and vice versa.</li>
+<li>Compute the probability <span class="math">\(P(a < X \leq b)\)</span> of a standard query using <span class="math">\(F\)</span>.</li>
+<li>Compute the probability <span class="math">\(P(a \square X \square b)\)</span> of a non-standard query using <span class="math">\(F\)</span>.
+</ol>
+<ul>
+<li><strong>Hint:</strong> Recall the mnemonic relating <span class="math">\(P(a \square X \square b)\)</span> to the standard query <span class="math">\(P(a < X \leq b)\)</span>.</li>
+</ul></li>
