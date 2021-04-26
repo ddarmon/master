@@ -1,11 +1,13 @@
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 <h1>Study Guide for Final Exam</h1>
 
-<p>This will be an open-book, open-notes final exam.</p>
+<p>This will be a closed-book final exam.</p>
+	
+<p>You are permitted one 8.5 inch by 11 inch sheet of <strong>handwritten</strong> notes (both sides) for the final exam.</p>
 
 <p>You will need a calculator. A calculator that performs arithmetic operations, reciprocals, square roots, powers and logarithms (base 10) is sufficient. Graphing calculators are permitted.</p>
 
-<p>You will have 2 hours to complete the exam. The exam will start promptly at 11:35 AM, so please start on time.</p>
+<p>You will have 2 hours to complete the exam. The exam will start promptly at 11:35 AM, so please arrive on time.</p>
 
 <p>There will be 7 questions on the exam: 3 modeled after problems from the previous exams, and 4 from the material covered since Exam 2.</p>
 
@@ -34,7 +36,8 @@
 <ol>
 <li>Identify when a &#8216;word problem&#8217; asks for a confidence interval for a population proportion and/or a success probability from a binomial experiment.</li>
 <li>State the standardization of the success proportion <span class="math">\(\widehat{p}_{n} = X/n\)</span> used in constructing the Wilson confidence interval, and explain why this standardized variable approximately follows a standard Gaussian distribution.</li>
-<li>Use the <tt>prop.test()</tt> function to compute the Wilson confidence interval for a population proportion.</li>
+<li>Use the <tt>binom.agresti.coull</tt> function in the R package <tt>binom</tt> to compute the Wilson confidence interval for a population proportion.</li>
+<li>State how the confidence level passed to <tt>binom.agresti.coull</tt> must be modified to use <tt>binom.agresti.coull</tt> to construct confidence upper / lower bounds.</li>
 <li>Sketch confidence level <span class="math">\(c\)</span> confidence intervals, confidence upper bounds, and confidence lower bounds for a population proportion based on the Wilson confidence interval.</li>
 <li>Distinguish between &#8216;word problems&#8217; that call for the use of:
 
@@ -97,7 +100,7 @@
 <li>State an appropriate test statistic to test a claim about the population mean of a Gaussian population with <strong>unknown</strong> population standard deviation.</li>
 <li>Identify when the <span class="math">\(Z\)</span> or <span class="math">\(T\)</span> statistics are appropriate to test a claim about the mean of a population.</li>
 <li>Perform a level <span class="math">\(\alpha\)</span> hypothesis test for a claim about a population mean.</li>
-<li>Use the <tt>pwr.norm.test()</tt> function from the R package <tt>pwr</tt> to perform power calculations for hypothesis tests for the population mean of a Gaussian population.
+<li>Use the <tt>pwr.norm.test</tt> function from the R package <tt>pwr</tt> to perform power calculations for hypothesis tests for the population mean of a Gaussian population.
 
 <ul>
 <li>Find <span class="math">\(n\)</span> given <span class="math">\(\mu_{0}, \mu_{a}, \sigma, \alpha,\)</span> and <span class="math">\(1 - \beta\)</span>.</li>
@@ -154,7 +157,7 @@
 <li>State the <span class="math">\(T\)</span>-statistic for a two sample test for the difference between two population means, including its sampling distribution under the null hypothesis when the populations are Gaussian.</li>
 <li>Construct confidence intervals and upper/lower confidence bounds for the difference between two population means when the population standard deviations are unknown.</li>
 <li>Perform a hypothesis test for a claim about the difference between two population means when the population standard deviations are unknown.</li>
-<li>Use the R function <tt>two.sample.t.test()</tt> to perform a two sample <span class="math">\(t\)</span>-test using summarized data.</li>
+<li>Use the R function <tt>two.sample.t.test</tt> to perform a two sample <span class="math">\(t\)</span>-test using summarized data.</li>
 </ol>
 
 <h3>Chapter 12</h3>
@@ -171,7 +174,7 @@
 <p><strong>Section 12.2: Estimating Model Parameters</strong></p>
 
 <ol>
-<li>Fit a simple linear regression model to data using R&#8217;s <tt>lm()</tt> function.</li>
+<li>Fit a simple linear regression model to data using R&#8217;s <tt>lm</tt> function.</li>
 <li>Recognize the slope and intercept of a simple linear regression model, and interpret the values of a slope and intercept in the context of a particular problem.</li>
 <li>Use a regression model to predict a response given a value of the predictor.</li>
 <li>Define the residual (error) of a prediction in a simple linear regression.</li>
@@ -185,7 +188,7 @@
 <ol>
 <li>State examples of paired data.</li>
 <li>Construct a scatter plot by-hand for a (small) data set of paired data.</li>
-<li>Construct a scatter plot in R using <tt>plot()</tt>.</li>
+<li>Construct a scatter plot in R using <tt>plot</tt>.</li>
 <li>Define the sample covariance, and explain why it quantifies linear association between two outcomes.</li>
 <li>Define the sample correlation, and relate the sample correlation to the sample covariance.</li>
 <li>State the main properties of the sample correlation in terms of its range, invariance to affine transformations of the data, and symmetry in <span class="math">\(X\)</span> and <span class="math">\(Y\)</span>.</li>
@@ -194,5 +197,5 @@
 <li>State the null and alternative hypotheses for a claim about a population correlation.</li>
 <li>State a test statistic for testing a claim about a population correlation, including its sampling distribution under the null hypothesis when the population is bivariate Gaussian.</li>
 <li>Test a claim about a population correlation by either constructing a rejection region or computing a <span class="math">\(P\)</span>-value for an appropriate test statistic.</li>
-<li>Use <tt>cor.test()</tt> and interpret its output to perform hypothesis tests or construct (approximate) confidence intervals / bounds for a population correlation.</li>
+<li>Use <tt>cor.test</tt> and interpret its output to perform hypothesis tests or construct (approximate) confidence intervals / bounds for a population correlation.</li>
 </ol>
