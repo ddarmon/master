@@ -1,6 +1,7 @@
 ---
-title: "Response to Facebook Posts Regarding the California Mathematics Framework"
+title: "Response to Facebook Comments Regarding the California Mathematics Framework"
 author: "David Darmon"
+date: "6 December 2021"
 output: html_document
 ---
 
@@ -8,32 +9,82 @@ output: html_document
 
 > because it will lead to higher data literacy, which is super important for a society making evidence-based decisions.
 
-Lorem ipsum.
+Data literacy requires understanding mathematical models. I agree that we could teach model-free (i.e. descriptive) statistics without calculus, but that's only the beginning, not the end, of data literacy. We already teach students about the sample mean, median, and mode, scatter plots, boxplots, histograms, etc., as part of the high school curriculum. If this is the plan for teaching a high school class in data science, then that is not adding anything new. But that's only the first unit from  [the template CMF course on data science](https://curriculum.idsucla.org/IDS_Curriculum_v_5.0/1_IDS_Curriculum_v_5.0/Introduction%20to%20Data%20Science_Curriculum_v_5.0.pdf).
+
+To make any inference from a descriptive statistic requires a statistical model, and understanding that model almost always requires tools from calculus. You can try to get around that with a lot of hand-waving, but having taught such a course (a non-calculus-based statistics course for non-math majors), I found that many of my students were worse off at the end of the course than at the beginning of it: they were equipped with the confidence to come to faulty conclusions because they did not really understand the tools they were using.
 
 > To clarify, I think algebra is important for everybody. But I would argue that we are kidding ourselves if we think that most people who take calculus benefit from having taken calculus. Even students who can do the limit problems mostly don't internalize the point of limits, and we waste tons of time on topics like trig identities and surfaces of rotation that are just unnecessary.
 
+This is an argument for teaching calculus differently rather than removing it from the high school curriculum and sounds in the spirit of the [calculus reform movement](https://www.mathvalues.org/masterblog/launchings201906-z45y4-fhkpj). I know this approach was used in the calculus courses at my university, and is certainly incorporated into the various "Calculus for [$x$]" ($x \in \{ \text{biology, social sciences, business, etc.}\}$) courses that are replacing a standard course sequence in calculus.
+
 > Graduating from high school should require a solid understanding of both algebra (including basic linear algebra) and statistics.
+
+As I'll get to in my responses to Mike below, I'm not sure how one can have a solid understanding of statistics (beyond descriptive statistics) without calculus. And the basics of linear algebra **are** taught in Algebra II courses, or at least they were in my Algebra II course back in the Before Times.
 
 # Mike Kreisel
 
 > I'm curious to know which students you think the traditional path is serving well, other than those going into advanced math or physics.
 
+I would argue that any student planning to go into a STEM field would benefit from the traditional path, not just those going into physics or advanced mathematics.
+
+1. **Engineering:** Unless we want engineers to become black-box mechanics, I feel they have to understand the underlying physics of the system they're designing. And that requires knowing the underlying mathematical methods used to analyze that physics.
+
+2. **Chemistry:** A standard curriculum in chemistry, starting with a first-year course in General Chemistry, requires knowledge of calculus. Chemical kinetics, thermodynamics, nuclear chemistry, etc., all of which are covered in a first-year sequence in general chemistry, require knowledge of at least differential calculus if you really want to understand the topic. Organic chemistry, if you want to understand how different reaction mechanisms are arrived at experimentally, requires differential equations. Physical chemistry also requires knowledge of integral calculus for thermodynamics and quantum mechanics.
+
+3. **Biology:** Biology has become an increasingly mathematical science. The non-mathematical bits have largely been worked out. Almost all of the biology faculty I worked with at Monmouth wished they had stronger mathematics backgrounds and encouraged their students to take more statistics and mathematics courses. Many of the rest admitted to a math phobia and avoided areas of biology that required deeper levels of mathematics.
+
+4. **Economics, Finance, Business, etc.:** Having never taken nor taught a course in economics, I can't speak to this directly. But I would imagine that most economics professors would agree that both micro- and macroeconomics are easier to understand once you have a solid foundation in calculus.
+
 > If advanced students had a 2 course sequence in linear algebra and statistics would you really think they're set back?
+
+If they then never take calculus? Yes.
+
+Calculus is the study of rates of change and accumulation of functions. We could call it "modeling science" if we wanted to make it sound sexier (like "data science" sounds sexier than statistics), but the basic crux remains: if we want our students to understand things that change or accumulate over time, they need to be proficient in basic tools from calculus like derivatives and integrals.
+
+Moreover, in my opinion, the choice between statistics and calculus is a false one. As soon as you move away from descriptive statistics, you are introducing a mathematical model, and that model is typically best understood using calculus. You can't do inferential statistics without understanding the fundamental concepts from calculus. Optimization (and thus derivatives) are central to deciding on estimators and justifying their use. Anything with continuous distributions is impossible without integration. And much of the introductory material on discrete distributions immediately moves to a continuous approximations that again require calculus. If we don't want to treat all of these topics as Rituals from the Ancients, but rather as human inventions that can be understand and improved, we need students to understand the underlying models.
 
 > Don't you wish every social scientist whose experiments fail to reproduce had that sequence instead of the calculus they forgot?
 
+If the social scientist understands the mathematical model underlying the inferential framework they're applying, I would argue they would be less likely to see a significance test as a black box that turns uncertainty into answers. Many social scientists (heck, many **scientists**) can't even give the correct definition of a P-value, let alone the logic behind the probabilistic proof by contradiction inherent in the standard formulation of hypothesis testing. They are taught statistics as a list of recipes for turning numbers into (dubious) publications precisely because they (and their instructors within the social sciences) do not appreciate the mathematical modeling framework they are implicitly adopting to do statistics.
+
+Harold Hotelling and many others have [made this argument](https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-11/issue-4/The-Teaching-of-Statistics/10.1214/aoms/1177731833.full) far better than I can here. 
+
 > Are linear algebra and statistics really "trendy and shallow" as the letter suggests?
+
+The [short letter](https://sites.google.com/view/k12mathmatters/home?fbclid=IwAR2TTtvLF50vXF5v-h_4tyOsec8SmhGaSYcQh97m0qp5-bEI-wH8c7_cxs4) never mentions linear algebra, and the [longer analysis](https://gdoc.pub/doc/e/2PACX-1vQvuzlJ8MWthsqOhRLxQc5akGS0JkgThz3umqO3K-WQiXFhWiq9qw-9iYdTyC652Ftjvv5nHvgGYTEv) of the California Math Framework explicitly **recommends** that linear algebra be included in the STEM curriculum. So I'm not sure where this point comes from? Can you point me to the relevant section?
 
 > IMO it is difficult to decide between geometry (which is really more of an introduction to logic), algebra 2 (graphical analysis), and statistics.
 
-> But I would want students to have all 3, and probably even linear algebra, before they go on to calculus. 
+As I said above, solidly done inferential statistics requires knowledge of calculus. You can teach Cookbook Statistics without calculus, but then you have educated a generation of students who think they understand statistics when they really do not. 
+
+And regarding geometry, at least according to my students, New Jersey public schools no longer teach geometry via the proof-based method popular when we were students. I don't know if they're correct (they would claim I hadn't taught something the previous *semester* when I had, so I don't know if I can trust their recollection of what they learned in high school), and I don't know if this generalizes to other states. But I agree that some sort of logic-based course should be part of the high school curriculum. I learned about the basics of proofs (the contrapositive, the converse, the inverse, proof by contradiction, proof by the contrapositive, etc.) in a geometry course in Pennslyvania public high school. I would be fine with replacing geometry with a discrete math course that, say, uses number theory to introduce proofs. But students should be introduced to the basics of logic at *some point*.
+
+As an example, much of hypothesis testing requires thinking counterfactually: "If the null hypothesis is true, what would be expect? If the alternative hypothesis is true, what would we expect?" Students who had not been introduced to logic typically had difficulty with the idea that we might assume something is true without knowing for sure, and then follow the consequences of that to see where the assumption leads. I don't know where that should be taught: I learned it during my mathematics coursework in proofs-based courses.
+
+> But I would want students to have all 3, and probably even linear algebra, before they go on to calculus.
+
+Again, I don't think you can teach a successful (in the sense that students understand what is going on) course in statistics without the basic ideas from calculus: derivatives, integrals, limits, etc.
+
+And linear algebra **is** a part of Algebra II. At least, I learned the basics of linear algebra in Algebra II at a middle-of-the-road public high school in PA.
 
 > And I'd much prefer kids understand exponential growth deep into their bones before any quadratic equation.
+
+I'm not sure how one understands exponential growth "deep in ones bones" without calculus.
 
 # Alex Cloninger
 
 > I've always been an advocate of updating, at a minimum, the examples and applications people use in K12 math courses to be more in line with current data science problems.
 
+We've had this discussion before, and I'm all for it! There's no reason to only used physics-based examples in a calculus class. But I think many of the "Calculus for [$x$]" courses already do this. At least at Monmouth, the Calculus for Biology and Calculus for Business courses explicitly incorporated applications of calculus relevant for those majors.
+
 > Also, I'm always an advocate for incorporating programming and "experiment based mathematics" problems in order to bolster understanding for students.
 
+I'm also all for including programming at the high school level. But then I suppose it becomes a matter of what we take out.
+
 > I wish that the CA push would be for rigorous mathematics with a data science lens, but it doesn't seem like that's what's happening. Definitely could be convinced otherwise, and I definitely plan to look into the CA Department of Education argument for why this would be a positive, as well.
+
+I agree. Most of the opinion pieces I've read in the "we need to replace calculus with statistics" have a strange view of calculus as "that thing people did in the 17th and 18th century," rather than the main framework we have for understanding rates of change and accumulation. Gilbert Strang put it best:
+
+> One purpose in studying mathematics is to know more about your own life. Calculus lights up a key idea: Functions. Shapes and populations and heart signals and profits and growth rates, all are given by functions. They change in time. They have integrals and derivatives. To understand and use them is a challenge - mathematics takes effort. A lot of people have contributed, in whatever way they could - as you and I are doing. We may not be Newton or Leibniz or Gauss or Einstein, but we can share some part of what they created.
+
+And it's definitely worth looking into the justifications the California Department of Education has put forward for their curriculum change. You can find some of them in the [longer analysis](https://gdoc.pub/doc/e/2PACX-1vQvuzlJ8MWthsqOhRLxQc5akGS0JkgThz3umqO3K-WQiXFhWiq9qw-9iYdTyC652Ftjvv5nHvgGYTEv) that went along with this letter.
