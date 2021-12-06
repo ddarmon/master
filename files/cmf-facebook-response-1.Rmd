@@ -1,0 +1,39 @@
+---
+title: "Response to Facebook Posts Regarding the California Mathematics Framework"
+author: "David Darmon"
+output: html_document
+---
+
+# Anne Jorstad
+
+> because it will lead to higher data literacy, which is super important for a society making evidence-based decisions.
+
+Lorem ipsum.
+
+> To clarify, I think algebra is important for everybody. But I would argue that we are kidding ourselves if we think that most people who take calculus benefit from having taken calculus. Even students who can do the limit problems mostly don't internalize the point of limits, and we waste tons of time on topics like trig identities and surfaces of rotation that are just unnecessary.
+
+> Graduating from high school should require a solid understanding of both algebra (including basic linear algebra) and statistics.
+
+# Mike Kreisel
+
+> I'm curious to know which students you think the traditional path is serving well, other than those going into advanced math or physics.
+
+> If advanced students had a 2 course sequence in linear algebra and statistics would you really think they're set back?
+
+> Don't you wish every social scientist whose experiments fail to reproduce had that sequence instead of the calculus they forgot?
+
+> Are linear algebra and statistics really "trendy and shallow" as the letter suggests?
+
+> IMO it is difficult to decide between geometry (which is really more of an introduction to logic), algebra 2 (graphical analysis), and statistics.
+
+> But I would want students to have all 3, and probably even linear algebra, before they go on to calculus. 
+
+> And I'd much prefer kids understand exponential growth deep into their bones before any quadratic equation.
+
+# Alex Cloninger
+
+> I've always been an advocate of updating, at a minimum, the examples and applications people use in K12 math courses to be more in line with current data science problems.
+
+> Also, I'm always an advocate for incorporating programming and "experiment based mathematics" problems in order to bolster understanding for students.
+
+> I wish that the CA push would be for rigorous mathematics with a data science lens, but it doesn't seem like that's what's happening. Definitely could be convinced otherwise, and I definitely plan to look into the CA Department of Education argument for why this would be a positive, as well.
