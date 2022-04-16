@@ -94,6 +94,15 @@ alpha_fudge <- uniroot(phat_bar_diff, lower = -10, upper = 10, tol = 1e-20)$root
 show(alpha_fudge) # alpha that matches sample mean
 ```
 
+## Get Correct Intercept Estimator via Fitting GLM with Offset
+
+```{r}
+alpha
+coef(glm(Y ~ 1 + offset(fsum), family = binomial())) # Correct
+coef(glm(Y ~ f, family = binomial())) # Incorrect
+coef(glm(Y ~ fsum, family = binomial())) # Incorrect
+```
+
 # Fit GAM Using `gam` Package
 
 ```{r}
