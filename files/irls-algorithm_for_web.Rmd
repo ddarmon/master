@@ -1,0 +1,147 @@
+---
+title: "Demo of Local Scoring Version of IRLS for Fitting a Logistic Regression GAM"
+author: "David Darmon"
+date: "13 April 2022"
+---
+
+# Simulate Data
+
+```{r}
+# set.seed(314)
+
+logit  <- qlogis
+ilogit <- plogis
+
+f1 <- function(x) sin(x)
+f2 <- function(x) -abs(x)
+f3 <- function(x) 5*dnorm(x)
+
+fj <- list(f1, f2, f3)
+
+mu <- function(x1, x2, x3) ilogit(f1(x1) + f2(x2) + f3(x3))
+
+n <- 1000
+
+x1 <- 4*2*(runif(n) - 0.5)
+x2 <- 4*2*(runif(n) - 0.5)
+x3 <- 4*2*(runif(n) - 0.5)
+
+X <- cbind(x1, x2, x3)
+
+p <- ncol(X)
+
+Y <- rbinom(n, 1, mu(x1, x2, x3))
+```
+
+# Fit GAM Using Local Scoring Version of Iteratively Reweighted Least Squares (IRLS)
+
+```{r}
+# Initialize intercept and additive terms.
+
+alpha <- qlogis(mean(Y))
+
+f <- matrix(0, nrow = n, ncol = p)
+
+# Perform Local Scoring:
+
+for (i in 1:20){
+  # Get adjusted response for fitting via backfitting algorithm.
+  
+  etahat <- alpha + rowSums(f)
+  muhat  <- ilogit(etahat)
+  w <- (muhat*(1 - muhat))
+  
+  Z <- etahat + (Y - muhat)/(muhat*(1 - muhat))
+  
+  # Use backfitting algorithm to update smoothers.
+  
+  for (ii in 1:20){
+    for (j in 1:p){
+      Zr <- Z - (alpha + rowSums(f[, -j]))
+      
+      f[, j] <- predict(smooth.spline(Zr ~ X[, j], w = w), X[, j])$y
+      
+      f[, j] <- f[, j] - mean(f[, j])
+    }
+  }
+}
+```
+
+# Force $\alpha$ to Give Mean of Predicted Response Matching Mean of Response
+
+**Want:** $\alpha$ such that:
+
+$$
+\begin{aligned}  
+	\bar{y} &= \frac{1}{n} \sum_{i = 1}^{n} g^{-1} \left(\alpha + \sum_{j = 1}^{p} f_{j}(X_{j})\right)  \\
+	&= \frac{1}{n} \sum_{i = 1}^{n} \frac{\exp \left(\alpha + \sum_{j = 1}^{p} f_{j}(X_{j})\right)}{1 + \exp \left(\alpha + \sum_{j = 1}^{p} f_{j}(X_{j})\right)}
+\end{aligned}
+$$
+
+```{r}
+ybar <- mean(Y)
+
+fsum <- rowSums(f)
+
+phat_bar_diff <- function(alpha) mean(plogis(alpha + fsum)) - ybar
+```
+
+## Show Hastie and Tibshirani $\alpha$ does not match $\alpha$ needed to match mean response
+
+```{r}
+show(alpha) # alpha from Hastie and Tibshirani
+alpha_fudge <- uniroot(phat_bar_diff, lower = -10, upper = 10, tol = 1e-20)$root
+show(alpha_fudge) # alpha that matches sample mean
+```
+
+## Get Correct Intercept Estimator via Fitting GLM with Offset
+
+```{r}
+alpha
+coef(glm(Y ~ 1 + offset(fsum), family = binomial())) # Correct
+coef(glm(Y ~ f, family = binomial())) # Incorrect
+coef(glm(Y ~ fsum, family = binomial())) # Incorrect
+```
+
+# Fit GAM Using `gam` Package
+
+```{r}
+library(gam)  # Fits using Local Scoring
+
+mod_gam  <- gam::gam(Y ~ s(x1) + s(x2) + s(x3), family = binomial)
+
+pp <- preplot(mod_gam)
+```
+
+# Compare Partial Response Functions
+
+```{r}
+par(mfrow = c(1, 3))
+for (j in 1:3){
+  plot(pp[[sprintf('s(x%d)', j)]], col = 'purple', cex = 0.1, pch = 16)
+  points(X[, j], f[, j], cex = 0.1, pch = 16, col = 'darkorange')
+  points(X[, j], fj[[j]](X[, j]) - mean(fj[[j]](X[, j])), col = 'blue', cex = 0.2, pch = 16)
+  legend('topleft', legend = c('truth', 'DIY', 'gam'), pch = c(16, 16, 16), col = c('blue', 'darkorange', 'purple'))
+}
+```
+
+# Show Intercepts
+
+```{r}
+c(alpha_init = qlogis(mean(Y)))
+c(alpha_gam = as.numeric(coef(mod_gam)[1]))
+c(alpha_diy = alpha)
+```
+
+# Show Mean of Predicted Response Matches Mean of Response
+
+```{r}
+phat_gam    <- predict(mod_gam, type = "response")
+phat_diy    <- plogis(alpha + rowSums(f))
+phat_fudge  <- plogis(alpha_fudge + rowSums(f))
+
+sprintf("%.10f", mean(phat_gam))
+sprintf("%.10f", mean(phat_diy))
+sprintf("%.10f", mean(phat_fudge))
+sprintf("%.10f", mean(Y))
+```
