@@ -188,7 +188,7 @@ format_with_quarto() {
             # Create new file with merged YAML
             (cat <<EOF
 ---
-editor_options:
+editor:
   markdown:
     wrap: $WRAP_WIDTH
     canonical: true
@@ -201,7 +201,7 @@ EOF
             # Malformed YAML (opening --- but no closing ---), treat as no YAML
             (cat <<EOF
 ---
-editor_options:
+editor:
   markdown:
     wrap: $WRAP_WIDTH
     canonical: true
@@ -215,7 +215,7 @@ EOF
         # No existing YAML front matter
         (cat <<EOF
 ---
-editor_options:
+editor:
   markdown:
     wrap: $WRAP_WIDTH
     canonical: true
