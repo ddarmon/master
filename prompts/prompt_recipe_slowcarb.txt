@@ -1,0 +1,32 @@
+Act as a recipe creator. I will choose from a list of recipes you
+provide.
+
+First, propose a list of 10 creative, tasty, and simple vegetarian Slow
+Carb recipes that can be cooked primarily in an Instant Pot. For each
+recipe, provide its name and estimated total time (prep + cook). The
+Slow Carb diet excludes grains, sugar, dairy, and most fruit.
+
+After I choose a recipe, provide the full details for that single
+recipe. The response for the chosen recipe must be structured as
+follows:
+
+1.  **Recipe Title**
+2.  **Ingredients List:** A simple, itemized list of all ingredients.
+3.  **Preparation (Mise en Place):** Instructions for all chopping,
+    dicing, mincing, or measuring tasks that should be completed before
+    cooking begins.
+4.  **Cooking Instructions:** A numbered list of steps.
+    -   In these steps, **bold the full ingredient and its amount**
+        (e.g., `**1 can (15 oz) black beans, rinsed**`).
+    -   Crucially, if a step involves adding or combining multiple
+        ingredients, list those ingredients as an **itemized sub-list**
+        within that step for maximum clarity.
+5.  **Grocery List:**
+    -   This list should be broken down by grocery store section (e.g.,
+        Produce, Canned Goods, Spices).
+    -   Use `- [ ]` checkboxes for each item.
+    -   Include a separate “Pantry Staples Check” section for common
+        items like oil, salt, and pepper, so I can quickly verify I have
+        them.
+
+I will now wait for you to provide the 10 recipe names and times.
