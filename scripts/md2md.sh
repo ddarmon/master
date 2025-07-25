@@ -282,7 +282,7 @@ for i, line in enumerate(lines):
     # Render the temporary Quarto file
     debug_log "Rendering with Quarto..."
     # Change to temp directory to avoid absolute path issues with Quarto
-    (cd "$TEMP_DIR" && quarto render "temp.qmd" --to md --output "output.md" --quiet) || {
+    (cd "$TEMP_DIR" && quarto render "temp.qmd" --to markdown-raw_tex --output "output.md" --quiet) || {
         echo "Warning: Quarto render encountered issues, but continuing..."
         # If render failed, check if output file exists anyway
         if [ ! -f "$TEMP_OUTPUT_FILE" ]; then
@@ -296,7 +296,7 @@ for i, line in enumerate(lines):
 handle_output() {
     debug_log "Handling output..."
 
-    # If the original content had YAML, we need to restore it properly
+    # Handle output - strip generated YAML if no original YAML existed
     FINAL_OUTPUT="$TEMP_OUTPUT_FILE"
     if has_yaml_frontmatter "$INPUT_CONTENT"; then
         debug_log "Restoring original YAML front matter"
@@ -305,15 +305,30 @@ handle_output() {
         ORIGINAL_YAML=$(extract_yaml "$INPUT_CONTENT")
 
         if [ -n "$ORIGINAL_YAML" ]; then
-            # Get the formatted content (skip the generated title/author/date lines)
-            FORMATTED_CONTENT=$(sed -n '/^------------------------------------------------------------------------$/,$p' "$TEMP_OUTPUT_FILE" | tail -n +2)
-            if [ -z "$FORMATTED_CONTENT" ]; then
-                # Fallback: if no separator found, take content after first few lines
+            # Get the formatted content (skip the generated YAML header)
+            # Find the end of the YAML front matter in the output
+            YAML_END_LINE=$(tail -n +2 "$TEMP_OUTPUT_FILE" | grep -n "^---$" | head -1 | cut -d: -f1)
+            if [ -n "$YAML_END_LINE" ]; then
+                # Add 2 to account for skipping first line and the closing ---
+                YAML_END_LINE=$((YAML_END_LINE + 2))
+                FORMATTED_CONTENT=$(tail -n +$((YAML_END_LINE + 1)) "$TEMP_OUTPUT_FILE")
+            else
+                # Fallback: if no YAML found, take content after first few lines
                 FORMATTED_CONTENT=$(tail -n +5 "$TEMP_OUTPUT_FILE")
             fi
 
             # Create final output with original YAML
             (echo "$ORIGINAL_YAML"; echo; echo "$FORMATTED_CONTENT") > "$FINAL_TEMP"
+            FINAL_OUTPUT="$FINAL_TEMP"
+        fi
+    else
+        debug_log "No original YAML, stripping generated YAML"
+        # No original YAML - strip the generated YAML header
+        YAML_END_LINE=$(tail -n +2 "$TEMP_OUTPUT_FILE" | grep -n "^---$" | head -1 | cut -d: -f1)
+        if [ -n "$YAML_END_LINE" ]; then
+            # Add 2 to account for skipping first line and the closing ---
+            YAML_END_LINE=$((YAML_END_LINE + 2))
+            tail -n +$((YAML_END_LINE + 1)) "$TEMP_OUTPUT_FILE" > "$FINAL_TEMP"
             FINAL_OUTPUT="$FINAL_TEMP"
         fi
     fi
