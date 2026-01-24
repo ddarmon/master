@@ -13,10 +13,21 @@
 # Written with Claude Sonnet 4 in Claude Code
 #
 # David Darmon, 5 July 2025
+#
+# Changelog:
+# 2026-01-24: Added table and code block preservation (Claude Opus 4.5)
+#             - New PRESERVE_TABLES option: extracts pipe tables, formats with
+#               aligned columns, and restores after Quarto processing
+#             - New PRESERVE_CODE_BLOCKS option: preserves fenced code blocks
+#               (``` ```) without indentation or fence removal
+#             - Both options default to true; disable with MD2MD_PRESERVE_TABLES=false
+#               or MD2MD_PRESERVE_CODE_BLOCKS=false
 
 # Configuration
 WRAP_WIDTH=${MD2MD_WRAP_WIDTH:-80}
 ENABLE_PREPROCESSING=${MD2MD_PREPROCESSING:-true}
+PRESERVE_TABLES=${MD2MD_PRESERVE_TABLES:-true}
+PRESERVE_CODE_BLOCKS=${MD2MD_PRESERVE_CODE_BLOCKS:-true}
 DEBUG=${DEBUG:-false}
 
 # Debug logging function
@@ -116,6 +127,203 @@ setup_temp_files() {
     debug_log "Temporary directory: $TEMP_DIR"
 }
 
+# Extract and protect tables and code blocks before Quarto processing
+preprocess_protected_blocks() {
+    local input_file="$1"
+    local output_file="$2"
+
+    debug_log "Preprocessing protected blocks..."
+
+    INPUT_FILE="$input_file" OUTPUT_FILE="$output_file" BLOCKS_DIR="$TEMP_DIR" \
+    PRESERVE_TABLES_FLAG="$PRESERVE_TABLES" PRESERVE_CODE_BLOCKS_FLAG="$PRESERVE_CODE_BLOCKS" \
+    python3 - << 'PYTHON_SCRIPT'
+import os
+import re
+
+input_file = os.environ['INPUT_FILE']
+output_file = os.environ['OUTPUT_FILE']
+temp_dir = os.environ['BLOCKS_DIR']
+preserve_tables = os.environ['PRESERVE_TABLES_FLAG'] == "true"
+preserve_code_blocks = os.environ['PRESERVE_CODE_BLOCKS_FLAG'] == "true"
+
+with open(input_file, 'r') as f:
+    content = f.read()
+
+blocks_dir = os.path.join(temp_dir, "protected_blocks")
+os.makedirs(blocks_dir, exist_ok=True)
+
+block_counter = 0
+
+def save_block(block_content, block_type):
+    global block_counter
+    block_counter += 1
+    block_file = os.path.join(blocks_dir, f"block_{block_counter}.txt")
+    with open(block_file, 'w') as f:
+        f.write(block_content)
+    # Write metadata
+    meta_file = os.path.join(blocks_dir, f"block_{block_counter}.meta")
+    with open(meta_file, 'w') as f:
+        f.write(block_type)
+    return f"\n\n<!--PROTECTED_BLOCK_{block_counter}-->\n\n"
+
+def format_table(table_text):
+    """Format a pipe table with aligned columns."""
+    lines = table_text.strip().split('\n')
+    if len(lines) < 2:
+        return table_text
+
+    # Parse rows
+    rows = []
+    separator_idx = -1
+    for i, line in enumerate(lines):
+        line = line.strip()
+        if not line.startswith('|'):
+            continue
+        # Check if it's the separator line
+        if re.match(r'^\|[\s\-:|]+\|$', line):
+            separator_idx = i
+            rows.append(None)  # Placeholder for separator
+        else:
+            # Parse cells
+            cells = [c.strip() for c in line.split('|')[1:-1]]
+            rows.append(cells)
+
+    if separator_idx == -1 or not rows:
+        return table_text
+
+    # Calculate column widths
+    num_cols = max(len(r) for r in rows if r is not None)
+    col_widths = [0] * num_cols
+    for row in rows:
+        if row is None:
+            continue
+        for i, cell in enumerate(row):
+            if i < num_cols:
+                col_widths[i] = max(col_widths[i], len(cell))
+
+    # Minimum width of 3 for separator dashes
+    col_widths = [max(w, 3) for w in col_widths]
+
+    # Rebuild table
+    result_lines = []
+    for i, row in enumerate(rows):
+        if row is None:
+            # Separator line
+            sep_cells = ['-' * w for w in col_widths]
+            result_lines.append('| ' + ' | '.join(sep_cells) + ' |')
+        else:
+            # Data row - pad cells to column width
+            padded_cells = []
+            for j, cell in enumerate(row):
+                if j < num_cols:
+                    padded_cells.append(cell.ljust(col_widths[j]))
+            # Handle missing cells
+            while len(padded_cells) < num_cols:
+                padded_cells.append(' ' * col_widths[len(padded_cells)])
+            result_lines.append('| ' + ' | '.join(padded_cells) + ' |')
+
+    return '\n'.join(result_lines)
+
+# Extract fenced code blocks first (they may contain pipe characters)
+if preserve_code_blocks:
+    def replace_code_block(match):
+        return save_block(match.group(0), 'code')
+
+    # Match fenced code blocks (``` or ~~~)
+    content = re.sub(
+        r'^(`{3,}|~{3,})([^\n]*)\n(.*?)\n\1\s*$',
+        replace_code_block,
+        content,
+        flags=re.MULTILINE | re.DOTALL
+    )
+
+# Extract and format pipe tables
+if preserve_tables:
+    def replace_table(match):
+        formatted = format_table(match.group(0))
+        return save_block(formatted, 'table')
+
+    # Match pipe tables: lines starting with | that contain |
+    # A table has a header, separator (|---|), and data rows
+    table_pattern = r'^(\|[^\n]+\|\n)(\|[\s\-:|]+\|\n)(\|[^\n]+\|\n?)+'
+    content = re.sub(
+        table_pattern,
+        replace_table,
+        content,
+        flags=re.MULTILINE
+    )
+
+with open(output_file, 'w') as f:
+    f.write(content)
+
+print(f"Extracted {block_counter} protected blocks", file=__import__('sys').stderr)
+PYTHON_SCRIPT
+}
+
+# Restore protected blocks after Quarto processing
+postprocess_protected_blocks() {
+    local input_file="$1"
+    local output_file="$2"
+
+    debug_log "Restoring protected blocks..."
+
+    INPUT_FILE="$input_file" OUTPUT_FILE="$output_file" BLOCKS_DIR="$TEMP_DIR" \
+    python3 - << 'PYTHON_SCRIPT'
+import os
+import re
+
+input_file = os.environ['INPUT_FILE']
+output_file = os.environ['OUTPUT_FILE']
+temp_dir = os.environ['BLOCKS_DIR']
+
+blocks_dir = os.path.join(temp_dir, "protected_blocks")
+
+with open(input_file, 'r') as f:
+    content = f.read()
+
+def restore_block(match):
+    block_num = match.group(1)
+    block_file = os.path.join(blocks_dir, f"block_{block_num}.txt")
+    if os.path.exists(block_file):
+        with open(block_file, 'r') as f:
+            return f.read()
+    return match.group(0)
+
+# Restore all protected blocks - ensure proper newlines around restored content
+def restore_with_newlines(match):
+    block_num = match.group(1)
+    block_file = os.path.join(blocks_dir, f"block_{block_num}.txt")
+    meta_file = os.path.join(blocks_dir, f"block_{block_num}.meta")
+
+    restored = ""
+    block_type = ""
+    if os.path.exists(block_file):
+        with open(block_file, 'r') as f:
+            restored = f.read()
+    if os.path.exists(meta_file):
+        with open(meta_file, 'r') as f:
+            block_type = f.read().strip()
+
+    # Tables need a trailing newline for proper separation
+    if block_type == 'table' and not restored.endswith('\n'):
+        restored += '\n'
+
+    return '\n\n' + restored + '\n'
+
+content = re.sub(
+    r'\n*<!--PROTECTED_BLOCK_(\d+)-->\n*',
+    restore_with_newlines,
+    content
+)
+
+# Clean up excessive blank lines (more than 2 consecutive)
+content = re.sub(r'\n{3,}', '\n\n', content)
+
+with open(output_file, 'w') as f:
+    f.write(content)
+PYTHON_SCRIPT
+}
+
 # Process input (clipboard or file)
 process_input() {
     debug_log "Processing input..."
@@ -169,21 +377,30 @@ process_input() {
 format_with_quarto() {
     debug_log "Formatting content with Quarto..."
 
+    # Preprocess to protect tables and code blocks
+    PREPROCESSED_INPUT="$TEMP_DIR/preprocessed.md"
+    if [[ "$PRESERVE_TABLES" == "true" ]] || [[ "$PRESERVE_CODE_BLOCKS" == "true" ]]; then
+        preprocess_protected_blocks "$INPUT_CONTENT" "$PREPROCESSED_INPUT"
+        WORKING_INPUT="$PREPROCESSED_INPUT"
+    else
+        WORKING_INPUT="$INPUT_CONTENT"
+    fi
+
     # Process the content - check for existing YAML front matter
-    if has_yaml_frontmatter "$INPUT_CONTENT"; then
+    if has_yaml_frontmatter "$WORKING_INPUT"; then
         debug_log "Found existing YAML front matter"
 
         # Extract existing YAML (without the opening and closing ---)
-        YAML_END_LINE=$(tail -n +2 "$INPUT_CONTENT" | grep -n "^---$" | head -1 | cut -d: -f1)
+        YAML_END_LINE=$(tail -n +2 "$WORKING_INPUT" | grep -n "^---$" | head -1 | cut -d: -f1)
         if [ -n "$YAML_END_LINE" ]; then
             # Add 1 to account for skipping first line, then add 1 more for the closing ---
             YAML_END_LINE=$((YAML_END_LINE + 2))
 
             # Extract existing YAML (without the opening and closing ---)
-            EXISTING_YAML=$(sed -n "2,$((YAML_END_LINE-1))p" "$INPUT_CONTENT")
+            EXISTING_YAML=$(sed -n "2,$((YAML_END_LINE-1))p" "$WORKING_INPUT")
 
             # Extract content after YAML
-            CONTENT_AFTER_YAML=$(extract_content_after_yaml "$INPUT_CONTENT")
+            CONTENT_AFTER_YAML=$(extract_content_after_yaml "$WORKING_INPUT")
 
             # Create new file with merged YAML
             (cat <<EOF
@@ -207,7 +424,7 @@ editor:
     canonical: true
 ---
 EOF
-            cat "$INPUT_CONTENT"
+            cat "$WORKING_INPUT"
             ) > "$TEMP_QMD_FILE"
         fi
     else
@@ -268,13 +485,13 @@ for i, line in enumerate(lines):
     if i in needs_blank:
         sys.stdout.write("\n")
     sys.stdout.write(line)
-' < "$INPUT_CONTENT"; then
+' < "$WORKING_INPUT"; then
                 echo "Error: Preprocessing failed."
                 exit 1
             fi
         else
             debug_log "Preprocessing disabled, using content as-is"
-            cat "$INPUT_CONTENT"
+            cat "$WORKING_INPUT"
         fi
         ) > "$TEMP_QMD_FILE"
     fi
@@ -296,8 +513,17 @@ for i, line in enumerate(lines):
 handle_output() {
     debug_log "Handling output..."
 
+    # Postprocess to restore protected blocks (tables and code blocks)
+    POSTPROCESSED_OUTPUT="$TEMP_DIR/postprocessed.md"
+    if [[ "$PRESERVE_TABLES" == "true" ]] || [[ "$PRESERVE_CODE_BLOCKS" == "true" ]]; then
+        postprocess_protected_blocks "$TEMP_OUTPUT_FILE" "$POSTPROCESSED_OUTPUT"
+        QUARTO_OUTPUT="$POSTPROCESSED_OUTPUT"
+    else
+        QUARTO_OUTPUT="$TEMP_OUTPUT_FILE"
+    fi
+
     # Handle output - strip generated YAML if no original YAML existed
-    FINAL_OUTPUT="$TEMP_OUTPUT_FILE"
+    FINAL_OUTPUT="$QUARTO_OUTPUT"
     if has_yaml_frontmatter "$INPUT_CONTENT"; then
         debug_log "Restoring original YAML front matter"
 
@@ -307,14 +533,14 @@ handle_output() {
         if [ -n "$ORIGINAL_YAML" ]; then
             # Get the formatted content (skip the generated YAML header)
             # Find the end of the YAML front matter in the output
-            YAML_END_LINE=$(tail -n +2 "$TEMP_OUTPUT_FILE" | grep -n "^---$" | head -1 | cut -d: -f1)
+            YAML_END_LINE=$(tail -n +2 "$QUARTO_OUTPUT" | grep -n "^---$" | head -1 | cut -d: -f1)
             if [ -n "$YAML_END_LINE" ]; then
                 # Add 2 to account for skipping first line and the closing ---
                 YAML_END_LINE=$((YAML_END_LINE + 2))
-                FORMATTED_CONTENT=$(tail -n +$((YAML_END_LINE + 1)) "$TEMP_OUTPUT_FILE")
+                FORMATTED_CONTENT=$(tail -n +$((YAML_END_LINE + 1)) "$QUARTO_OUTPUT")
             else
                 # Fallback: if no YAML found, take content after first few lines
-                FORMATTED_CONTENT=$(tail -n +5 "$TEMP_OUTPUT_FILE")
+                FORMATTED_CONTENT=$(tail -n +5 "$QUARTO_OUTPUT")
             fi
 
             # Create final output with original YAML
@@ -324,11 +550,11 @@ handle_output() {
     else
         debug_log "No original YAML, stripping generated YAML"
         # No original YAML - strip the generated YAML header
-        YAML_END_LINE=$(tail -n +2 "$TEMP_OUTPUT_FILE" | grep -n "^---$" | head -1 | cut -d: -f1)
+        YAML_END_LINE=$(tail -n +2 "$QUARTO_OUTPUT" | grep -n "^---$" | head -1 | cut -d: -f1)
         if [ -n "$YAML_END_LINE" ]; then
             # Add 2 to account for skipping first line and the closing ---
             YAML_END_LINE=$((YAML_END_LINE + 2))
-            tail -n +$((YAML_END_LINE + 1)) "$TEMP_OUTPUT_FILE" > "$FINAL_TEMP"
+            tail -n +$((YAML_END_LINE + 1)) "$QUARTO_OUTPUT" > "$FINAL_TEMP"
             FINAL_OUTPUT="$FINAL_TEMP"
         fi
     fi
