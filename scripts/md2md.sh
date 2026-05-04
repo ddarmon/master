@@ -22,6 +22,14 @@
 #               (``` ```) without indentation or fence removal
 #             - Both options default to true; disable with MD2MD_PRESERVE_TABLES=false
 #               or MD2MD_PRESERVE_CODE_BLOCKS=false
+# 2026-05-03: Hardened against silent failures from broken interpreters (Claude Opus 4.7)
+#             - Pinned python3 to /usr/bin/python3; override with MD2MD_PYTHON3=/path/to/python3
+#               (guards against bundled-app pythons that are on PATH but fail at startup)
+#             - Dependency check now verifies python3 actually runs, not just that it exists
+#             - Embedded pre/postprocessing python blocks now check exit code and non-empty
+#               output, and abort instead of letting an empty file flow downstream
+#             - Final cleanup step now errors on sed failure and refuses to overwrite the
+#               input file with empty output (last-line defense against earlier silent failures)
 
 # Configuration
 WRAP_WIDTH=${MD2MD_WRAP_WIDTH:-80}
@@ -29,6 +37,9 @@ ENABLE_PREPROCESSING=${MD2MD_PREPROCESSING:-true}
 PRESERVE_TABLES=${MD2MD_PRESERVE_TABLES:-true}
 PRESERVE_CODE_BLOCKS=${MD2MD_PRESERVE_CODE_BLOCKS:-true}
 DEBUG=${DEBUG:-false}
+# Pin to a known-good python3. Override with
+# MD2MD_PYTHON3=/path/to/python3 if /usr/bin/python3 is unavailable.
+PYTHON3="${MD2MD_PYTHON3:-/usr/bin/python3}"
 
 # Debug logging function
 debug_log() {
@@ -48,9 +59,17 @@ check_dependencies() {
         exit 1
     fi
 
-    # Check if Python3 is available
-    if ! command -v python3 &> /dev/null; then
-        echo "Error: Python3 is required but not installed."
+    # Check that the configured python3 exists *and* actually runs.
+    # `command -v` alone isn't enough: bundled-app pythons can exist
+    # on disk but die on startup with a missing-encodings error.
+    if ! command -v "$PYTHON3" &> /dev/null; then
+        echo "Error: python3 not found at '$PYTHON3'."
+        echo "Override with MD2MD_PYTHON3=/path/to/working/python3."
+        exit 1
+    fi
+    if ! "$PYTHON3" -c 'import sys' &> /dev/null; then
+        echo "Error: python3 at '$PYTHON3' failed to start (likely a broken interpreter)."
+        echo "Override with MD2MD_PYTHON3=/path/to/working/python3."
         exit 1
     fi
 
@@ -136,7 +155,7 @@ preprocess_protected_blocks() {
 
     INPUT_FILE="$input_file" OUTPUT_FILE="$output_file" BLOCKS_DIR="$TEMP_DIR" \
     PRESERVE_TABLES_FLAG="$PRESERVE_TABLES" PRESERVE_CODE_BLOCKS_FLAG="$PRESERVE_CODE_BLOCKS" \
-    python3 - << 'PYTHON_SCRIPT'
+    "$PYTHON3" - << 'PYTHON_SCRIPT'
 import os
 import re
 
@@ -258,6 +277,15 @@ with open(output_file, 'w') as f:
 
 print(f"Extracted {block_counter} protected blocks", file=__import__('sys').stderr)
 PYTHON_SCRIPT
+    local rc=$?
+    if [ $rc -ne 0 ]; then
+        echo "Error: preprocess_protected_blocks (python3) failed (exit $rc)." >&2
+        exit 1
+    fi
+    if [ ! -s "$output_file" ]; then
+        echo "Error: preprocess_protected_blocks produced no output file." >&2
+        exit 1
+    fi
 }
 
 # Restore protected blocks after Quarto processing
@@ -268,7 +296,7 @@ postprocess_protected_blocks() {
     debug_log "Restoring protected blocks..."
 
     INPUT_FILE="$input_file" OUTPUT_FILE="$output_file" BLOCKS_DIR="$TEMP_DIR" \
-    python3 - << 'PYTHON_SCRIPT'
+    "$PYTHON3" - << 'PYTHON_SCRIPT'
 import os
 import re
 
@@ -322,6 +350,15 @@ content = re.sub(r'\n{3,}', '\n\n', content)
 with open(output_file, 'w') as f:
     f.write(content)
 PYTHON_SCRIPT
+    local rc=$?
+    if [ $rc -ne 0 ]; then
+        echo "Error: postprocess_protected_blocks (python3) failed (exit $rc)." >&2
+        exit 1
+    fi
+    if [ ! -s "$output_file" ]; then
+        echo "Error: postprocess_protected_blocks produced no output file." >&2
+        exit 1
+    fi
 }
 
 # Process input (clipboard or file)
@@ -443,7 +480,7 @@ EOF
             debug_log "Applying preprocessing..."
             # Very targeted preprocessing: only add blank lines before lists
             # when they would otherwise be merged into preceding text
-            if ! python3 -c '
+            if ! "$PYTHON3" -c '
 import sys
 import re
 
@@ -559,8 +596,22 @@ handle_output() {
         fi
     fi
 
-    # Remove extra newlines at the beginning
-    sed '/./,$!d' "$FINAL_OUTPUT" > "$CLEANED_OUTPUT"
+    # Remove extra newlines at the beginning. If sed errors out (e.g.
+    # because $FINAL_OUTPUT is missing due to an earlier silent failure),
+    # the truncating `>` will still create an empty $CLEANED_OUTPUT -
+    # which should not copy over the user's original file.
+    if ! sed '/./,$!d' "$FINAL_OUTPUT" > "$CLEANED_OUTPUT"; then
+        echo "Error: final cleanup step failed (input was '$FINAL_OUTPUT')." >&2
+        exit 1
+    fi
+
+    # Refuse to overwrite the input with empty output. This is a last-line
+    # defense against silent failures earlier in the pipeline.
+    if [ ! -s "$CLEANED_OUTPUT" ]; then
+        echo "Error: formatted output is empty; refusing to overwrite the input." >&2
+        echo "  Re-run with DEBUG=true to investigate." >&2
+        exit 1
+    fi
 
     # Output the result
     if [ "$USE_CLIPBOARD" = true ]; then
