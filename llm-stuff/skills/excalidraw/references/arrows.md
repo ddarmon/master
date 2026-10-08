@@ -1,5 +1,16 @@
 # Arrow Routing Reference
 
+## Clearance Rules
+
+- Prefer the library's `connect` helper for ordinary shape-to-shape arrows.
+- Route connectors through open corridors rather than across nodes or labels.
+- Leave visible clearance between arrowheads and shape outlines when manually
+  positioning endpoints.
+- Render and inspect after the final routing change; bindings and valid JSON do
+  not prove that an arrow is visually clear.
+- When several arrows share an edge, stagger their attachment points and keep
+  their labels out of the shared corridor.
+
 ## Edge Calculation
 
 | Edge   | x formula              | y formula               |

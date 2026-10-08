@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagram Generation"
+  short_description: "Route and quality-check technical diagrams"
+  default_prompt: "Use $diagram-generation to choose the right backend and create a clear, validated diagram."

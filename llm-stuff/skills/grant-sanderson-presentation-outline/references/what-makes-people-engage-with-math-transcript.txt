@@ -1,0 +1,123 @@
+What Makes People Engage With Math
+Grant Sanderson — TEDxBerkeley, 2020
+
+Video: https://www.youtube.com/watch?v=s_L-fp8gDzY
+TED page: https://www.ted.com/talks/grant_sanderson_what_makes_people_engage_with_math
+Readable transcript source: https://singjupost.com/what-makes-people-engage-with-math-grant-sanderson-transcript/
+
+This readable transcript was cross-checked against the video's original-English
+automatic captions. Punctuation and paragraphing are editorial, and a few obvious
+automatic-transcription errors were corrected. It is not guaranteed to be a
+fully official or perfectly verbatim transcript.
+
+---
+
+I want to ask, what makes people engage with math? We all seem very intent that our children should learn math, that we should learn math, that it somehow puts us in a better position to understand science and technology, and when you have someone sitting there in a classroom, it’s not a given that they’re engaged.
+
+Now I work on a YouTube channel, and on YouTube, this question is put to an unusual level of, let’s just say, an extreme stress test, right? Because if you’re bored with what you’re watching, or you’re debating whether or not to watch something, there are billions of hours of content sitting there waiting for you. Some of the most entertaining things humanity has ever created are sitting there just one click away.
+
+So if you’re trying to teach math on YouTube and someone’s not engaged, they’re not sticking around. So what I want to do is answer this question through a YouTuber’s lens in a way that’s hopefully helpful to more traditional teaching contexts, and I was asked to talk about some of what I do.
+
+So I figured what we would do here is take a look at some of the content that I’ve made that, by the extremely coarse metric of view count, is in a sense more engaging than others. And part of the reason I choose to do this is the four specific videos at the top paint a very interesting picture to answer our question. So sitting at number four was a video about Fourier transforms .
+
+Now this is a beautiful piece of math, absolutely wonderful. The whole idea is about understanding functions in terms of pure frequencies. So when you hear a musical note played, something like the A440 that’s used to tune an orchestra, what the air pressure over time would look like if you were to graph it is something maybe like this yellow graph.
+
+You know, it’s a pure sine wave, it wiggles at a nice steady rate. Pitches that are higher or lower also wiggle according to pure sine waves but may be faster or slower. Now when you play them all together to get a chord, what happens is that at each point in time, the strength of each of those individual notes is getting added together. So because there are different frequencies, you end up with this very complicated looking graph.
+
+In this case, I’ve only added together four different frequencies but the one at the top, it’s notably more complicated. It’s definitely not a clean sine wave. And the question that Fourier transforms try to answer is how do you do this in reverse? How do you start with a signal that something like your microphone would pick up and reverse engineer what the pure frequencies that went into it are? Now it’s not just relevant for sound engineering.
+
+If you ask any electrical engineer or someone who works with quantum mechanics or all kinds of physics, it turns out that being able to break up functions as pure frequencies is kind of a problem-solving superpower. But if you are bought into the idea that this is a very neat thing to learn, it’s a wonderful, beautiful piece of math, and you go to look it up, what you would find is something that looks like this, which is very intimidating, right? I mean, first of all, there’s an integral there, so you at least need to know calculus. That’s just a bare minimum.
+
+But if you look closely, you see to this e to the pi i stuff, so we’re doing calculus with complex numbers. I mean, the very first line of the Wikipedia page is sort of screaming at you, you need to be at a certain elite level before you’re going to be able to understand this. But if you look past the symbols and the formalisms, it turns out there’s a very nice way to understand what the Fourier transform is actually doing. This isn’t sugarcoating it.
+
+It’s showing what it’s actually doing, but in a very visual way, and this is what I tried to make a video about. I’ll just give you the very high level here. The idea is to take this graph that might be a mixture of different frequencies and sort of wind it around a circle, and to really talk through the details of what’s going on in this animation and how it pulls out the exact frequencies, it takes maybe 10, 15 minutes. It’s not too bad, but it’s a complicated image.
+
+But the idea is that even if you don’t have a deep technical background, you can come to a substantive understanding of what the Fourier transform is doing before you see the calculus and the complex numbers. And at that point, once you bring in the formalisms, it has a way of articulating an idea that’s already in your mind, explaining the usefulness of those calculus and complex number terms. So that’s Fourier transforms. Now if we jump up to number two, I did a video on neural networks, and I think I hardly need to tell anyone in this audience just how useful neural networks have proved to be in the last couple of decades.
+
+But if you really drill in on what specifically is going on when we reference machines learning, giving them training examples, in what sense is it learning in this context how to recognize handwritten digits, there is a ton of wonderful math to be had in there. And again, it’s highly visualizable. It’s something where you can show what’s happening before you bring in the formalisms of matrix operations and nonlinearities between them and gradient descent and all of that delicious stuff. You can get to the substance before you get to the intimidating formalism.
+
+So what makes people engage with math? I personally am a big fan of visualizations. I think animation can play a big role. But that’s only once you’ve got them bought into learning a topic.
+
+If we think about these two, Fourier transforms and neural networks, I think a big part of what draws people in is that they answer a question that often goes woefully unaddressed for most people in their math classes. When am I ever going to use this? I mean, you all know this feeling, right? I hear that kind of murmur of agreement.
+
+You’re in an algebra class, you’re doing something like the quadratic formula, you’re just working through worksheet after worksheet, and it’s all so unrelated to your life or anything that you could imagine being in your life. But if you can’t answer this question, I think it elevates math to the status of going to the gym. It’s still going to take work, right? We’re not going to sugarcoat things, but you know what you’re getting for that work.
+
+And instead of being something that’s kind of nerdy exclusively for the realm of school, it’s something that you can feel proud of doing, where after you do it, you feel good. You feel powerful. And you feel smug, too. You kind of want to boast to your friends.
+
+So what makes people engage with math? Relevance. You know? Connect it to the world.
+
+Preferably connect it to the audience’s world. But that’s almost too obvious. I think you all know that that’s the answer. I would like to argue it’s actually not the complete answer, though.
+
+I think there’s an ingredient that people don’t really talk about when they set curriculums, when they decide what their class is going to look like. And I think it’s a very important ingredient if we’re thinking about this question of engagement. And what leads me to think of it is looking at some of the content that I’ve made that people have seemed most engaged with. So let’s take a look at number three and one here, because they paint a very different story.
+
+And what I want to do is just talk about the topic itself, the math that you’re going to learn in the video, without any of the context, okay? Just what problem does each one talk about? So sitting at number three, the problem is, let’s say we have two different blocks and they’re sitting on a frictionless surface. Okay?
+
+In this case, I have one that’s one kilogram and one that’s 16 kilograms. And we’re going to send that right block sliding towards the left one. They’re going to bounce off of each other a couple of times. There’s a wall to their left.
+
+A bunch of bounces happen, and eventually they sail off, never to touch again. And we’re going to be very idealized. You know, no energy is lost to friction. No energy is lost to the collisions between them. They don’t act on each other with gravity. We just want to count the collisions in this idealized situation. That’s it. That is the question. That is the number three video.
+
+And this might seem like a joke, and I promise it’s not, but here’s the number one. Here’s the question that it’s asking. If you take a sphere and you choose four random points on the surface of that sphere, okay, so a uniform probability, all points on the sphere are equally likely, and we’re going to form a tetrahedron, which is sort of a triangular pyramid shape. It’s what you get to make those four points its vertices.
+
+The question is, what is the probability that this tetrahedron, this weird shape, contains the center of the sphere? You know, sometimes the four points are kind of on opposite sides and it contains it. Other times they’re bunched up together and it doesn’t. That is it.
+
+That is the question. Somehow that’s more popular than neural networks, right? And I can hear some of you scratching your heads in the audience, because if you look at the question, when am I ever going to use this, you might think that you won’t use the answer to this question. I know you might think that.
+
+You’d be absolutely right. I promise. You’re never going to need to know the number of times that two blocks bounce off of each other in a frictionless situation, and you are never going to need to know the probability that a tetrahedron formed by four random points on the surface of a sphere contains… It’s a weird question.
+
+It’s not a natural question. So why on earth do more people care about block collisions than Fourier transforms? And why on earth do more people care about the strange sphere question than neural networks? Okay, so I said that if you can answer this question, it elevates math to the status of going to the gym.
+
+Now let me ask, in the audience today, among you, how many of you have gone to the gym in the last 24 hours, by raise of hands? Okay, so raise your hand if you’ve been to the gym in the last 24 hours. And it looks like maybe the room’s 20% most muscular arms are all rising at once. Okay.
+
+So set them down. In contrast, how many of you in this audience today, again by raise of hands, in the last 24 hours have consumed some piece of fiction? So maybe a book, or a movie, or that Netflix series that you’ve been binging, some piece of fiction. It’s a lot more.
+
+A lot more. Now what’s funny is fiction makes no attempt to answer this question. I don’t know about you, but when I was reading Harry Potter, I didn’t find myself asking, when will I ever use Wingardium Leviosa? When am I going to apply the newfound knowledge I have of the rules of Quidditch, or the newfound knowledge I have of the intimate personality quirks of each individual Weasley child?
+
+No, I didn’t ask that, because we understand fiction appeals for an entirely different reason. It’s about emotion. It’s about wonder. It’s about establishing a mystery that you just need to see resolved.
+
+It’s about introducing a romance that you really want to see come to fruition. It’s a warm escape from a world that to a lot of us can be cold, and sometimes lonely. And before you go thinking that math plays by different rules, it absolutely does not. If you look at some of the people who are most engaged with the subject, professional mathematicians, the way that they describe their subject sometimes seems almost callously removed from the idea of reality.
+
+There was this one English mathematician, G. H. Hardy, and he wrote a book in 1940 called “ A Mathematician’s Apology “, and it might be best summed up by the following quotation. “We have concluded that trivial mathematics is on the whole useful, and that the real mathematics on the whole is not.”
+
+So yeah, you know, Fourier transforms, neural networks, all that trivial stuff, it might be useful, but leave it to the engineers. Pure stuff, number theory, topology, analysis, yeah, that’s the good stuff, but not useful. So why would he care? Well, let’s turn to an earlier mathematician.
+
+Another giant of the field, Henri Poincaré, he writes, “The mathematician does not study pure mathematics because it is useful. He studies it because he delights in it, and he delights in it because it’s beautiful.” It’s funny, that sounds more like how people talk about art than how they talk about science. What makes people engage with math?
+
+I think the thing not enough people talk about is what I’m just going to call story. And when I use that word, I mean appeals to emotion. I mean having comedy, having some notion of characters that you care about. I mean having a mystery you need to see resolved.
+
+Really, anything that pulls you in for the math for what it is now, not what it promises to give you later. Let’s take a look at the block collisions, because context here is crucial. Yes, the question is useless, but let me show you what would pull you in. This is really a mystery novel, and like any good mystery novel, you open with a crime scene, smoking gun, a fingerprint of someone who’s kind of familiar, in a way that suggests there’s something deeper at play.
+
+If each block has the same mass, it’s not too hard to see what’s going to happen. They transfer their momentum entirely with each collision, you end up getting three total clacks. Now, if we increase one of those masses by a factor of 100, it gets more interesting, because once it hits that block, it retains a lot of its momentum, and it ends up taking a lot more collisions to turn it around. It is a legitimately hard problem, I’ll tell you that, it’s a hard problem to figure out, but I’m just going to tell you the answer because the pattern is what’s going to be interesting here.
+
+All in all, when the dust settles, it ends up being 31 total collisions, so we have three and then 31. If we up it by another factor of 100 to 10,000, most collisions happen in a very big, unrealistic burst. It’s dependent on the idealism of the situation, and what I love about it is you get a beautiful, dramatic pause before the final, because you remember, our pattern was three, then 31, and then finally it’s going to be 314, and you might not see it, I wouldn’t blame you, it’s a very surprising result.
+
+But it turns out if you keep playing this game, and you up by various powers of 100, what ends up happening, and again, I want to emphasize, this depends on the idealism of the situation, the total number of collisions gives the digits of pi: 3, 1, 4, 1, 5, 9, 2, and at this point, it does not matter if the physics is idealized, if you have a soul, you have to know why, right? It’s a one-dimensional situation, there’s no circle, I don’t see a circle, and pi’s digits are counting something, that is a very weird thing for pi to do, that’s not what it does.
+
+So what follows is a detective story, tracking down the circle, and you’re not shying away from the math. To get a satisfying answer to the mystery, you dive right into that math, and you learn what you need to learn, but it’s not because it’s useful, it’s because the story has drawn you in.
+
+Now, what about that weird sphere problem? I will admit that maybe most of the popularity there has more to do with a mildly click-baity title that I gave it, you see, I called it “The Hardest Problem on the Hardest Test”, which is actually kind of the point, you see, there’s this contest given to some of the most ambitious math students in colleges around the United States and Canada, it’s called the Putnam, it is famously hard, you know, the mean score on this is two out of 120, it’s a very hard test, and it’s given in these two parts, each with six questions.
+
+Number one is hard, because it’s the Putnam, and they get progressively more challenging, so the pi, you know, you get to five and six, it ends up being, well, it ends up being crushing, let’s be honest.
+
+And this problem that I talked about earlier, the sphere probability tetrahedron situation showed up as number six on one of these tests. So the video is not about the problem per se, you do see how to solve it. But it’s a story about how you, dear viewer, whoever you are, whatever your background in math, you’re not actually that different from the top students, because what we can do is walk through step by step the problem-solving tactics that could lead you to find the clever insight to answer this question that is, you know, maybe a stretch to call the hardest problem on the hardest test.
+
+But it’s positioned as the hardest problem on a famously hard test, and in the same way that people watching Star Wars, I think, get a little buzz within them by thinking, hmm, what if I had the force? I like to think that people watching something like this get that same buzz, thinking, hmm, what if I were to solve the hardest problem on a Putnam test?
+
+Yeah, it’s a fiction, it might be a fiction, but that’s exactly what pulls you in. And I know I’ve been a little bit focused on my own channel here, but I guarantee, if you look at any of the most successful math outlets out there, they succeed by leveraging some component of the story. Maybe the most popular math channel on YouTube, Numberphile, great channel. One of the best things that it does is it exposes the humanity and the character of different mathematicians.
+
+If we look at Stand Up Maths by Matt Parker , he leverages comedy and wit in order to talk about very technical topics, but in a very laughable way. A personal favorite of mine is a channel called Looking Glass Universe, and when you watch a video, you almost hear in the narration the smile behind each word. And the whole channel is a sort of scientific homage to Lewis Carroll and Alice in Wonderland .
+
+So you want to talk about incorporating fiction into science, this exemplifies it. But even then, even if you buy me that there’s some storytelling component to be had in math, that it can be genuinely entertaining, I know that some people are going to be thinking, yeah, but when am I ever going to use that math?
+
+Surely the stuff we should teach our students isn’t that playful puzzle stuff, it’s the useful stuff. That’s the reason we emphasize math and put it core in the education system. Who cares about puzzles? But here’s the thing about math.
+
+Even if it’s not useful, even if it’s almost trying not to be useful, it has a way of coming back around. Do you remember our friend Hardy from earlier? Well, one of the reasons he was not only okay with, but like weirdly proud of the fact that his work had no applications, is that he had just lived through two world wars. So at that time, utility and morality were not exactly synonyms.
+
+And shortly after the quote we saw earlier, here’s what he writes. He says, “No one has discovered any warlike purpose to be served in the theory of numbers or relativity. And it seems very unlikely that anyone will do so for many years.” Now in hindsight, we can almost laugh at this because relativity is critical for most physics to include GPS, GPS guided weaponry.
+
+And as to number theory, I’m sorry, Hardy, as pure and platonic as your primes might have seemed, that’s the backbone of modern cryptography. So even when he’s trying not to make it useful, it had a way of coming back around. And you know, those blocks collisions, I would have put money on the fact that you would never need to know the solution to this problem. You would never actually need to apply the fact that you get a circle out of this.
+
+And yet, a couple of months after I made it, a quantum computing researcher came up to me and pointed out a discovery he made, that the math behind that is identical to, not similar to, but identical to the math behind a very famous quantum search algorithm. So bizarrely, tracking down the circle in that detective story puts you in a better position to understand quantum computation. I wouldn’t have guessed that. That’s what math does.
+
+It shines a light on unexpected connections. So what makes people engage with math? Well, honestly, I think the most compelling answer is neither the usefulness nor the story, but understanding the bizarre way that they intertwine with each other. You know, the easy half here is that sometimes the best narrative is rooted in a really good application.
+
+But much more counterintuitive and just as true is that some of the most useful math that you’ll ever find, or that you can teach, has its origins in someone who is just looking for a good story. Thank you very much.
