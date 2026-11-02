@@ -30,6 +30,11 @@
 #               output, and abort instead of letting an empty file flow downstream
 #             - Final cleanup step now errors on sed failure and refuses to overwrite the
 #               input file with empty output (last-line defense against earlier silent failures)
+# 2026-11-02: Restored 4-space bullet-list indentation (Claude Opus 5.5)
+#             - Render with --to markdown-raw_tex+four_space_rule. Pandoc 3.6.4 dropped
+#               the padding after bullet markers (`-   ` -> `- `), which reached this
+#               script via Quarto 1.9's bundled pandoc 3.8.3; the extension restores
+#               the Google style guide's nested-list spacing. No-op on older pandoc.
 
 # Configuration
 WRAP_WIDTH=${MD2MD_WRAP_WIDTH:-80}
@@ -535,8 +540,13 @@ for i, line in enumerate(lines):
 
     # Render the temporary Quarto file
     debug_log "Rendering with Quarto..."
-    # Change to temp directory to avoid absolute path issues with Quarto
-    (cd "$TEMP_DIR" && quarto render "temp.qmd" --to markdown-raw_tex --output "output.md" --quiet) || {
+    # Change to temp directory to avoid absolute path issues with Quarto.
+    # +four_space_rule keeps bullet lists at a 4-space content indent
+    # (`-   item`), matching ordered lists and the Google Markdown style
+    # guide's nested-list-spacing rule. Pandoc >= 3.6.4 (bundled from
+    # Quarto 1.9) otherwise emits `- item` with 2-space nesting (pandoc
+    # #7172). The extension is a no-op on older pandoc.
+    (cd "$TEMP_DIR" && quarto render "temp.qmd" --to markdown-raw_tex+four_space_rule --output "output.md" --quiet) || {
         echo "Warning: Quarto render encountered issues, but continuing..."
         # If render failed, check if output file exists anyway
         if [ ! -f "$TEMP_OUTPUT_FILE" ]; then
